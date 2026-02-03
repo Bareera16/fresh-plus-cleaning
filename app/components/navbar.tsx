@@ -21,6 +21,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -148,28 +149,48 @@ export default function Navbar() {
                 <Link
                   key={item}
                   href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="text-3xl font-black uppercase border-b border-gray-100 pb-2 hover:text-green-600 transition-colors"
+                  className="text-xl font-bold uppercase border-b border-gray-100 pb-2 hover:text-green-600 transition-colors"
+                  style={{ fontFamily: "'Times New Roman', Times, serif" }}
                   onClick={() => setIsOpen(false)}
                 >
                   {item}
                 </Link>
               ))}
 
-              {/* SERVICES LIST */}
-              <div className="pt-2">
-                <p className="text-green-600 text-[10px] font-black uppercase tracking-[0.3em] mb-6 underline underline-offset-8">Our Services</p>
-                <div className="grid grid-cols-1 gap-5 pl-4 border-l-2 border-green-500">
-                  {services.map((s) => (
-                    <Link
-                      key={s.name}
-                      href={s.href}
-                      className="text-sm font-bold uppercase text-gray-600 hover:text-green-600 transition-all active:translate-x-2"
-                      onClick={() => setIsOpen(false)}
+              {/* SERVICES DROPDOWN MOBILE */}
+              <div className="flex flex-col">
+                <button
+                  onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                  className="flex items-center justify-between text-xl font-bold uppercase border-b border-gray-100 pb-2 hover:text-green-600 transition-colors text-left"
+                  style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                >
+                  Services <ChevronDown size={20} className={`transition-transform duration-300 ${isMobileServicesOpen ? "rotate-180 text-green-600" : ""}`} />
+                </button>
+
+                <AnimatePresence>
+                  {isMobileServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
                     >
-                      {s.name}
-                    </Link>
-                  ))}
-                </div>
+                      <div className="grid grid-cols-1 gap-4 pl-4 border-l-2 border-green-500 mt-6 mb-4">
+                        {services.map((s) => (
+                          <Link
+                            key={s.name}
+                            href={s.href}
+                            className="text-xs font-bold uppercase text-gray-500 hover:text-green-600 transition-all active:translate-x-2"
+                            style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {s.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               {/* Blog & Contact */}
@@ -177,7 +198,8 @@ export default function Navbar() {
                 <Link
                   key={item}
                   href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="text-3xl font-black uppercase border-b border-gray-100 pb-2 hover:text-green-600 transition-colors"
+                  className="text-xl font-bold uppercase border-b border-gray-100 pb-2 hover:text-green-600 transition-colors"
+                  style={{ fontFamily: "'Times New Roman', Times, serif" }}
                   onClick={() => setIsOpen(false)}
                 >
                   {item}
@@ -185,9 +207,11 @@ export default function Navbar() {
               ))}
 
               <div className="mt-6">
-                <button className="w-full bg-green-600 text-white py-4 font-black uppercase tracking-widest text-xs shadow-lg active:scale-95 transition-all">
-                  See Instant Pricing
-                </button>
+                <Link href="/get-quote" onClick={() => setIsOpen(false)}>
+                  <button className="w-full bg-green-600 text-white py-4 font-bold uppercase tracking-widest text-xs shadow-lg active:scale-95 transition-all" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                    See Instant Pricing
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>
