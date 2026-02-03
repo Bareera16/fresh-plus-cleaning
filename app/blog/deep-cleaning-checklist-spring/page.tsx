@@ -69,7 +69,7 @@ export default function SpringCleaningPage() {
                 {/* HERO IMAGE */}
                 <div className="relative h-[400px] md:h-[500px] mb-20 rounded-sm overflow-hidden shadow-2xl">
                     <Image
-                        src="/House cleaning.webp"
+                        src="/House Cleaning.webp"
                         alt="Spring Cleaning Checklist"
                         fill
                         className="object-cover"
