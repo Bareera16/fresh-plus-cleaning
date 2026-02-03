@@ -1,26 +1,31 @@
 {
-  "name": "fresh-plus-cleaning",
-  "version": "0.1.0",
+  "name": "freshplus-cleaning",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "16.1.6",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "framer-motion": "^10.18.0",
+    "lucide-react": "^0.263.1",
+    "next": "14.0.4",
+    "react": "18.2.0",
+    "react-countup": "^6.5.3",
+    "react-dom": "18.2.0",
+    "react-intersection-observer": "^10.0.2",
+    "react-player": "^3.4.0",
+    "swiper": "^12.1.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.6",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "@types/node": "20.10.6",
+    "@types/react": "18.2.46",
+    "@types/react-dom": "18.2.18",
+    "autoprefixer": "10.4.16",
+    "postcss": "8.4.32",
+    "tailwindcss": "3.4.0",
+    "typescript": "5.3.3"
   }
 }

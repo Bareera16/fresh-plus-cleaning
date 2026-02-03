@@ -1,26 +1,64 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Brand Colors */
+  --brand-green: #16a34a; /* green-600 */
+  --brand-green-light: #f0fdf4; /* green-50 */
+  --brand-orange: #f97316; /* orange-500 */
+  --brand-orange-light: #fb923c; /* orange-400 */
+  --brand-blue: #1d4ed8; /* blue-700 */
+  --brand-blue-dark: #1e3a8a; /* blue-900 */
+  --brand-blue-light: #bfdbfe; /* blue-200 */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: white;
+}
+/* Swiper Navigation Arrows Color */
+:root {
+  --swiper-navigation-size: 24px; /* Arrows ka size thora chhota aur sleek karne ke liye */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff !important; /* Default color White */
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover,
+.swiper-button-next:active {
+  color: #22c55e !important; /* Green color (Tailwind green-500) on click/hover */
+}
+
+/* Agar aap dots (pagination) bhi use kar rahe hain toh unka color bhi change kar sakte hain */
+.swiper-pagination-bullet {
+  background: #ffffff !important;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #22c55e !important;
+  opacity: 1;
+}
+.swiper-button-next {
+  right: 30px !important; /* Kinare se thora andar */
+}
+
+.swiper-button-prev {
+  left: 30px !important; /* Kinare se thora andar */
+}
+
+/* Arrow size ko thora aur compact karein */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 18px !important;
+  font-weight: bold;
 }
