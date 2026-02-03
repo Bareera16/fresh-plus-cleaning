@@ -32,7 +32,7 @@ const secondaryPosts = [
         category: "Deep Cleaning",
         date: "Dec 8, 2024",
         readTime: "10 min read",
-        image: "/house cleaning.webp",
+        image: "/House Cleaning.webp",
         desc: "Transform your home this spring with our comprehensive deep cleaning checklist for Melbourne homes.",
         animation: { initial: { opacity: 0, x: 100 }, whileInView: { opacity: 1, x: 0 } } // Right Side
     },
