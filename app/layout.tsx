@@ -13,8 +13,11 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fresh-plus-cleaning.vercel.app"),
-  title: "Fresh Plus Cleaning | Professional Services",
-  description: "Reliable and stable crews for your home and office.",
+  title: {
+    default: "Fresh Plus Cleaning | Professional Home & Office Cleaning Melbourne",
+    template: "%s | Fresh Plus Cleaning"
+  },
+  description: "Melbourne's most reliable professional cleaning services for homes and offices. Stable crews, eco-friendly products, and sparkling results guaranteed.",
   alternates: {
     canonical: "/",
   },

@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: 'Our Cleaning Services',
+  description: 'Explore our full range of professional cleaning services in Melbourne, from residential to commercial.',
   alternates: {
     canonical: '/services',
   },
