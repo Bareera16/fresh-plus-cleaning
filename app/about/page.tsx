@@ -83,6 +83,7 @@ export default function AboutPage() {
   return (
 
     <main className="bg-white overflow-hidden" style={{ fontFamily: "'Poppins', sans-serif" }}>
+      <h1 className="sr-only">About Fresh Plus Cleaning - Melbourne's Professional Cleaning Experts</h1>
 
 
 

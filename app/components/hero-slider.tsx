@@ -95,13 +95,13 @@ export default function HeroSlider() {
                       </motion.p>
 
                       {/* Main Title (2nd Line) - Size Reduced */}
-                      <motion.h1
+                      <motion.h2
                         custom={1}
                         variants={topToBottom}
                         className="text-lg sm:text-2xl md:text-4xl font-bold uppercase mb-10 leading-snug tracking-widest max-w-3xl"
                       >
                         {slide.title}
-                      </motion.h1>
+                      </motion.h2>
 
                       {/* Button (3rd Line) */}
                       <motion.div variants={bottomToTop}>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const services = [
   { name: "Residential Cleaning", href: "/services/residential" },
@@ -23,6 +24,17 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
+  const pathname = usePathname();
+
+  // Pages that have a dark hero section where white text on transparent bg works
+  const hasDarkHero = pathname === "/" || pathname === "/about" || pathname === "/contact";
+
+  // Text color should be black if scrolled OR if it's a light-background page
+  const useBlackText = scrolled || !hasDarkHero;
+
+  // Background should ONLY be white when scrolled
+  const showWhiteBg = scrolled;
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
@@ -34,7 +46,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-[100] transition-all duration-500 font-display ${scrolled ? "bg-white py-2 shadow-md" : "bg-transparent py-4"
+      className={`fixed top-0 w-full z-[100] transition-all duration-500 font-display ${showWhiteBg ? "bg-white py-2 shadow-md" : "bg-transparent py-4"
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
@@ -61,11 +73,11 @@ export default function Navbar() {
         {/* DESKTOP NAV - Animations restored */}
         <nav className="hidden lg:flex items-center space-x-8">
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-            <Link href="/" className={`${navItemClass} ${scrolled ? "text-black hover:text-green-600" : "text-white hover:text-green-400"}`}>Home</Link>
+            <Link href="/" className={`${navItemClass} ${useBlackText ? "text-black hover:text-green-600" : "text-white hover:text-green-400"}`}>Home</Link>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-            <Link href="/about" className={`${navItemClass} ${scrolled ? "text-black hover:text-green-600" : "text-white hover:text-green-400"}`}>About</Link>
+            <Link href="/about" className={`${navItemClass} ${useBlackText ? "text-black hover:text-green-600" : "text-white hover:text-green-400"}`}>About</Link>
           </motion.div>
 
           {/* SERVICES DROPDOWN */}
@@ -77,7 +89,7 @@ export default function Navbar() {
             onMouseEnter={() => setOpenDropdown(true)}
             onMouseLeave={() => setOpenDropdown(false)}
           >
-            <button className={`${navItemClass} flex items-center gap-1 ${scrolled ? "text-black" : "text-white"}`}>
+            <button className={`${navItemClass} flex items-center gap-1 ${useBlackText ? "text-black" : "text-white"}`}>
               Services <ChevronDown size={12} className={`transition-transform duration-300 ${openDropdown ? "rotate-180" : ""}`} />
             </button>
             <AnimatePresence>
@@ -99,11 +111,11 @@ export default function Navbar() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-            <Link href="/blog" className={`${navItemClass} ${scrolled ? "text-black hover:text-green-600" : "text-white hover:text-green-400"}`}>Blog</Link>
+            <Link href="/blog" className={`${navItemClass} ${useBlackText ? "text-black hover:text-green-600" : "text-white hover:text-green-400"}`}>Blog</Link>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-            <Link href="/contact" className={`${navItemClass} ${scrolled ? "text-black hover:text-green-600" : "text-white hover:text-green-400"}`}>Contact</Link>
+            <Link href="/contact" className={`${navItemClass} ${useBlackText ? "text-black hover:text-green-600" : "text-white hover:text-green-400"}`}>Contact</Link>
           </motion.div>
         </nav>
 
@@ -117,7 +129,7 @@ export default function Navbar() {
         transition-all duration-500 ease-in-out
         hover:-translate-y-1 hover:shadow-xl
         border-x-2 border-transparent hover:border-green-500
-        ${scrolled ? "bg-green-600 text-white hover:bg-black" : "bg-green-600 text-white hover:bg-white hover:text-black"}
+        ${useBlackText ? "bg-green-600 text-white hover:bg-black" : "bg-green-600 text-white hover:bg-white hover:text-black"}
       `}>
                 See Instant Pricing
               </button>
@@ -125,7 +137,7 @@ export default function Navbar() {
           </motion.div>
 
           <button
-            className={`lg:hidden relative z-[110] p-2 transition-transform active:scale-90 ${scrolled || isOpen ? "text-black" : "text-white"}`}
+            className={`lg:hidden relative z-[110] p-2 transition-transform active:scale-90 ${useBlackText || isOpen ? "text-black" : "text-white"}`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
