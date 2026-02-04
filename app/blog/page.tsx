@@ -61,6 +61,7 @@ const secondaryPosts = [
 export default function EditorialBlogPage() {
     return (
         <main className="min-h-screen bg-[#F0F4F2] pt-32 pb-20 px-6 overflow-hidden">
+            <h1 className="sr-only">Our Cleaning Blog - Expert Tips & Maintenance Guides</h1>
 
             {/* 1. HERO SECTION (Wahi Purana Overlapping Style) */}
             <section className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-32">
@@ -76,11 +77,11 @@ export default function EditorialBlogPage() {
                 <div className="lg:col-span-5 flex flex-col items-start">
                     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
                         <span className="text-[10px] font-black uppercase tracking-[0.5em] text-green-600 mb-6 block">End of Lease</span>
-                        <h1 className="text-4xl md:text-6xl font-serif text-gray-900 leading-[1.1] mb-8">Ultimate Guide to <span className="italic">Get Your Bond Back</span></h1>
+                        <h2 className="text-4xl md:text-6xl font-serif text-gray-900 leading-[1.1] mb-8">Ultimate Guide to <span className="italic">Get Your Bond Back</span></h2>
                         <p className="text-gray-500 text-sm mb-10 max-w-sm">Ensure you get your full bond back with our comprehensive end of lease cleaning checklist.</p>
                         <Link href="/blog/ultimate-guide-end-of-lease-cleaning">
                             <button className="flex items-center gap-6 group transition-all">
-                                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-900 border-b border-gray-900 pb-1">Read Full Article</span>
+                                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-900 border-b border-gray-900 pb-1">Read the full Bond Back Guide</span>
                                 <ArrowRight size={18} className="text-gray-400 group-hover:text-green-600 transition-all" />
                             </button>
                         </Link>
@@ -125,7 +126,7 @@ export default function EditorialBlogPage() {
                                 <h3 className="text-lg font-bold text-gray-900 mb-4 line-clamp-2 group-hover:text-green-600 transition-colors">{post.title}</h3>
                                 <p className="text-gray-500 text-xs leading-relaxed mb-6 line-clamp-2">{post.desc}</p>
                                 <Link href={`/blog/${post.slug}`} className="text-[10px] font-black uppercase tracking-widest text-orange-400 flex items-center gap-2 hover:gap-4 transition-all">
-                                    Read More <ArrowRight size={14} />
+                                    View Article: {post.title} <ArrowRight size={14} />
                                 </Link>
                             </div>
                         </motion.div>

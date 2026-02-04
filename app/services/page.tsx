@@ -104,7 +104,7 @@ export default function ServicesPage() {
             Our Services
           </h1>
           <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
-            Comprehensive cleaning solutions tailored to your needs. From residential to commercial, 
+            Comprehensive cleaning solutions tailored to your needs. From residential to commercial,
             we have the expertise to keep your space immaculate.
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function ServicesPage() {
             {services.map((service, index) => {
               const Icon = service.icon
               return (
-                <div 
+                <div
                   key={service.id}
                   id={service.id}
                   className="bg-gradient-to-br from-white to-primary-50 border border-primary-100 rounded-2xl p-8 card-hover"
@@ -138,7 +138,7 @@ export default function ServicesPage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-3">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start gap-3">
@@ -164,7 +164,7 @@ export default function ServicesPage() {
             Every space is unique. Contact us to discuss your specific cleaning needs and get a personalized quote.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/quote" className="btn-primary">
+            <Link href="/get-quote" className="btn-primary">
               Get Free Quote
             </Link>
             <Link href="/calculator" className="btn-outline">

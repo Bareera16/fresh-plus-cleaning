@@ -1,10 +1,11 @@
+import React from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cleaning Cost Calculator',
-  description: 'Estimate your cleaning costs with our interactive calculator for Melbourne properties.',
+  title: "Cleaning Cost Calculator",
+  description: "Estimate your cleaning costs with our interactive calculator for Melbourne properties.",
   alternates: {
-    canonical: '/calculator',
+    canonical: "/calculator",
   },
 };
 

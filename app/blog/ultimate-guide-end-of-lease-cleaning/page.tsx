@@ -32,8 +32,8 @@ export default function EndOfLeaseGuide() {
                 >
                     <span className="text-[10px] font-black uppercase tracking-[0.5em] text-green-600 mb-6 block">Bond Back Guarantee</span>
                     <h1 className="text-4xl md:text-6xl font-serif text-gray-900 leading-[1.1] mb-8">
-                        Ultimate Guide to <br />
-                        <span className="italic text-green-700">Get Your Bond Back</span>
+                        Ultimate Guide: <br />
+                        <span className="italic text-green-700">How to Get Your Bond Back</span>
                     </h1>
 
                     <div className="flex items-center justify-center gap-6 text-[10px] font-black uppercase tracking-widest text-gray-400 border-y border-gray-200 py-6">

@@ -1,10 +1,11 @@
+import React from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'How Clean Offices Boost Productivity',
-  description: 'Discover the link between workspace cleanliness and employee performance in our latest guide.',
+  title: "How Clean Offices Boost Productivity",
+  description: "Discover the link between workspace cleanliness and employee performance in our latest guide.",
   alternates: {
-    canonical: '/blog/commercial-cleaning-productivity',
+    canonical: "/blog/commercial-cleaning-productivity",
   },
 };
 

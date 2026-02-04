@@ -1,10 +1,11 @@
+import React from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Deep Cleaning Services Melbourne',
-  description: 'Intensive deep cleaning solutions for homes and offices that need extra care and attention.',
+  title: "Deep Cleaning Services Melbourne",
+  description: "Intensive deep cleaning solutions for homes and offices that need extra care and attention.",
   alternates: {
-    canonical: '/services/deep-cleaning',
+    canonical: "/services/deep-cleaning",
   },
 };
 

@@ -1,10 +1,11 @@
+import React from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Spring Deep Cleaning Checklist',
-  description: 'Your room-by-room guide to transforming your home this spring with professional cleaning techniques.',
+  title: "Spring Deep Cleaning Checklist",
+  description: "Your room-by-room guide to transforming your home this spring with professional cleaning techniques.",
   alternates: {
-    canonical: '/blog/deep-cleaning-checklist-spring',
+    canonical: "/blog/deep-cleaning-checklist-spring",
   },
 };
 

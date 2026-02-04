@@ -116,7 +116,7 @@ export default function ProfessionalServices() {
                       {service.desc}
                     </p>
                     <Link href={service.link} className="text-green-500 font-bold text-xs uppercase tracking-widest hover:gap-3 flex items-center transition-all">
-                      Read More <span className="ml-2">+</span>
+                      Learn detail: {service.title} <span className="ml-2">+</span>
                     </Link>
                   </div>
                 </motion.div>

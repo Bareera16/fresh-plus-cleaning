@@ -1,10 +1,11 @@
+import React from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Window Cleaning Services Melbourne',
-  description: 'Sparkling streak-free windows for your home or office. Professional window cleaning in Melbourne.',
+  title: "Window Cleaning Services Melbourne",
+  description: "Sparkling streak-free windows for your home or office. Professional window cleaning in Melbourne.",
   alternates: {
-    canonical: '/services/window',
+    canonical: "/services/window",
   },
 };
 

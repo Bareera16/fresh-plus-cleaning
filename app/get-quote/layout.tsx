@@ -1,10 +1,11 @@
+import React from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Get an Instant Quote',
-  description: 'Get a fast and accurate cleaning quote for your home or office in Melbourne today.',
+  title: "Get an Instant Quote",
+  description: "Get a fast and accurate cleaning quote for your home or office in Melbourne today.",
   alternates: {
-    canonical: '/get-quote',
+    canonical: "/get-quote",
   },
 };
 
