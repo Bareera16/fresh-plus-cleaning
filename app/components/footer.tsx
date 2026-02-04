@@ -41,7 +41,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 w-fit">
               <div className="relative w-12 h-12">
                 <Image
-                  src="/logo.webp"
+                  src="/logo.png"
                   alt="Fresh Plus Logo"
                   fill
                   className="object-contain"

@@ -76,9 +76,9 @@ export default function SmoothContactPage() {
             className="grid md:grid-cols-3 gap-10 w-full"
           >
             {[
-              { icon: <Phone size={28} />, title: "Call Us", detail: "0403 971 720", link: "tel:0403971720" },
-              { icon: <MessageCircle size={28} />, title: "Text Us", detail: "0403 971 720", link: "sms:0403971720" },
-              { icon: <Mail size={28} />, title: "Email Us", detail: "infofreshplusclean@gmail.com", link: "mailto:infofreshplusclean@gmail.com" }
+              { icon: <Phone size={28} />, title: "Call Us", detail: "043971720", link: "tel:043971720" },
+              { icon: <MessageCircle size={28} />, title: "Text Us", detail: "043971720", link: "sms:043971720" },
+              { icon: <Mail size={28} />, title: "Email Us", detail: "info@freshpluscleaning.com.au", link: "mailto:nfo@freshpluscleaning.com.au" }
             ].map((item, index) => (
               <motion.div
                 key={index}

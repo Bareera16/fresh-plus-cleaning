@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { usePathname } from "next/navigation";
 
 const services = [
   { name: "Residential Cleaning", href: "/services/residential" },
@@ -20,213 +19,112 @@ const services = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
-  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
-  const pathname = usePathname();
-
-  // Pages that have a dark hero section where white text on transparent bg works
-  const hasDarkHero = pathname === "/" || pathname === "/about" || pathname === "/contact";
-
-  // Text color should be black if scrolled OR if it's a light-background page
-  const useBlackText = scrolled || !hasDarkHero;
-
-  // Background should ONLY be white when scrolled
-  const showWhiteBg = scrolled;
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Hover Effect Style (Border bottom animation)
-  const navItemClass = "relative text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-green-500 after:transition-all hover:after:w-full";
+  const navItemClass = "text-[10px] font-bold uppercase tracking-[0.15em] transition-all duration-300 text-gray-800 hover:text-green-600 whitespace-nowrap";
 
   return (
-    <header
-      className={`fixed top-0 w-full z-[100] transition-all duration-500 font-display ${showWhiteBg ? "bg-white py-2 shadow-md" : "bg-transparent py-4"
-        }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
-
-        {/* LOGO - Animation restored */}
+    <header className="absolute top-0 w-full z-[100] px-4 py-4 md:px-8 pointer-events-none">
+      <div className="max-w-full mx-auto flex items-center justify-between pointer-events-auto">
+        
+        {/* LOGO CARD - Resized and Fitted to show full text */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
+          initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
+          className="bg-white rounded-br-[35px] rounded-tl-[15px] shadow-xl border border-white/20 overflow-hidden flex items-center justify-center w-[220px] h-[110px] md:w-[280px] md:h-[140px]
+"
         >
-          <Link href="/" className="relative z-[110]">
+          <Link href="/" className="relative w-full h-full p-2 flex items-center justify-center">
             <Image
-              src="/logo.webp"
-              alt="Logo"
-              width={150}
-              height={45}
-              priority
-              style={{ width: scrolled ? "120px" : "140px", height: "auto" }}
-              className="object-contain transition-all duration-300"
-              quality={60}
-              sizes="150px"
-            />
+  src="/logo.png"
+  alt="Logo"
+  width={260}
+  height={120}
+  priority
+  className="object-contain"
+  quality={100}
+/>
+
           </Link>
         </motion.div>
 
-        {/* DESKTOP NAV - Animations restored */}
-        <nav className="hidden lg:flex items-center space-x-8">
-          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-            <Link href="/" className={`${navItemClass} ${useBlackText ? "text-black hover:text-green-600" : "text-white hover:text-green-400"}`}>Home</Link>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-            <Link href="/about" className={`${navItemClass} ${useBlackText ? "text-black hover:text-green-600" : "text-white hover:text-green-400"}`}>About</Link>
-          </motion.div>
-
-          {/* SERVICES DROPDOWN */}
-          <motion.div
-            className="relative py-2"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            onMouseEnter={() => setOpenDropdown(true)}
+        {/* PILL NAV - Floating Style */}
+        <nav className="hidden lg:flex items-center bg-white/95 backdrop-blur-md px-10 py-4 rounded-full shadow-2xl border border-white/40 space-x-10">
+          <Link href="/" className={navItemClass}>Home</Link>
+          <Link href="/about" className={navItemClass}>About</Link>
+          
+          <div 
+            className="relative" 
+            onMouseEnter={() => setOpenDropdown(true)} 
             onMouseLeave={() => setOpenDropdown(false)}
           >
-            <button className={`${navItemClass} flex items-center gap-1 ${useBlackText ? "text-black" : "text-white"}`}>
-              Services <ChevronDown size={12} className={`transition-transform duration-300 ${openDropdown ? "rotate-180" : ""}`} />
+            <button className={`${navItemClass} flex items-center gap-1`}>
+              Services <ChevronDown size={14} className={`transition-transform ${openDropdown ? "rotate-180" : ""}`} />
             </button>
             <AnimatePresence>
               {openDropdown && (
                 <motion.div
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 15 }}
-                  className="absolute top-full left-0 w-64 bg-white shadow-2xl border-t-4 border-green-600 py-4"
+                  exit={{ opacity: 0, y: 10 }}
+                  className="absolute top-full left-0 mt-5 w-64 bg-white shadow-2xl rounded-2xl py-4 border border-gray-100"
                 >
                   {services.map((s) => (
-                    <Link key={s.name} href={s.href} className="block px-6 py-2.5 text-[12px] font-bold text-gray-800 hover:bg-green-50 hover:text-green-600 transition-colors border-b border-gray-50 last:border-0">
+                    <Link key={s.name} href={s.href} className="block px-6 py-2.5 text-[11px] font-bold text-gray-600 hover:bg-green-50 hover:text-green-600 border-b border-gray-50 last:border-0 transition-colors">
                       {s.name}
                     </Link>
                   ))}
                 </motion.div>
               )}
             </AnimatePresence>
-          </motion.div>
+          </div>
 
-          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-            <Link href="/blog" className={`${navItemClass} ${useBlackText ? "text-black hover:text-green-600" : "text-white hover:text-green-400"}`}>Blog</Link>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-            <Link href="/contact" className={`${navItemClass} ${useBlackText ? "text-black hover:text-green-600" : "text-white hover:text-green-400"}`}>Contact</Link>
-          </motion.div>
+          <Link href="/blog" className={navItemClass}>Blog</Link>
+          <Link href="/contact" className={navItemClass}>Contact</Link>
+          
+          <div className="pl-6 border-l border-gray-200">
+             <Link href="/get-quote">
+                <button className="bg-green-600 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-black transition-all shadow-lg active:scale-95">
+                  See Pricing
+                </button>
+             </Link>
+          </div>
         </nav>
 
-        {/* ACTION BUTTON - Hover Animation restored */}
-        <div className="flex items-center gap-4">
-          <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
-            {/* Link component yahan add kiya hai */}
-            <Link href="/get-quote">
-              <button className={`
-        hidden sm:block px-6 py-2.5 text-[10px] font-black uppercase tracking-widest
-        transition-all duration-500 ease-in-out
-        hover:-translate-y-1 hover:shadow-xl
-        border-x-2 border-transparent hover:border-green-500
-        ${useBlackText ? "bg-green-600 text-white hover:bg-black" : "bg-green-600 text-white hover:bg-white hover:text-black"}
-      `}>
-                See Instant Pricing
-              </button>
-            </Link>
-          </motion.div>
-
-          <button
-            className={`lg:hidden relative z-[110] p-2 transition-transform active:scale-90 ${useBlackText || isOpen ? "text-black" : "text-white"}`}
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
+        {/* MOBILE MENU TOGGLE */}
+        <button 
+          className="lg:hidden bg-white p-4 rounded-full shadow-lg border border-gray-100 pointer-events-auto"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={28} className="text-black" /> : <Menu size={28} className="text-black" />}
+        </button>
       </div>
 
-      {/* MOBILE MENU - Smooth Transition & Spacing */}
+      {/* MOBILE MENU OVERLAY */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-white z-[100] lg:hidden flex flex-col pt-24 px-8 overflow-y-auto pb-10"
+            className="fixed inset-0 bg-white z-[110] lg:hidden flex flex-col pt-32 px-10 pointer-events-auto overflow-y-auto"
           >
-            <div className="flex flex-col space-y-8">
-              {/* Home & About */}
-              {["Home", "About"].map((item) => (
+            <div className="flex flex-col space-y-10">
+              {["Home", "About", "Blog", "Contact"].map((item) => (
                 <Link
                   key={item}
                   href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="text-xl font-bold uppercase border-b border-gray-100 pb-2 hover:text-green-600 transition-colors"
-                  style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                  className="text-3xl font-bold uppercase border-b border-gray-100 pb-4"
                   onClick={() => setIsOpen(false)}
                 >
                   {item}
                 </Link>
               ))}
-
-              {/* SERVICES DROPDOWN MOBILE */}
-              <div className="flex flex-col">
-                <button
-                  onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                  className="flex items-center justify-between text-xl font-bold uppercase border-b border-gray-100 pb-2 hover:text-green-600 transition-colors text-left"
-                  style={{ fontFamily: "'Times New Roman', Times, serif" }}
-                >
-                  Services <ChevronDown size={20} className={`transition-transform duration-300 ${isMobileServicesOpen ? "rotate-180 text-green-600" : ""}`} />
+              <Link href="/get-quote" onClick={() => setIsOpen(false)}>
+                <button className="w-full bg-green-600 text-white py-6 rounded-2xl font-bold uppercase text-sm tracking-widest shadow-2xl">
+                  See Instant Pricing
                 </button>
-
-                <AnimatePresence>
-                  {isMobileServicesOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="grid grid-cols-1 gap-4 pl-4 border-l-2 border-green-500 mt-6 mb-4">
-                        {services.map((s) => (
-                          <Link
-                            key={s.name}
-                            href={s.href}
-                            className="text-xs font-bold uppercase text-gray-500 hover:text-green-600 transition-all active:translate-x-2"
-                            style={{ fontFamily: "'Times New Roman', Times, serif" }}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {s.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {/* Blog & Contact */}
-              {["Blog", "Contact"].map((item) => (
-                <Link
-                  key={item}
-                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="text-xl font-bold uppercase border-b border-gray-100 pb-2 hover:text-green-600 transition-colors"
-                  style={{ fontFamily: "'Times New Roman', Times, serif" }}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item}
-                </Link>
-              ))}
-
-              <div className="mt-6">
-                <Link href="/get-quote" onClick={() => setIsOpen(false)}>
-                  <button className="w-full bg-green-600 text-white py-4 font-bold uppercase tracking-widest text-xs shadow-lg active:scale-95 transition-all" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-                    See Instant Pricing
-                  </button>
-                </Link>
-              </div>
+              </Link>
             </div>
           </motion.div>
         )}

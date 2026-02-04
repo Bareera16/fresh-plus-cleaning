@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { Phone, MessageSquare, Mail, Calendar } from 'lucide-react';
 
 const contactOptions = [
-  { icon: <Phone size={24} />, title: "Call Now", detail: "+61 403 971 720", color: "bg-orange-500" },
-  { icon: <MessageSquare size={24} />, title: "Text Us", detail: "+61 403 971 720", color: "bg-green-500" },
-  { icon: <Mail size={24} />, title: "Email Us", detail: "infofreshplusclean@gmail.com", color: "bg-orange-500" },
+  { icon: <Phone size={24} />, title: "Call Now", detail: "043971720", color: "bg-orange-500" },
+  { icon: <MessageSquare size={24} />, title: "Text Us", detail: "043971720", color: "bg-green-500" },
+  { icon: <Mail size={24} />, title: "Email Us", detail: "info@freshpluscleaning.com.au", color: "bg-orange-500" },
   { icon: <Calendar size={24} />, title: "Book Online", detail: "See Price Instantly", color: "bg-green-500" },
 ];
 
