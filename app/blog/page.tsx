@@ -67,10 +67,10 @@ export default function EditorialBlogPage() {
                 <div className="lg:col-span-7 relative h-[500px] md:h-[650px]">
                     <div className="absolute -top-10 -left-10 text-[10vw] font-black text-black/[0.02] uppercase pointer-events-none">Featured</div>
                     <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.5 }} className="absolute top-10 left-0 w-[75%] h-[85%] z-10 shadow-2xl overflow-hidden rounded-sm">
-                        <Image src="/blog1.webp" alt="Lease Cleaning" fill className="object-cover" />
+                        <Image src="/blog1.webp" alt="Lease Cleaning" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" quality={65} />
                     </motion.div>
                     <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2, delay: 0.5 }} className="absolute bottom-0 right-0 w-[55%] h-[65%] z-20 shadow-2xl border-[15px] border-[#F0F4F2] overflow-hidden rounded-sm">
-                        <Image src="/blog-1.jpg" alt="Detail" fill className="object-cover" />
+                        <Image src="/blog-1.jpg" alt="Detail" fill className="object-cover" sizes="(max-width: 768px) 100vw, 40vw" quality={65} />
                     </motion.div>
                 </div>
                 <div className="lg:col-span-5 flex flex-col items-start">
@@ -111,7 +111,7 @@ export default function EditorialBlogPage() {
                             className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group hover:shadow-xl transition-all"
                         >
                             <div className="relative h-56 overflow-hidden">
-                                <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" quality={60} />
                                 <div className="absolute top-4 left-4">
                                     <span className="bg-orange-400 text-white text-[9px] font-black uppercase px-3 py-1 rounded-md">{post.category}</span>
                                 </div>

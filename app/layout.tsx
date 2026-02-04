@@ -12,8 +12,12 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fresh-plus-cleaning.vercel.app"),
   title: "Fresh Plus Cleaning | Professional Services",
   description: "Reliable and stable crews for your home and office.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

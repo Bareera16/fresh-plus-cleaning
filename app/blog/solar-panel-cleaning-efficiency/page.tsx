@@ -38,6 +38,8 @@ export default function SolarPanelCleaningPage() {
                         fill
                         className="object-cover"
                         priority
+                        sizes="(max-width: 1200px) 100vw, 80vw"
+                        quality={65}
                     />
                 </div>
 

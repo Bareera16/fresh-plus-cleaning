@@ -36,6 +36,8 @@ export default function CommercialCleaningPage() {
                         fill
                         className="object-cover"
                         priority
+                        sizes="(max-width: 1200px) 100vw, 80vw"
+                        quality={65}
                     />
                     <div className="absolute bottom-10 right-10 bg-white p-6 shadow-xl rounded-sm max-w-[200px] hidden md:block">
                         <p className="text-3xl font-serif text-green-600 mb-1">+12%</p>

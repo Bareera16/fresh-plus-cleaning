@@ -73,6 +73,8 @@ export default function SpringCleaningPage() {
                         alt="Spring Cleaning Checklist"
                         fill
                         className="object-cover"
+                        sizes="(max-width: 1200px) 100vw, 80vw"
+                        quality={50}
                     />
                 </div>
 

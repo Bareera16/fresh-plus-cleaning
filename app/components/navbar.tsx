@@ -66,6 +66,8 @@ export default function Navbar() {
               priority
               style={{ width: scrolled ? "120px" : "140px", height: "auto" }}
               className="object-contain transition-all duration-300"
+              quality={60}
+              sizes="150px"
             />
           </Link>
         </motion.div>
