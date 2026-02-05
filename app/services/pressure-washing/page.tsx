@@ -66,7 +66,7 @@ export default function PressureWashing() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="relative pt-32 pb-20 px-6 bg-gradient-to-b from-blue-50 to-white text-center"
+        className="relative pt-48 pb-20 px-6 bg-gradient-to-b from-blue-50 to-white text-center"
       >
         <div className="max-w-7xl mx-auto">
           <motion.h1 
@@ -228,7 +228,7 @@ export default function PressureWashing() {
         show: {
           opacity: 1,
           transition: {
-            staggerChildren: 0.08, // Har suburb 0.08s ke gap se aayega
+            staggerChildren: 0.08, 
           },
         },
       }}

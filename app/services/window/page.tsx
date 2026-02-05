@@ -48,7 +48,7 @@ export default function WindowCleaning() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="relative pt-32 pb-20 px-6 bg-gradient-to-b from-green-50 to-white text-center"
+        className="relative pt-48 pb-20 px-6 bg-gradient-to-b from-green-50 to-white text-center"
       >
         <div className="max-w-7xl mx-auto">
           <motion.h1

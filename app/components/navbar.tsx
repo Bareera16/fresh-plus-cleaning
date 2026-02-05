@@ -1,8 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Home, Info, BookOpen, Mail, Zap, LayoutGrid } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const services = [
@@ -20,44 +20,37 @@ const services = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   const navItemClass = "text-[10px] font-bold uppercase tracking-[0.15em] transition-all duration-300 text-gray-800 hover:text-green-600 whitespace-nowrap";
 
   return (
-    <header className="absolute top-0 w-full z-[100] px-4 py-4 md:px-8 pointer-events-none">
+    <header className="absolute top-0 w-full z-[100] px-4 py-4 md:px-8 pointer-events-none font-sans">
       <div className="max-w-full mx-auto flex items-center justify-between pointer-events-auto">
         
-        {/* LOGO CARD - Resized and Fitted to show full text */}
+        {/* 1. LOGO - Left to Right Animation */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-white rounded-br-[35px] rounded-tl-[15px] shadow-xl border border-white/20 overflow-hidden flex items-center justify-center w-[220px] h-[110px] md:w-[280px] md:h-[140px]
-"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="bg-white rounded-br-[35px] rounded-tl-[15px] shadow-xl border border-white/20 overflow-hidden flex items-center justify-center w-[220px] h-[110px] md:w-[280px] md:h-[140px]"
         >
           <Link href="/" className="relative w-full h-full p-2 flex items-center justify-center">
-            <Image
-  src="/logo.png"
-  alt="Logo"
-  width={260}
-  height={120}
-  priority
-  className="object-contain"
-  quality={100}
-/>
-
+            <Image src="/logo.png" alt="Logo" width={260} height={120} priority className="object-contain" quality={100} />
           </Link>
         </motion.div>
 
-        {/* PILL NAV - Floating Style */}
-        <nav className="hidden lg:flex items-center bg-white/95 backdrop-blur-md px-10 py-4 rounded-full shadow-2xl border border-white/40 space-x-10">
+        {/* 2. PILL NAV - Right to Left Animation (Delay taake logo pehle aaye) */}
+        <motion.nav 
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="hidden lg:flex items-center bg-white/95 backdrop-blur-md px-10 py-4 rounded-full shadow-2xl border border-white/40 space-x-10"
+        >
           <Link href="/" className={navItemClass}>Home</Link>
           <Link href="/about" className={navItemClass}>About</Link>
           
-          <div 
-            className="relative" 
-            onMouseEnter={() => setOpenDropdown(true)} 
-            onMouseLeave={() => setOpenDropdown(false)}
-          >
+          <div className="relative" onMouseEnter={() => setOpenDropdown(true)} onMouseLeave={() => setOpenDropdown(false)}>
             <button className={`${navItemClass} flex items-center gap-1`}>
               Services <ChevronDown size={14} className={`transition-transform ${openDropdown ? "rotate-180" : ""}`} />
             </button>
@@ -89,40 +82,53 @@ export default function Navbar() {
                 </button>
              </Link>
           </div>
-        </nav>
+        </motion.nav>
 
         {/* MOBILE MENU TOGGLE */}
-        <button 
-          className="lg:hidden bg-white p-4 rounded-full shadow-lg border border-gray-100 pointer-events-auto"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={28} className="text-black" /> : <Menu size={28} className="text-black" />}
+        <button className="lg:hidden bg-white p-4 rounded-full shadow-lg border border-gray-100 pointer-events-auto" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* MOBILE MENU OVERLAY */}
+      {/* MOBILE MENU - Transparent Background & Icons */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            className="fixed inset-0 bg-white z-[110] lg:hidden flex flex-col pt-32 px-10 pointer-events-auto overflow-y-auto"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 bg-white/90 backdrop-blur-xl z-[110] lg:hidden flex flex-col pt-32 px-10 pointer-events-auto overflow-y-auto"
           >
-            <div className="flex flex-col space-y-10">
-              {["Home", "About", "Blog", "Contact"].map((item) => (
-                <Link
-                  key={item}
-                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="text-3xl font-bold uppercase border-b border-gray-100 pb-4"
-                  onClick={() => setIsOpen(false)}
+            <div className="flex flex-col space-y-6">
+              <MobileNavLink href="/" icon={<Home size={24}/>} label="Home" onClick={() => setIsOpen(false)} />
+              <MobileNavLink href="/about" icon={<Info size={24}/>} label="About" onClick={() => setIsOpen(false)} />
+              
+              {/* Mobile Services Dropdown */}
+              <div className="border-b border-gray-200 pb-4">
+                <button 
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="flex items-center justify-between w-full text-2xl font-black uppercase"
                 >
-                  {item}
-                </Link>
-              ))}
+                  <span className="flex items-center gap-4"><LayoutGrid size={24}/> Services</span>
+                  <ChevronDown className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {mobileServicesOpen && (
+                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden pl-10 pt-4 flex flex-col space-y-3">
+                      {services.map((s) => (
+                        <Link key={s.name} href={s.href} className="text-lg font-bold text-gray-600 uppercase" onClick={() => setIsOpen(false)}>{s.name}</Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <MobileNavLink href="/blog" icon={<BookOpen size={24}/>} label="Blog" onClick={() => setIsOpen(false)} />
+              <MobileNavLink href="/contact" icon={<Mail size={24}/>} label="Contact" onClick={() => setIsOpen(false)} />
+              
               <Link href="/get-quote" onClick={() => setIsOpen(false)}>
-                <button className="w-full bg-green-600 text-white py-6 rounded-2xl font-bold uppercase text-sm tracking-widest shadow-2xl">
-                  See Instant Pricing
+                <button className="w-full bg-green-600 text-white py-5 rounded-2xl font-black uppercase text-sm tracking-widest flex items-center justify-center gap-3">
+                  <Zap size={20} /> See Instant Pricing
                 </button>
               </Link>
             </div>
@@ -130,5 +136,14 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </header>
+  );
+}
+
+// Helper Component for Mobile Links
+function MobileNavLink({ href, label, icon, onClick }) {
+  return (
+    <Link href={href} onClick={onClick} className="text-2xl font-black uppercase border-b border-gray-200 pb-4 flex items-center gap-4">
+      {icon} {label}
+    </Link>
   );
 }
