@@ -66,7 +66,7 @@ const ServicesSection = () => {
             <div
                 className="absolute inset-0 z-0 bg-fixed bg-cover bg-center"
                 style={{
-                    backgroundImage: "url('/lease.jpg')",
+                    backgroundImage: "url('/lease.webp')",
                     filter: "brightness(0.35)"
                 }}
             />
@@ -138,7 +138,7 @@ export default function EndOfLeaseCleaning() {
                         transition={{ delay: 1.2, duration: 1 }}
                         className="relative mt-12 max-w-4xl mx-auto rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white"
                     >
-                        <Image src="/lease.jpg" alt="End of Lease Cleaning" width={1200} height={600} priority className="w-full h-auto object-cover" />
+                        <Image src="/lease.webp" alt="End of Lease Cleaning" width={1200} height={600} priority className="w-full h-auto object-cover" />
                     </motion.div>
 
                     <motion.div

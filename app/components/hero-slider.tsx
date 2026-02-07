@@ -11,12 +11,12 @@ import "swiper/css/pagination";
 
 const slides = [
   {
-    image: "/cleaner1.jpg",
+    image: "/cleaner1.webp",
     sub: "Reliable and Stable Crews",
     title: "OUR TEAM IS OUR MOST VALUABLE RESOURCE",
   },
   {
-    image: "/cleaner2.jpeg",
+    image: "/cleaner2.webp",
     sub: "Expert Cleaning Services",
     title: "TRANSFORM YOUR SPACE WITH PROFESSIONALS",
   },
@@ -134,7 +134,7 @@ export default function HeroSlider() {
           transition: all 0.3s ease;
         }
 
-        /* Desktop par default size */
+
         .swiper-button-next:after, .swiper-button-prev:after {
           font-size: 18px !important;
           color: white;
@@ -143,13 +143,13 @@ export default function HeroSlider() {
 
         /* Mobile Responsive Adjustments */
         @media (max-width: 768px) {
-          /* Arrows ko chota karna */
+
           .swiper-button-next:after, .swiper-button-prev:after {
             font-size: 14px !important; 
-            opacity: 0.6; /* Thora transparent taake text par bojh na lage */
+            opacity: 0.6;
           }
           
-          /* Arrows ko screen ke bilkul kono (edges) par le jana */
+
           .swiper-button-next {
             right: 5px !important;
           }
@@ -157,7 +157,7 @@ export default function HeroSlider() {
             left: 5px !important;
           }
           
-          /* Pagination dots ko bhi thora chota karna */
+
           .swiper-pagination-bullet {
             width: 5px !important;
             height: 5px !important;

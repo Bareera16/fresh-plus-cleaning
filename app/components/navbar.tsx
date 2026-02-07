@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <header className="absolute top-0 w-full z-[100] px-4 py-4 md:px-8 pointer-events-none font-sans">
       <div className="max-w-full mx-auto flex items-center justify-between pointer-events-auto">
-        
+
         {/* 1. LOGO - Left to Right Animation */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -36,12 +36,12 @@ export default function Navbar() {
           className="bg-white rounded-br-[35px] rounded-tl-[15px] shadow-xl border border-white/20 overflow-hidden flex items-center justify-center w-[220px] h-[110px] md:w-[280px] md:h-[140px]"
         >
           <Link href="/" className="relative w-full h-full p-2 flex items-center justify-center">
-            <Image src="/logo.png" alt="Logo" width={260} height={120} priority className="object-contain" quality={100} />
+            <Image src="/logo.webp" alt="Logo" width={260} height={120} priority className="object-contain" quality={100} />
           </Link>
         </motion.div>
 
-        {/* 2. PILL NAV - Right to Left Animation (Delay taake logo pehle aaye) */}
-        <motion.nav 
+        {/* 2. PILL NAV - Right to Left Animation */}
+        <motion.nav
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -49,7 +49,7 @@ export default function Navbar() {
         >
           <Link href="/" className={navItemClass}>Home</Link>
           <Link href="/about" className={navItemClass}>About</Link>
-          
+
           <div className="relative" onMouseEnter={() => setOpenDropdown(true)} onMouseLeave={() => setOpenDropdown(false)}>
             <button className={`${navItemClass} flex items-center gap-1`}>
               Services <ChevronDown size={14} className={`transition-transform ${openDropdown ? "rotate-180" : ""}`} />
@@ -74,13 +74,13 @@ export default function Navbar() {
 
           <Link href="/blog" className={navItemClass}>Blog</Link>
           <Link href="/contact" className={navItemClass}>Contact</Link>
-          
+
           <div className="pl-6 border-l border-gray-200">
-             <Link href="/get-quote">
-                <button className="bg-green-600 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-black transition-all shadow-lg active:scale-95">
-                  See Pricing
-                </button>
-             </Link>
+            <Link href="/get-quote">
+              <button className="bg-green-600 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-black transition-all shadow-lg active:scale-95">
+                See Pricing
+              </button>
+            </Link>
           </div>
         </motion.nav>
 
@@ -100,16 +100,16 @@ export default function Navbar() {
             className="fixed inset-0 bg-white/90 backdrop-blur-xl z-[110] lg:hidden flex flex-col pt-32 px-10 pointer-events-auto overflow-y-auto"
           >
             <div className="flex flex-col space-y-6">
-              <MobileNavLink href="/" icon={<Home size={24}/>} label="Home" onClick={() => setIsOpen(false)} />
-              <MobileNavLink href="/about" icon={<Info size={24}/>} label="About" onClick={() => setIsOpen(false)} />
-              
+              <MobileNavLink href="/" icon={<Home size={24} />} label="Home" onClick={() => setIsOpen(false)} />
+              <MobileNavLink href="/about" icon={<Info size={24} />} label="About" onClick={() => setIsOpen(false)} />
+
               {/* Mobile Services Dropdown */}
               <div className="border-b border-gray-200 pb-4">
-                <button 
+                <button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                   className="flex items-center justify-between w-full text-2xl font-black uppercase"
                 >
-                  <span className="flex items-center gap-4"><LayoutGrid size={24}/> Services</span>
+                  <span className="flex items-center gap-4"><LayoutGrid size={24} /> Services</span>
                   <ChevronDown className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
                 </button>
                 <AnimatePresence>
@@ -123,9 +123,9 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
-              <MobileNavLink href="/blog" icon={<BookOpen size={24}/>} label="Blog" onClick={() => setIsOpen(false)} />
-              <MobileNavLink href="/contact" icon={<Mail size={24}/>} label="Contact" onClick={() => setIsOpen(false)} />
-              
+              <MobileNavLink href="/blog" icon={<BookOpen size={24} />} label="Blog" onClick={() => setIsOpen(false)} />
+              <MobileNavLink href="/contact" icon={<Mail size={24} />} label="Contact" onClick={() => setIsOpen(false)} />
+
               <Link href="/get-quote" onClick={() => setIsOpen(false)}>
                 <button className="w-full bg-green-600 text-white py-5 rounded-2xl font-black uppercase text-sm tracking-widest flex items-center justify-center gap-3">
                   <Zap size={20} /> See Instant Pricing

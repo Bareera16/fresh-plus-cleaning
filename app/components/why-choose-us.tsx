@@ -43,8 +43,6 @@ export default function WhyChooseUs() {
           <motion.h2
             initial={{ opacity: 0, y: -70 }}
             whileInView={{ opacity: 1, y: 0 }}
-            // once: false ka matlab hai har bar scroll par animate hoga
-            // amount: 0.3 ka matlab jab 30% section dikhe tab shuru ho
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "circOut" }}
             className="text-4xl md:text-6xl font-black text-black uppercase tracking-tight mb-4"
@@ -110,8 +108,8 @@ export default function WhyChooseUs() {
                 src="/choose.avif"
                 alt="Cleaning Crew"
                 fill
-                priority // <--- Hero section ke liye zaroori hai
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // <--- Sizes warning fix
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover"
               />
             </motion.div>

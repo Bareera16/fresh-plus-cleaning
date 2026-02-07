@@ -31,7 +31,7 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-black/80 backdrop-blur-md text-white pt-16 pb-8 overflow-hidden border-t border-white/10">
-      {/* Is footer mein background transparent black hai taake peeche ki image halki nazar aaye */}
+
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -41,7 +41,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 w-fit">
               <div className="relative w-12 h-12">
                 <Image
-                  src="/logo.png"
+                  src="/logo.webp"
                   alt="Fresh Plus Logo"
                   fill
                   className="object-contain"

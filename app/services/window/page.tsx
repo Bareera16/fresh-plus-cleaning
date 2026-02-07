@@ -75,7 +75,7 @@ export default function WindowCleaning() {
             transition={{ delay: 1, duration: 1 }}
             className="relative mt-12 max-w-4xl mx-auto rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white"
           >
-            <Image src="/window-cleaning.jpg" alt="Window Cleaning" width={1200} height={600} priority className="w-full h-auto object-cover" />
+            <Image src="/window-cleaning.webp" alt="Window Cleaning" width={1200} height={600} priority className="w-full h-auto object-cover" />
           </motion.div>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">

@@ -13,14 +13,14 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 const allServices = [
-  { title: "Residential Cleaning", desc: "Professional home cleaning tailored to your needs", img: "/res-clean.jpg", link: "/services/residential" },
-  { title: "Commercial Cleaning", desc: "Pristine workplace cleaning solutions", img: "/commercial-cleaning.jpg", link: "/services/commercial" },
-  { title: "Deep Cleaning", desc: "Thorough cleaning for spotless results", img: "/deep-cleaning.jpg", link: "/services/deep-cleaning" },
+  { title: "Residential Cleaning", desc: "Professional home cleaning tailored to your needs", img: "/res-clean.webp", link: "/services/residential" },
+  { title: "Commercial Cleaning", desc: "Pristine workplace cleaning solutions", img: "/commercial-cleaning.webp", link: "/services/commercial" },
+  { title: "Deep Cleaning", desc: "Thorough cleaning for spotless results", img: "/deep-cleaning.webp", link: "/services/deep-cleaning" },
   { title: "Pressure Washing", desc: "High-pressure cleaning for exterior surfaces", img: "/pressure.avif", link: "/services/pressure-washing" },
-  { title: "Carpet Cleaning", desc: "Expert carpet cleaning for fresher carpets", img: "/carpet.jpg", link: "/services/carpet" },
-  { title: "Window Cleaning", desc: "Crystal clear windows for more light", img: "/window-cleaning.jpg", link: "/services/window" },
+  { title: "Carpet Cleaning", desc: "Expert carpet cleaning for fresher carpets", img: "/carpet.webp", link: "/services/carpet" },
+  { title: "Window Cleaning", desc: "Crystal clear windows for more light", img: "/window-cleaning.webp", link: "/services/window" },
   { title: "Tile & Grout Cleaning", desc: "Restore tiles to pristine condition", img: "/tiles.webp", link: "/services/tile-grout" },
-  { title: "End of Lease", desc: "Bond-back guarantee cleaning", img: "/lease.jpg", link: "/services/end-of-lease" },
+  { title: "End of Lease", desc: "Bond-back guarantee cleaning", img: "/lease.webp", link: "/services/end-of-lease" },
   { title: "Solar Panel Cleaning", desc: "Maximize efficiency with professional cleaning", img: "/solarpanel.webp", link: "/services/solar-panel" },
 ];
 
@@ -75,11 +75,11 @@ export default function ProfessionalServices() {
             slidesPerView={1}
             loop={true}
             // Continuous movement settings
-            speed={5000} // Speed jitni zyada hogi movement utni smooth (slow) hogi
+            speed={5000}
             autoplay={{
-              delay: 0, // Delay 0 matlab ruke ga nahi
+              delay: 0,
               disableOnInteraction: false,
-              pauseOnMouseEnter: true, // Hover par ruk jayega
+              pauseOnMouseEnter: true,
             }}
             allowTouchMove={true}
             pagination={{ clickable: true }}

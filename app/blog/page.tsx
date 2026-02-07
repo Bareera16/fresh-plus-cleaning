@@ -71,7 +71,7 @@ export default function EditorialBlogPage() {
                         <Image src="/blog1.webp" alt="Lease Cleaning" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" quality={65} />
                     </motion.div>
                     <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2, delay: 0.5 }} className="absolute bottom-0 right-0 w-[55%] h-[65%] z-20 shadow-2xl border-[15px] border-[#F0F4F2] overflow-hidden rounded-sm">
-                        <Image src="/blog-1.jpg" alt="Detail" fill className="object-cover" sizes="(max-width: 768px) 100vw, 40vw" quality={65} />
+                        <Image src="/blog-1.webp" alt="Detail" fill className="object-cover" sizes="(max-width: 768px) 100vw, 40vw" quality={65} />
                     </motion.div>
                 </div>
                 <div className="lg:col-span-5 flex flex-col items-start">

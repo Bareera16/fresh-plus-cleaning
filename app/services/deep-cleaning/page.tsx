@@ -7,20 +7,20 @@ import { Check, Home, Sparkles, Construction } from "lucide-react";
 
 // Updated for Deep Cleaning Services
 const deepCleaningServices = [
-  { 
-    title: "Pre-Move Deep Clean", 
+  {
+    title: "Pre-Move Deep Clean",
     desc: "Complete deep clean before moving in or out to ensure every surface is spotless.",
-    icon: <Home size={40} className="text-orange-500" /> 
+    icon: <Home size={40} className="text-orange-500" />
   },
-  { 
-    title: "Spring Cleaning", 
+  {
+    title: "Spring Cleaning",
     desc: "Seasonal refresh to eliminate accumulated dirt and restore your home's freshness.",
-    icon: <Sparkles size={40} className="text-orange-500" /> 
+    icon: <Sparkles size={40} className="text-orange-500" />
   },
-  { 
-    title: "Post-Renovation Clean", 
+  {
+    title: "Post-Renovation Clean",
     desc: "Remove construction dust and debris to make your renovated space shine.",
-    icon: <Construction size={40} className="text-orange-500" /> 
+    icon: <Construction size={40} className="text-orange-500" />
   }
 ];
 
@@ -61,16 +61,16 @@ const locations = [
 export default function DeepCleaning() {
   return (
     <main className="relative min-h-screen bg-white overflow-hidden" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-      
+
       {/* 1. HERO SECTION (Deep Cleaning Style) */}
-      <motion.div 
+      <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative pt-48 pb-20 px-6 bg-gradient-to-b from-blue-50 to-white text-center"
       >
         <div className="max-w-7xl mx-auto">
-          <motion.h1 
+          <motion.h1
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
@@ -79,7 +79,7 @@ export default function DeepCleaning() {
             Deep Cleaning <span className="text-green-600">Melbourne</span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -88,15 +88,15 @@ export default function DeepCleaning() {
             Our deep cleaning service tackles everything your regular clean misses. From inside appliances to behind furniture, we leave no corner untouched for a truly spotless home.
           </motion.p>
 
-          
 
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1, duration: 1 }}
             className="relative max-w-4xl mx-auto rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white"
           >
-            <Image src="/deep-cleaning.jpg" alt="Deep Cleaning" width={1200} height={600} priority className="w-full h-auto object-cover" />
+            <Image src="/deep-cleaning.webp" alt="Deep Cleaning" width={1200} height={600} priority className="w-full h-auto object-cover" />
           </motion.div>
 
           <motion.div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -141,7 +141,7 @@ export default function DeepCleaning() {
 
       {/* 4. PRICING & PLANS */}
       <section className="py-24 px-6 md:px-12 bg-white">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -175,7 +175,7 @@ export default function DeepCleaning() {
                 <div className="space-y-4 mb-10 flex-grow">
                   {plan.features.map((feat, index) => (
                     <div key={index} className="flex items-center gap-3 text-sm font-bold text-gray-700">
-                      <Check size={16} className="text-green-500 shrink-0" /> 
+                      <Check size={16} className="text-green-500 shrink-0" />
                       <span>{feat}</span>
                     </div>
                   ))}
@@ -192,7 +192,7 @@ export default function DeepCleaning() {
       {/* 5. SERVING MELBOURNE (Suburbs) */}
       <section className="py-24 bg-white px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <motion.h2 
+          <motion.h2
             initial={{ y: -40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -217,7 +217,7 @@ export default function DeepCleaning() {
         </div>
       </section>
 
-      
+
 
       <footer className="py-10 bg-white" />
     </main>

@@ -15,7 +15,7 @@ export default function CarpetCleaningArticle() {
                     <div className="absolute -top-10 -left-10 text-[10vw] font-black text-black/[0.02] uppercase pointer-events-none">Expertise</div>
 
                     <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1.5 }} className="absolute top-10 left-0 w-[75%] h-[85%] z-10 shadow-2xl overflow-hidden rounded-sm">
-                        <Image src="/carpet.jpg" alt="Carpet Cleaning" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" quality={65} />
+                        <Image src="/carpet.webp" alt="Carpet Cleaning" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" quality={65} />
                     </motion.div>
 
                     <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2, delay: 0.5 }} className="absolute bottom-0 right-0 w-[55%] h-[65%] z-20 shadow-2xl border-[15px] border-[#F0F4F2] overflow-hidden rounded-sm">

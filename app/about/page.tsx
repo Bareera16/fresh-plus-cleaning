@@ -7,10 +7,10 @@ import { Award, ShieldCheck, Heart, Leaf } from 'lucide-react';
 import WhyChooseFreshPlus from "../components/why-melbourne-chooses";
 
 const backgroundImages = [
-  '/cleaner1.jpg',
-  '/res-clean.jpg',
-  '/commercial-cleaning.jpg',
-  '/window-cleaning.jpg'
+  '/cleaner1.webp',
+  '/res-clean.webp',
+  '/commercial-cleaning.webp',
+  '/window-cleaning.webp'
 ];
 
 const storyLines = [
@@ -48,7 +48,7 @@ export default function AboutPage() {
     initial: { opacity: 0 },
     whileInView: {
       opacity: 1,
-      transition: { staggerChildren: 0.2 } // One by one show hone ke liye
+      transition: { staggerChildren: 0.2 }
     }
   };
 
@@ -139,7 +139,7 @@ export default function AboutPage() {
       </section>
 
       {/* 3. STATS (Still Background Parallax) */}
-      <section className="relative min-h-[60vh] flex items-center justify-center py-20 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/commercial-cleaning.jpg')" }}>
+      <section className="relative min-h-[60vh] flex items-center justify-center py-20 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/commercial-cleaning.webp')" }}>
         <div className="absolute inset-0 bg-black/60 z-0" />
 
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 px-6 w-full">

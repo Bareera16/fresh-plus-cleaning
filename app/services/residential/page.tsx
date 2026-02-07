@@ -9,12 +9,12 @@ const servicesList = [
   {
     title: "Kitchen Cleaning",
     desc: "Deep degreasing of ovens, stove tops, and sparkling surfaces.",
-    img: "/cleaner1.jpg"
+    img: "/cleaner1.webp"
   },
   {
     title: "Bathroom Sanitization",
     desc: "Complete disinfection and lime-scale removal for a fresh finish.",
-    img: "/cleaner2.jpeg"
+    img: "/cleaner2.webp"
   },
   {
     title: "Living Area Dusting",
@@ -93,7 +93,7 @@ export default function ResidentialCleaning() {
             transition={{ delay: 1.2, duration: 1 }}
             className="relative mt-12 max-w-4xl mx-auto rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white"
           >
-            <Image src="/cleaner2.jpeg" alt="Residential" width={1200} height={600} priority className="w-full h-auto object-cover" />
+            <Image src="/cleaner2.webp" alt="Residential" width={1200} height={600} priority className="w-full h-auto object-cover" />
           </motion.div>
 
           <motion.div
@@ -122,7 +122,7 @@ export default function ResidentialCleaning() {
           className="relative max-w-7xl mx-auto min-h-[850px] rounded-[3.5rem] overflow-hidden p-8 md:p-16 flex flex-col items-center"
         >
           <div className="absolute inset-0 z-0">
-            <Image src="/cleaner1.jpg" alt="Service BG" fill sizes="100vw" className="object-cover blur-xl brightness-[0.3]" />
+            <Image src="/cleaner1.webp" alt="Service BG" fill sizes="100vw" className="object-cover blur-xl brightness-[0.3]" />
           </div>
           <div className="relative z-10 text-center mb-16">
             <h2 className="text-white text-4xl md:text-7xl font-black uppercase tracking-tighter">

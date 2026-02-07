@@ -16,7 +16,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3, // Cards ke darmiyan gap barha diya (Slower sequence)
+      staggerChildren: 0.3,
       delayChildren: 0.2
     }
   }
@@ -27,7 +27,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1.0, ease: "easeOut" } // Har card ab 1 second me aram se aye ga
+    transition: { duration: 1.0, ease: "easeOut" }
   }
 };
 
@@ -40,7 +40,7 @@ export default function SmoothContactPage() {
         <div
           className="absolute inset-0 z-0 bg-fixed bg-cover bg-center"
           style={{
-            backgroundImage: "url('/commercial-cleaning.jpg')",
+            backgroundImage: "url('/commercial-cleaning.webp')",
             filter: "brightness(0.35)"
           }}
         />
@@ -124,7 +124,7 @@ export default function SmoothContactPage() {
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.08 }} // Bohat aram se cards ayen gy
+                transition={{ duration: 0.8, delay: i * 0.08 }}
                 whileHover={{
                   scale: 1.05,
                   backgroundColor: "#14532d",

@@ -9,12 +9,12 @@ const servicesList = [
     {
         title: "Steam Cleaning",
         desc: "Deep hot water extraction to remove dirt, allergens and bacteria.",
-        img: "/carpet.jpg"
+        img: "/carpet.webp"
     },
     {
         title: "Stain Removal",
         desc: "Expert treatment for tough wine, coffee, and pet stains.",
-        img: "/cleaner1.jpg"
+        img: "/cleaner1.webp"
     },
     {
         title: "Upholstery Cleaning",
@@ -64,7 +64,7 @@ const ServicesSection = () => {
             <div
                 className="absolute inset-0 z-0 bg-fixed bg-cover bg-center"
                 style={{
-                    backgroundImage: "url('/carpet.jpg')",
+                    backgroundImage: "url('/carpet.webp')",
                     filter: "brightness(0.35)"
                 }}
             />
@@ -136,7 +136,7 @@ export default function CarpetCleaning() {
                         transition={{ delay: 1.2, duration: 1 }}
                         className="relative mt-12 max-w-4xl mx-auto rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white"
                     >
-                        <Image src="/carpet.jpg" alt="Carpet Cleaning" width={1200} height={600} priority className="w-full h-auto object-cover" />
+                        <Image src="/carpet.webp" alt="Carpet Cleaning" width={1200} height={600} priority className="w-full h-auto object-cover" />
                     </motion.div>
 
                     <motion.div

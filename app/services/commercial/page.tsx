@@ -6,20 +6,20 @@ import WhyChooseUs from "../../components/why-choose-us";
 import { Check, Building2, Store, Factory } from "lucide-react";
 
 const commercialServices = [
-  { 
-    title: "Office Cleaning", 
+  {
+    title: "Office Cleaning",
     desc: "Professional daily or weekly cleaning for offices, corporate buildings, and business centers.",
-    icon: <Building2 size={40} className="text-orange-500" /> 
+    icon: <Building2 size={40} className="text-orange-500" />
   },
-  { 
-    title: "Retail Cleaning", 
+  {
+    title: "Retail Cleaning",
     desc: "Maintain pristine shopping environments that enhance customer experience and sales.",
-    icon: <Store size={40} className="text-orange-500" /> 
+    icon: <Store size={40} className="text-orange-500" />
   },
-  { 
-    title: "Warehouse Cleaning", 
+  {
+    title: "Warehouse Cleaning",
     desc: "Industrial-grade cleaning for warehouses, storage facilities, and distribution centers.",
-    icon: <Factory size={40} className="text-orange-500" /> 
+    icon: <Factory size={40} className="text-orange-500" />
   }
 ];
 
@@ -60,16 +60,16 @@ const locations = [
 export default function CommercialCleaning() {
   return (
     <main className="relative min-h-screen bg-white overflow-hidden" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
-      
+
       {/* 1. HERO SECTION */}
-      <motion.div 
+      <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="relative pt-48 pb-20 px-6 bg-gradient-to-b from-blue-50 to-white text-center"
       >
         <div className="max-w-7xl mx-auto">
-          <motion.h1 
+          <motion.h1
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
@@ -78,7 +78,7 @@ export default function CommercialCleaning() {
             Commercial Cleaning <span className="text-green-600">Melbourne</span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -87,13 +87,13 @@ export default function CommercialCleaning() {
             Focus on your business while we handle the clean. Professional commercial cleaning trusted by Melbourne businesses for over 12 years.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1, duration: 1 }}
             className="relative mt-12 max-w-4xl mx-auto rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white"
           >
-            <Image src="/com.jpg" alt="Commercial" width={1200} height={600} priority className="w-full h-auto object-cover" />
+            <Image src="/com.webp" alt="Commercial" width={1200} height={600} priority className="w-full h-auto object-cover" />
           </motion.div>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -110,14 +110,14 @@ export default function CommercialCleaning() {
       {/* 2. PARALLAX BUSINESS CLEANING SERVICES SECTION */}
       <section className="relative h-auto py-32 flex items-center justify-center overflow-hidden">
         {/* Parallax Background */}
-        <div 
+        <div
           className="absolute inset-0 z-0 bg-fixed bg-cover bg-center"
-          style={{ 
-            backgroundImage: "url('/com.jpg')", // Make sure this path is correct
-            filter: "brightness(0.3)" 
+          style={{
+            backgroundImage: "url('/com.webp')", // Make sure this path is correct
+            filter: "brightness(0.3)"
           }}
         />
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white">
@@ -148,12 +148,12 @@ export default function CommercialCleaning() {
 
       {/* 3. WHY CHOOSE US */}
       <section className="py-20 bg-white">
-         <WhyChooseUs />
+        <WhyChooseUs />
       </section>
 
       {/* 4. FLEXIBLE CLEANING PLANS (Master Green Card) */}
       <section className="py-24 px-6 md:px-12 bg-gray-50/50">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -184,7 +184,7 @@ export default function CommercialCleaning() {
                 <div className="space-y-4 mb-10 flex-grow">
                   {plan.features.map((feat, index) => (
                     <div key={index} className="flex items-center gap-3 text-sm font-bold text-gray-700">
-                      <Check size={16} className="text-green-500" /> 
+                      <Check size={16} className="text-green-500" />
                       <span>{feat}</span>
                     </div>
                   ))}
