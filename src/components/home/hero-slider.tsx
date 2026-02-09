@@ -2,6 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
 
 import "swiper/css";
@@ -105,7 +106,8 @@ export default function HeroSlider() {
 
                                             {/* Button (3rd Line) */}
                                             <motion.div variants={bottomToTop}>
-                                                <button className={`
+                                                <Link href="/get-quote">
+                                                    <button className={`
                           relative group
                           bg-green-600 text-white 
                           px-10 py-3.5 rounded-none 
@@ -116,8 +118,9 @@ export default function HeroSlider() {
                           border-x-2 border-transparent hover:border-green-500
                           shadow-lg hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)]
                         `}>
-                                                    Calculate Service
-                                                </button>
+                                                        Calculate Service
+                                                    </button>
+                                                </Link>
                                             </motion.div>
                                         </motion.div>
                                     )}

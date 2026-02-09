@@ -1,13 +1,13 @@
 "use client";
-import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Phone, MessageSquare, Mail, Calendar } from 'lucide-react';
 
 const contactOptions = [
-    { icon: <Phone size={24} />, title: "Call Now", detail: "043971720", color: "bg-orange-500" },
-    { icon: <MessageSquare size={24} />, title: "Text Us", detail: "043971720", color: "bg-green-500" },
-    { icon: <Mail size={24} />, title: "Email Us", detail: "info@freshpluscleaning.com.au", color: "bg-orange-500" },
-    { icon: <Calendar size={24} />, title: "Book Online", detail: "See Price Instantly", color: "bg-green-500" },
+    { icon: <Phone size={24} />, title: "Call Now", detail: "043971720", color: "bg-orange-500", href: "tel:043971720" },
+    { icon: <MessageSquare size={24} />, title: "Text Us", detail: "043971720", color: "bg-green-500", href: "sms:043971720" },
+    { icon: <Mail size={24} />, title: "Email Us", detail: "info@freshpluscleaning.com.au", color: "bg-orange-500", href: "mailto:info@freshpluscleaning.com.au" },
+    { icon: <Calendar size={24} />, title: "Book Online", detail: "See Price Instantly", color: "bg-green-500", href: "/get-quote" },
 ];
 
 export default function CtaParallax() {
@@ -45,28 +45,35 @@ export default function CtaParallax() {
                         Get your free quote today and experience the Fresh Plus difference across Melbourne.
                     </p>
 
-                    <button className="bg-green-600 hover:bg-black hover:text-white text-white font-black py-5 px-12 rounded-xl uppercase tracking-widest mb-20 transition-all duration-300 shadow-2xl border-2 border-transparent hover:-translate-y-2">
-                        See Instant Pricing
-                    </button>
+                    <Link href="/get-quote">
+                        <button className="bg-green-600 hover:bg-black hover:text-white text-white font-black py-5 px-12 rounded-xl uppercase tracking-widest mb-20 transition-all duration-300 shadow-2xl border-2 border-transparent hover:-translate-y-2">
+                            See Instant Pricing
+                        </button>
+                    </Link>
                 </motion.div>
 
                 {/* Contact Cards Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {contactOptions.map((opt, index) => (
-                        <motion.div
+                        <Link
                             key={index}
-                            initial={{ opacity: 0, scale: 0.8, y: 30 }}
-                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
-                            transition={{ duration: 0.5, delay: index * 0.15, ease: "backOut" }}
-                            className="bg-white/60 backdrop-blur-xl border border-white/40 p-10 rounded-[2.5rem] flex flex-col items-center group hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer shadow-sm"
+                            href={opt.href}
+                            className="block"
                         >
-                            <div className={`${opt.color} p-5 rounded-2xl mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                                {opt.icon}
-                            </div>
-                            <h4 className="text-xs font-black uppercase tracking-[0.2em] mb-3 text-gray-500">{opt.title}</h4>
-                            <p className="text-sm md:text-base font-black text-black break-all w-full">{opt.detail}</p>
-                        </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                viewport={{ once: false, amount: 0.2 }}
+                                transition={{ duration: 0.5, delay: index * 0.15, ease: "backOut" }}
+                                className="bg-white/60 backdrop-blur-xl border border-white/40 p-10 rounded-[2.5rem] flex flex-col items-center group hover:bg-white hover:shadow-2xl transition-all duration-500 cursor-pointer shadow-sm h-full"
+                            >
+                                <div className={`${opt.color} p-5 rounded-2xl mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                                    {opt.icon}
+                                </div>
+                                <h4 className="text-xs font-black uppercase tracking-[0.2em] mb-3 text-gray-500">{opt.title}</h4>
+                                <p className="text-sm md:text-base font-black text-black break-all w-full">{opt.detail}</p>
+                            </motion.div>
+                        </Link>
                     ))}
                 </div>
 
