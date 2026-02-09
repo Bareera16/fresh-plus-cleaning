@@ -12,129 +12,129 @@ console.log('🔧 Email Service Configuration:');
 console.log('- Email Service: ✅ Supabase Edge Function');
 console.log('- Admin Email:', ADMIN_EMAIL);
 console.log('- Business Email:', BUSINESS_EMAIL);
-console.log('- Environment:', import.meta.env.MODE || 'development');
+console.log('- Environment:', process.env.NODE_ENV || 'development');
 console.log('✅ All emails will be sent via Supabase Edge Function (no CORS issues)');
 
 // Test email function to verify service is working
 export const sendTestEmail = async (testEmail: string) => {
-  console.log('🧪 Testing email service with address:', testEmail);
-  
-  try {
-    // Create a test quote to send via Edge Function
-    const testQuote = {
-      id: 'test-' + Date.now(),
-      name: 'Test User',
-      email: testEmail,
-      address: 'Test Address',
-      city: 'Melbourne',
-      postcode: '3000',
-      phone1: '0400000000',
-      services: ['residential-cleaning'],
-      job_description: 'This is a test email to verify the email service is working.'
-    };
-    
-    const { data: edgeData, error: edgeError } = await supabase.functions.invoke('email-dispatch', {
-      body: { type: 'quote', quote: testQuote, adminEmail: ADMIN_EMAIL }
-    });
+    console.log('🧪 Testing email service with address:', testEmail);
 
-    if (edgeError) {
-      console.error('❌ Test email failed:', edgeError);
-      return { success: false, error: edgeError.message || JSON.stringify(edgeError) };
+    try {
+        // Create a test quote to send via Edge Function
+        const testQuote = {
+            id: 'test-' + Date.now(),
+            name: 'Test User',
+            email: testEmail,
+            address: 'Test Address',
+            city: 'Melbourne',
+            postcode: '3000',
+            phone1: '0400000000',
+            services: ['residential-cleaning'],
+            job_description: 'This is a test email to verify the email service is working.'
+        };
+
+        const { data: edgeData, error: edgeError } = await supabase.functions.invoke('email-dispatch', {
+            body: { type: 'quote', quote: testQuote, adminEmail: ADMIN_EMAIL }
+        });
+
+        if (edgeError) {
+            console.error('❌ Test email failed:', edgeError);
+            return { success: false, error: edgeError.message || JSON.stringify(edgeError) };
+        }
+
+        if (edgeData?.success) {
+            console.log('✅ Test email sent successfully via Edge Function');
+            return { success: true, data: edgeData };
+        } else {
+            console.error('❌ Test email failed:', edgeData);
+            return { success: false, error: edgeData?.error || 'Unknown error' };
+        }
+    } catch (error) {
+        console.error('❌ Test email failed:', error);
+        return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
     }
-    
-    if (edgeData?.success) {
-      console.log('✅ Test email sent successfully via Edge Function');
-      return { success: true, data: edgeData };
-    } else {
-      console.error('❌ Test email failed:', edgeData);
-      return { success: false, error: edgeData?.error || 'Unknown error' };
-    }
-  } catch (error) {
-    console.error('❌ Test email failed:', error);
-    return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
-  }
 };
 
 export interface BookingData {
-  id: string;
-  name: string;
-  email: string;
-  phone: string;
-  service: string;
-  address: string;
-  service_date: string;
-  service_time: string;
-  special_instructions?: string;
+    id: string;
+    name: string;
+    email: string;
+    phone: string;
+    service: string;
+    address: string;
+    service_date: string;
+    service_time: string;
+    special_instructions?: string;
 }
 
 export interface QuoteData {
-  id: string;
-  name: string;
-  address: string;
-  city: string;
-  postcode: string;
-  phone1: string;
-  phone2?: string;
-  email: string;
-  property_type?: string;
-  services: string[];
-  preferred_date?: string;
-  job_description?: string;
+    id: string;
+    name: string;
+    address: string;
+    city: string;
+    postcode: string;
+    phone1: string;
+    phone2?: string;
+    email: string;
+    property_type?: string;
+    services: string[];
+    preferred_date?: string;
+    job_description?: string;
 }
 
 export interface ContactData {
-  id: string;
-  name: string;
-  email: string;
-  phone?: string;
-  subject: string;
-  message: string;
+    id: string;
+    name: string;
+    email: string;
+    phone?: string;
+    subject: string;
+    message: string;
 }
 
 export interface InstantBookingData {
-  id: string;
-  service_type: string;
-  service_name: string;
-  service_size: number | null;
-  property_type: string | null;
-  furnished: 'furnished' | 'empty' | null;
-  bathrooms: number;
-  selected_extras: Record<string, number>;
-  bundle_selected: boolean;
-  original_price: number;
-  discount_amount: number;
-  final_price: number;
-  same_day_booking: boolean;
-  preferred_date: string | null;
-  preferred_time: string | null;
-  first_name: string;
-  last_name: string;
-  email: string;
-  phone: string;
-  address: string;
-  suburb: string;
-  postcode: string;
-  comments: string | null;
+    id: string;
+    service_type: string;
+    service_name: string;
+    service_size: number | null;
+    property_type: string | null;
+    furnished: 'furnished' | 'empty' | null;
+    bathrooms: number;
+    selected_extras: Record<string, number>;
+    bundle_selected: boolean;
+    original_price: number;
+    discount_amount: number;
+    final_price: number;
+    same_day_booking: boolean;
+    preferred_date: string | null;
+    preferred_time: string | null;
+    first_name: string;
+    last_name: string;
+    email: string;
+    phone: string;
+    address: string;
+    suburb: string;
+    postcode: string;
+    comments: string | null;
 }
 
 // Generate booking confirmation email HTML for customer
 export const generateBookingConfirmationEmail = (booking: BookingData) => {
-  const formattedDate = new Date(booking.service_date).toLocaleDateString('en-AU', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
+    const formattedDate = new Date(booking.service_date).toLocaleDateString('en-AU', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
 
-  const timeSlots = {
-    'morning': 'Morning (8AM - 12PM)',
-    'afternoon': 'Afternoon (12PM - 4PM)',
-    'evening': 'Evening (4PM - 8PM)'
-  };
+    const timeSlots = {
+        'morning': 'Morning (8AM - 12PM)',
+        'afternoon': 'Afternoon (12PM - 4PM)',
+        'evening': 'Evening (4PM - 8PM)'
+    };
 
-  const formattedTime = timeSlots[booking.service_time as keyof typeof timeSlots] || booking.service_time;
+    const formattedTime = timeSlots[booking.service_time as keyof typeof timeSlots] || booking.service_time;
 
-  return `
+    return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -374,16 +374,16 @@ export const generateBookingConfirmationEmail = (booking: BookingData) => {
 
 // Generate quote confirmation email HTML for customer
 export const generateQuoteConfirmationEmail = (quote: QuoteData) => {
-  const formattedDate = quote.preferred_date 
-    ? new Date(quote.preferred_date).toLocaleDateString('en-AU', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      })
-    : 'Not specified';
+    const formattedDate = quote.preferred_date
+        ? new Date(quote.preferred_date).toLocaleDateString('en-AU', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        })
+        : 'Not specified';
 
-  return `
+    return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -647,22 +647,22 @@ export const generateQuoteConfirmationEmail = (quote: QuoteData) => {
 
 // Generate admin notification email for new booking
 export const generateAdminBookingNotification = (booking: BookingData) => {
-  const formattedDate = new Date(booking.service_date).toLocaleDateString('en-AU', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
+    const formattedDate = new Date(booking.service_date).toLocaleDateString('en-AU', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
 
-  const timeSlots = {
-    'morning': 'Morning (8AM - 12PM)',
-    'afternoon': 'Afternoon (12PM - 4PM)',
-    'evening': 'Evening (4PM - 8PM)'
-  };
+    const timeSlots = {
+        'morning': 'Morning (8AM - 12PM)',
+        'afternoon': 'Afternoon (12PM - 4PM)',
+        'evening': 'Evening (4PM - 8PM)'
+    };
 
-  const formattedTime = timeSlots[booking.service_time as keyof typeof timeSlots] || booking.service_time;
+    const formattedTime = timeSlots[booking.service_time as keyof typeof timeSlots] || booking.service_time;
 
-  return `
+    return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -863,16 +863,16 @@ export const generateAdminBookingNotification = (booking: BookingData) => {
 
 // Generate admin notification email for new quote
 export const generateAdminQuoteNotification = (quote: QuoteData) => {
-  const formattedDate = quote.preferred_date 
-    ? new Date(quote.preferred_date).toLocaleDateString('en-AU', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      })
-    : 'Not specified';
+    const formattedDate = quote.preferred_date
+        ? new Date(quote.preferred_date).toLocaleDateString('en-AU', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        })
+        : 'Not specified';
 
-  return `
+    return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -1096,37 +1096,37 @@ export const generateAdminQuoteNotification = (quote: QuoteData) => {
 
 // Generate instant booking confirmation email for customer
 export const generateInstantBookingCustomerEmail = (booking: InstantBookingData, extraServiceNames: Record<string, string>) => {
-  const formattedDate = booking.preferred_date 
-    ? new Date(booking.preferred_date).toLocaleDateString('en-AU', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      })
-    : 'To be confirmed';
+    const formattedDate = booking.preferred_date
+        ? new Date(booking.preferred_date).toLocaleDateString('en-AU', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        })
+        : 'To be confirmed';
 
-  const timeSlots: Record<string, string> = {
-    'morning': 'Morning (8AM - 12PM)',
-    'afternoon': 'Afternoon (12PM - 5PM)',
-    'flexible': 'Flexible - Any time'
-  };
+    const timeSlots: Record<string, string> = {
+        'morning': 'Morning (8AM - 12PM)',
+        'afternoon': 'Afternoon (12PM - 5PM)',
+        'flexible': 'Flexible - Any time'
+    };
 
-  const formattedTime = booking.preferred_time 
-    ? (timeSlots[booking.preferred_time] || booking.preferred_time)
-    : 'To be confirmed';
+    const formattedTime = booking.preferred_time
+        ? (timeSlots[booking.preferred_time] || booking.preferred_time)
+        : 'To be confirmed';
 
-  // Format extras list
-  const extrasHtml = Object.entries(booking.selected_extras)
-    .filter(([_, qty]) => qty > 0)
-    .map(([extraId, qty]) => {
-      const name = extraServiceNames[extraId] || extraId;
-      return `<div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #e2e8f0;">
+    // Format extras list
+    const extrasHtml = Object.entries(booking.selected_extras)
+        .filter(([_, qty]) => qty > 0)
+        .map(([extraId, qty]) => {
+            const name = extraServiceNames[extraId] || extraId;
+            return `<div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #e2e8f0;">
         <span>${name}</span>
         <span style="color: #059669; font-weight: 600;">${qty > 1 ? `x${qty}` : '✓'}</span>
       </div>`;
-    }).join('');
+        }).join('');
 
-  return `
+    return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -1471,24 +1471,24 @@ export const generateInstantBookingCustomerEmail = (booking: InstantBookingData,
 
 // Generate admin notification email for instant booking
 export const generateInstantBookingAdminEmail = (booking: InstantBookingData, extraServiceNames: Record<string, string>) => {
-  const formattedDate = booking.preferred_date 
-    ? new Date(booking.preferred_date).toLocaleDateString('en-AU', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      })
-    : 'Not specified';
+    const formattedDate = booking.preferred_date
+        ? new Date(booking.preferred_date).toLocaleDateString('en-AU', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        })
+        : 'Not specified';
 
-  // Format extras list
-  const extrasList = Object.entries(booking.selected_extras)
-    .filter(([_, qty]) => qty > 0)
-    .map(([extraId, qty]) => {
-      const name = extraServiceNames[extraId] || extraId;
-      return `${name}${qty > 1 ? ` x${qty}` : ''}`;
-    }).join(', ') || 'None';
+    // Format extras list
+    const extrasList = Object.entries(booking.selected_extras)
+        .filter(([_, qty]) => qty > 0)
+        .map(([extraId, qty]) => {
+            const name = extraServiceNames[extraId] || extraId;
+            return `${name}${qty > 1 ? ` x${qty}` : ''}`;
+        }).join(', ') || 'None';
 
-  return `
+    return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -1617,9 +1617,9 @@ export const generateInstantBookingAdminEmail = (booking: InstantBookingData, ex
             
             <div class="content">
                 <div class="urgent">
-                    ${booking.same_day_booking 
-                      ? '🚨 SAME DAY BOOKING - URGENT ACTION REQUIRED!' 
-                      : '📋 New booking received - Contact customer within 24hrs'}
+                    ${booking.same_day_booking
+            ? '🚨 SAME DAY BOOKING - URGENT ACTION REQUIRED!'
+            : '📋 New booking received - Contact customer within 24hrs'}
                 </div>
                 
                 <div class="price-highlight">
@@ -1749,154 +1749,154 @@ export const generateInstantBookingAdminEmail = (booking: InstantBookingData, ex
 
 // Send instant booking confirmation emails
 export const sendInstantBookingEmails = async (booking: InstantBookingData, extraServiceNames: Record<string, string>) => {
-  console.log('📧 Sending instant booking emails for:', booking.first_name, booking.last_name, '- Service:', booking.service_name);
-  
-  try {
-    // Use Supabase Edge Function for server-side email dispatch
-    const { data: edgeData, error: edgeError } = await supabase.functions.invoke('email-dispatch', {
-      body: { 
-        type: 'instant_booking', 
-        booking, 
-        extraServiceNames,
-        adminEmail: ADMIN_EMAIL 
-      }
-    });
+    console.log('📧 Sending instant booking emails for:', booking.first_name, booking.last_name, '- Service:', booking.service_name);
 
-    if (edgeError) {
-      console.error('❌ Edge function instant booking email error:', edgeError);
-      throw new Error(`Edge function failed: ${edgeError.message || JSON.stringify(edgeError)}`);
+    try {
+        // Use Supabase Edge Function for server-side email dispatch
+        const { data: edgeData, error: edgeError } = await supabase.functions.invoke('email-dispatch', {
+            body: {
+                type: 'instant_booking',
+                booking,
+                extraServiceNames,
+                adminEmail: ADMIN_EMAIL
+            }
+        });
+
+        if (edgeError) {
+            console.error('❌ Edge function instant booking email error:', edgeError);
+            throw new Error(`Edge function failed: ${edgeError.message || JSON.stringify(edgeError)}`);
+        }
+
+        if (edgeData?.success) {
+            console.log('✅ Instant booking emails sent via Edge Function:', edgeData);
+            return { success: true, customerEmail: edgeData.customer, adminEmail: edgeData.admin };
+        } else {
+            console.error('❌ Edge function returned unsuccessful result:', edgeData);
+            throw new Error(`Edge function returned error: ${edgeData?.error || 'Unknown error'}`);
+        }
+    } catch (error) {
+        console.error('❌ Error sending instant booking emails:', error);
+        return { success: false, error: error instanceof Error ? error.message : 'Unknown error', details: error };
     }
-    
-    if (edgeData?.success) {
-      console.log('✅ Instant booking emails sent via Edge Function:', edgeData);
-      return { success: true, customerEmail: edgeData.customer, adminEmail: edgeData.admin };
-    } else {
-      console.error('❌ Edge function returned unsuccessful result:', edgeData);
-      throw new Error(`Edge function returned error: ${edgeData?.error || 'Unknown error'}`);
-    }
-  } catch (error) {
-    console.error('❌ Error sending instant booking emails:', error);
-    return { success: false, error: error instanceof Error ? error.message : 'Unknown error', details: error };
-  }
 };
 
 // Send booking confirmation email to customer and admin notification
 export const sendBookingEmails = async (booking: BookingData) => {
-  console.log('📧 Attempting to send booking emails for:', booking.name, '- Service:', getServiceDisplayName(booking.service));
-  
-  try {
-    // Use Supabase Edge Function for server-side email dispatch (avoids CORS issues)
-    const { data: edgeData, error: edgeError } = await supabase.functions.invoke('email-dispatch', {
-      body: { type: 'booking', booking, adminEmail: ADMIN_EMAIL }
-    });
+    console.log('📧 Attempting to send booking emails for:', booking.name, '- Service:', getServiceDisplayName(booking.service));
 
-    if (edgeError) {
-      console.error('❌ Edge function booking email error:', edgeError);
-      throw new Error(`Edge function failed: ${edgeError.message || JSON.stringify(edgeError)}`);
+    try {
+        // Use Supabase Edge Function for server-side email dispatch (avoids CORS issues)
+        const { data: edgeData, error: edgeError } = await supabase.functions.invoke('email-dispatch', {
+            body: { type: 'booking', booking, adminEmail: ADMIN_EMAIL }
+        });
+
+        if (edgeError) {
+            console.error('❌ Edge function booking email error:', edgeError);
+            throw new Error(`Edge function failed: ${edgeError.message || JSON.stringify(edgeError)}`);
+        }
+
+        if (edgeData?.success) {
+            console.log('✅ Booking emails sent via Edge Function:', edgeData);
+            console.log('🎉 All booking emails sent successfully!');
+            return { success: true, customerEmail: edgeData.customer, adminEmail: edgeData.admin };
+        } else {
+            console.error('❌ Edge function returned unsuccessful result:', edgeData);
+            throw new Error(`Edge function returned error: ${edgeData?.error || 'Unknown error'}`);
+        }
+    } catch (error) {
+        console.error('❌ Error sending booking emails:', error);
+        console.error('📋 Booking data:', JSON.stringify(booking, null, 2));
+
+        // Detailed error information
+        if (error instanceof Error) {
+            console.error('Error name:', error.name);
+            console.error('Error message:', error.message);
+            console.error('Error stack:', error.stack);
+        }
+
+        return { success: false, error: error instanceof Error ? error.message : 'Unknown error', details: error };
     }
-    
-    if (edgeData?.success) {
-      console.log('✅ Booking emails sent via Edge Function:', edgeData);
-      console.log('🎉 All booking emails sent successfully!');
-      return { success: true, customerEmail: edgeData.customer, adminEmail: edgeData.admin };
-    } else {
-      console.error('❌ Edge function returned unsuccessful result:', edgeData);
-      throw new Error(`Edge function returned error: ${edgeData?.error || 'Unknown error'}`);
-    }
-  } catch (error) {
-    console.error('❌ Error sending booking emails:', error);
-    console.error('📋 Booking data:', JSON.stringify(booking, null, 2));
-    
-    // Detailed error information
-    if (error instanceof Error) {
-      console.error('Error name:', error.name);
-      console.error('Error message:', error.message);
-      console.error('Error stack:', error.stack);
-    }
-    
-    return { success: false, error: error instanceof Error ? error.message : 'Unknown error', details: error };
-  }
 };
 
 // Send quote confirmation email to customer and admin notification
 export const sendQuoteEmails = async (quote: QuoteData) => {
-  console.log('📧 Attempting to send quote emails for:', quote.name, '- Services:', quote.services.map(service => getServiceDisplayName(service)).join(', '));
-  
-  try {
-    // Use Supabase Edge Function for server-side email dispatch (avoids CORS issues)
-    const { data: edgeData, error: edgeError } = await supabase.functions.invoke('email-dispatch', {
-      body: { type: 'quote', quote, adminEmail: ADMIN_EMAIL }
-    });
+    console.log('📧 Attempting to send quote emails for:', quote.name, '- Services:', quote.services.map(service => getServiceDisplayName(service)).join(', '));
 
-    if (edgeError) {
-      console.error('❌ Edge function quote email error:', edgeError);
-      throw new Error(`Edge function failed: ${edgeError.message || JSON.stringify(edgeError)}`);
+    try {
+        // Use Supabase Edge Function for server-side email dispatch (avoids CORS issues)
+        const { data: edgeData, error: edgeError } = await supabase.functions.invoke('email-dispatch', {
+            body: { type: 'quote', quote, adminEmail: ADMIN_EMAIL }
+        });
+
+        if (edgeError) {
+            console.error('❌ Edge function quote email error:', edgeError);
+            throw new Error(`Edge function failed: ${edgeError.message || JSON.stringify(edgeError)}`);
+        }
+
+        if (edgeData?.success) {
+            console.log('✅ Quote emails sent via Edge Function:', edgeData);
+            console.log('🎉 All quote emails sent successfully!');
+            return { success: true, customerEmail: edgeData.customer, adminEmail: edgeData.admin };
+        } else {
+            console.error('❌ Edge function returned unsuccessful result:', edgeData);
+            throw new Error(`Edge function returned error: ${edgeData?.error || 'Unknown error'}`);
+        }
+    } catch (error) {
+        console.error('❌ Error sending quote emails:', error);
+        console.error('📋 Quote data:', JSON.stringify(quote, null, 2));
+
+        // Detailed error information
+        if (error instanceof Error) {
+            console.error('Error name:', error.name);
+            console.error('Error message:', error.message);
+            console.error('Error stack:', error.stack);
+        }
+
+        return { success: false, error: error instanceof Error ? error.message : 'Unknown error', details: error };
     }
-    
-    if (edgeData?.success) {
-      console.log('✅ Quote emails sent via Edge Function:', edgeData);
-      console.log('🎉 All quote emails sent successfully!');
-      return { success: true, customerEmail: edgeData.customer, adminEmail: edgeData.admin };
-    } else {
-      console.error('❌ Edge function returned unsuccessful result:', edgeData);
-      throw new Error(`Edge function returned error: ${edgeData?.error || 'Unknown error'}`);
-    }
-  } catch (error) {
-    console.error('❌ Error sending quote emails:', error);
-    console.error('📋 Quote data:', JSON.stringify(quote, null, 2));
-    
-    // Detailed error information
-    if (error instanceof Error) {
-      console.error('Error name:', error.name);
-      console.error('Error message:', error.message);
-      console.error('Error stack:', error.stack);
-    }
-    
-    return { success: false, error: error instanceof Error ? error.message : 'Unknown error', details: error };
-  }
 };
 
 // Send contact form notification to admin
 export const sendContactEmails = async (contact: ContactData) => {
-  console.log('📧 Attempting to send contact emails for:', contact.name, '- Subject:', contact.subject);
-  
-  try {
-    // Use Supabase Edge Function for server-side email dispatch (avoids CORS issues)
-    const { data: edgeData, error: edgeError } = await supabase.functions.invoke('email-dispatch', {
-      body: { type: 'contact', contact, adminEmail: ADMIN_EMAIL }
-    });
+    console.log('📧 Attempting to send contact emails for:', contact.name, '- Subject:', contact.subject);
 
-    if (edgeError) {
-      console.error('❌ Edge function contact email error:', edgeError);
-      throw new Error(`Edge function failed: ${edgeError.message || JSON.stringify(edgeError)}`);
+    try {
+        // Use Supabase Edge Function for server-side email dispatch (avoids CORS issues)
+        const { data: edgeData, error: edgeError } = await supabase.functions.invoke('email-dispatch', {
+            body: { type: 'contact', contact, adminEmail: ADMIN_EMAIL }
+        });
+
+        if (edgeError) {
+            console.error('❌ Edge function contact email error:', edgeError);
+            throw new Error(`Edge function failed: ${edgeError.message || JSON.stringify(edgeError)}`);
+        }
+
+        if (edgeData?.success) {
+            console.log('✅ Contact emails sent via Edge Function:', edgeData);
+            console.log('🎉 All contact emails sent successfully!');
+            return { success: true, customerEmail: edgeData.customer, adminEmail: edgeData.admin };
+        } else {
+            console.error('❌ Edge function returned unsuccessful result:', edgeData);
+            throw new Error(`Edge function returned error: ${edgeData?.error || 'Unknown error'}`);
+        }
+    } catch (error) {
+        console.error('❌ Error sending contact emails:', error);
+        console.error('📋 Contact data:', JSON.stringify(contact, null, 2));
+
+        // Detailed error information
+        if (error instanceof Error) {
+            console.error('Error name:', error.name);
+            console.error('Error message:', error.message);
+            console.error('Error stack:', error.stack);
+        }
+
+        return { success: false, error: error instanceof Error ? error.message : 'Unknown error', details: error };
     }
-    
-    if (edgeData?.success) {
-      console.log('✅ Contact emails sent via Edge Function:', edgeData);
-      console.log('🎉 All contact emails sent successfully!');
-      return { success: true, customerEmail: edgeData.customer, adminEmail: edgeData.admin };
-    } else {
-      console.error('❌ Edge function returned unsuccessful result:', edgeData);
-      throw new Error(`Edge function returned error: ${edgeData?.error || 'Unknown error'}`);
-    }
-  } catch (error) {
-    console.error('❌ Error sending contact emails:', error);
-    console.error('📋 Contact data:', JSON.stringify(contact, null, 2));
-    
-    // Detailed error information
-    if (error instanceof Error) {
-      console.error('Error name:', error.name);
-      console.error('Error message:', error.message);
-      console.error('Error stack:', error.stack);
-    }
-    
-    return { success: false, error: error instanceof Error ? error.message : 'Unknown error', details: error };
-  }
 };
 
 // Update admin email (to be called when you provide the actual admin email)
 export const updateAdminEmail = (newAdminEmail: string) => {
-  // This function would be used to update the admin email
-  // For now, you'll need to manually update the ADMIN_EMAIL constant above
-  console.log(`Admin email should be updated to: ${newAdminEmail}`);
+    // This function would be used to update the admin email
+    // For now, you'll need to manually update the ADMIN_EMAIL constant above
+    console.log(`Admin email should be updated to: ${newAdminEmail}`);
 };

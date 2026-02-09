@@ -1,0 +1,478 @@
+﻿app/get-quote/page.tsx(116,9): error TS2322: Type '{ title: string; description: string; path: string; }' is not assignable to type 'IntrinsicAttributes & SEOProps'.
+  Property 'path' does not exist on type 'IntrinsicAttributes & SEOProps'.
+app/thank-you/page.tsx(24,16): error TS2304: Cannot find name 'gtag'.
+app/thank-you/page.tsx(28,7): error TS2304: Cannot find name 'gtag'.
+app/thank-you/page.tsx(38,7): error TS2304: Cannot find name 'gtag'.
+app/thank-you/page.tsx(43,7): error TS2304: Cannot find name 'gtag'.
+backups_batch_tier1_20251025_011936/EndOfLeaseCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_batch_tier1_20251025_011936/EndOfLeaseCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_batch_tier1_20251025_011936/EndOfLeaseCleaning.tsx(3,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_batch_tier1_20251025_011936/EndOfLeaseCleaning.tsx(5,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_batch_tier1_20251025_011936/EndOfLeaseCleaning.tsx(6,48): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_batch_tier1_20251025_011936/PressureWashing.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_batch_tier1_20251025_011936/PressureWashing.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_batch_tier1_20251025_011936/PressureWashing.tsx(3,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_batch_tier1_20251025_011936/PressureWashing.tsx(4,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_batch_tier1_20251025_011936/PressureWashing.tsx(6,48): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_batch_tier1_20251025_011936/SolarPanelCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_batch_tier1_20251025_011936/SolarPanelCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_batch_tier1_20251025_011936/SolarPanelCleaning.tsx(3,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_batch_tier1_20251025_011936/SolarPanelCleaning.tsx(4,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_blog_rebuild_20251025_014012/Blog.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_blog_rebuild_20251025_014012/Blog.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_blog_rebuild_20251025_014012/Blog.tsx(3,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_blog_rebuild_20251025_014012/Blog.tsx(5,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/About.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/About.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/About.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/About.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/About.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Blog.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Blog.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Blog.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Blog.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Blog.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(3,33): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(5,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(406,26): error TS2339: Property 'subsections' does not exist on type '{ title: string; content: string; subsections?: undefined; items?: undefined; } | { title: string; content: string; subsections: { title: string; items: string[]; }[]; items?: undefined; } | { title: string; content: string; items: string[]; subsections?: undefined; } | { ...; } | { ...; } | { ...; }'.
+  Property 'subsections' does not exist on type '{ title: string; content: string; }'.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(408,30): error TS2339: Property 'subsections' does not exist on type '{ title: string; content: string; subsections?: undefined; items?: undefined; } | { title: string; content: string; subsections: { title: string; items: string[]; }[]; items?: undefined; } | { title: string; content: string; items: string[]; subsections?: undefined; } | { ...; } | { ...; } | { ...; }'.
+  Property 'subsections' does not exist on type '{ title: string; content: string; }'.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(408,47): error TS7006: Parameter 'subsection' implicitly has an 'any' type.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(408,59): error TS7006: Parameter 'subIndex' implicitly has an 'any' type.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(412,50): error TS7006: Parameter 'item' implicitly has an 'any' type.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(412,56): error TS7006: Parameter 'itemIndex' implicitly has an 'any' type.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(425,26): error TS2339: Property 'items' does not exist on type '{ title: string; content: string; subsections?: undefined; items?: undefined; } | { title: string; content: string; subsections: { title: string; items: string[]; }[]; items?: undefined; } | { title: string; content: string; items: string[]; subsections?: undefined; } | { ...; } | { ...; } | { ...; }'.
+  Property 'items' does not exist on type '{ title: string; content: string; }'.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(428,32): error TS2339: Property 'items' does not exist on type '{ title: string; content: string; subsections?: undefined; items?: undefined; } | { title: string; content: string; subsections: { title: string; items: string[]; }[]; items?: undefined; } | { title: string; content: string; items: string[]; subsections?: undefined; } | { ...; } | { ...; } | { ...; }'.
+  Property 'items' does not exist on type '{ title: string; content: string; }'.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(428,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+backups_button_and_scroll_fix_20251025_040327/BlogPost.tsx(428,49): error TS7006: Parameter 'itemIndex' implicitly has an 'any' type.
+backups_button_and_scroll_fix_20251025_040327/CarpetCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/CarpetCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/CarpetCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/CarpetCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/CarpetCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/CommercialCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/CommercialCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/CommercialCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/CommercialCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/CommercialCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Contact.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Contact.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Contact.tsx(3,25): error TS2307: Cannot find module '@/components/ContactForm' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Contact.tsx(4,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Contact.tsx(6,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Contact.tsx(7,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/DeepCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/DeepCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/DeepCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/DeepCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/DeepCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/EndOfLeaseCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/EndOfLeaseCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/EndOfLeaseCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/EndOfLeaseCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/EndOfLeaseCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Navigation.tsx(2,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Navigation.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Navigation.tsx(30,17): error TS2322: Type 'StaticImageData' is not assignable to type 'string'.
+backups_button_and_scroll_fix_20251025_040327/PressureWashing.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/PressureWashing.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/PressureWashing.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/PressureWashing.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/PressureWashing.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/ResidentialCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/ResidentialCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/ResidentialCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/ResidentialCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/ResidentialCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Services.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Services.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Services.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Services.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Services.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/Services.tsx(277,18): error TS2304: Cannot find name 'Phone'.
+backups_button_and_scroll_fix_20251025_040327/SolarPanelCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/SolarPanelCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/SolarPanelCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/SolarPanelCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/SolarPanelCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/TileGroutCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/TileGroutCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/TileGroutCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/TileGroutCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_button_and_scroll_fix_20251025_040327/TileGroutCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_carpet_rebuild_20251025_011601/CarpetCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_carpet_rebuild_20251025_011601/CarpetCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_carpet_rebuild_20251025_011601/CarpetCleaning.tsx(3,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_carpet_rebuild_20251025_011601/CarpetCleaning.tsx(4,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_commercial_rebuild_20251025_011712/CommercialCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_commercial_rebuild_20251025_011712/CommercialCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_commercial_rebuild_20251025_011712/CommercialCleaning.tsx(3,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_commercial_rebuild_20251025_011712/CommercialCleaning.tsx(4,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/Contact.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/Contact.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/Contact.tsx(3,25): error TS2307: Cannot find module '@/components/ContactForm' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/Contact.tsx(4,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/Contact.tsx(6,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/Contact.tsx(7,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ContactForm.tsx(5,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ContactForm.tsx(6,80): error TS2307: Cannot find module '@/components/ui/form' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ContactForm.tsx(7,23): error TS2307: Cannot find module '@/components/ui/input' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ContactForm.tsx(8,26): error TS2307: Cannot find module '@/components/ui/textarea' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ContactForm.tsx(9,58): error TS2307: Cannot find module '@/components/ui/card' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ContactForm.tsx(11,26): error TS2307: Cannot find module '@/lib/supabase' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ContactForm.tsx(12,35): error TS2307: Cannot find module '@/lib/emailService' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ContactForm.tsx(14,26): error TS2307: Cannot find module './ThankYouPage' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ContactForm.tsx(110,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_contact_form_consistency_20251025_015304/ContactForm.tsx(126,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_contact_form_consistency_20251025_015304/ContactForm.tsx(146,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_contact_form_consistency_20251025_015304/ContactForm.tsx(163,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_contact_form_consistency_20251025_015304/ContactForm.tsx(181,26): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_contact_form_consistency_20251025_015304/ThankYou.tsx(2,52): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ThankYou.tsx(3,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ThankYou.tsx(5,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ThankYou.tsx(6,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ThankYou.tsx(7,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_contact_form_consistency_20251025_015304/ThankYou.tsx(21,16): error TS2304: Cannot find name 'gtag'.
+backups_contact_form_consistency_20251025_015304/ThankYou.tsx(25,7): error TS2304: Cannot find name 'gtag'.
+backups_contact_form_consistency_20251025_015304/ThankYou.tsx(35,7): error TS2304: Cannot find name 'gtag'.
+backups_contact_form_consistency_20251025_015304/ThankYou.tsx(40,7): error TS2304: Cannot find name 'gtag'.
+backups_contact_rebuild_20251025_013356/Contact.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_contact_rebuild_20251025_013356/Contact.tsx(2,25): error TS2307: Cannot find module '@/components/ContactForm' or its corresponding type declarations.
+backups_contact_rebuild_20251025_013356/Contact.tsx(4,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/About.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/About.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/About.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/About.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/About.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Blog.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Blog.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Blog.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Blog.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Blog.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(3,33): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(5,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(406,26): error TS2339: Property 'subsections' does not exist on type '{ title: string; content: string; subsections?: undefined; items?: undefined; } | { title: string; content: string; subsections: { title: string; items: string[]; }[]; items?: undefined; } | { title: string; content: string; items: string[]; subsections?: undefined; } | { ...; } | { ...; } | { ...; }'.
+  Property 'subsections' does not exist on type '{ title: string; content: string; }'.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(408,30): error TS2339: Property 'subsections' does not exist on type '{ title: string; content: string; subsections?: undefined; items?: undefined; } | { title: string; content: string; subsections: { title: string; items: string[]; }[]; items?: undefined; } | { title: string; content: string; items: string[]; subsections?: undefined; } | { ...; } | { ...; } | { ...; }'.
+  Property 'subsections' does not exist on type '{ title: string; content: string; }'.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(408,47): error TS7006: Parameter 'subsection' implicitly has an 'any' type.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(408,59): error TS7006: Parameter 'subIndex' implicitly has an 'any' type.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(412,50): error TS7006: Parameter 'item' implicitly has an 'any' type.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(412,56): error TS7006: Parameter 'itemIndex' implicitly has an 'any' type.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(425,26): error TS2339: Property 'items' does not exist on type '{ title: string; content: string; subsections?: undefined; items?: undefined; } | { title: string; content: string; subsections: { title: string; items: string[]; }[]; items?: undefined; } | { title: string; content: string; items: string[]; subsections?: undefined; } | { ...; } | { ...; } | { ...; }'.
+  Property 'items' does not exist on type '{ title: string; content: string; }'.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(428,32): error TS2339: Property 'items' does not exist on type '{ title: string; content: string; subsections?: undefined; items?: undefined; } | { title: string; content: string; subsections: { title: string; items: string[]; }[]; items?: undefined; } | { title: string; content: string; items: string[]; subsections?: undefined; } | { ...; } | { ...; } | { ...; }'.
+  Property 'items' does not exist on type '{ title: string; content: string; }'.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(428,43): error TS7006: Parameter 'item' implicitly has an 'any' type.
+backups_cta_button_fix_20251025_020501/BlogPost.tsx(428,49): error TS7006: Parameter 'itemIndex' implicitly has an 'any' type.
+backups_cta_button_fix_20251025_020501/CarpetCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/CarpetCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/CarpetCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/CarpetCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/CarpetCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/CommercialCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/CommercialCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/CommercialCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/CommercialCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/CommercialCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Contact.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Contact.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Contact.tsx(3,25): error TS2307: Cannot find module '@/components/ContactForm' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Contact.tsx(4,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Contact.tsx(6,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Contact.tsx(7,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/DeepCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/DeepCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/DeepCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/DeepCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/DeepCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/EndOfLeaseCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/EndOfLeaseCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/EndOfLeaseCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/EndOfLeaseCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/EndOfLeaseCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/PressureWashing.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/PressureWashing.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/PressureWashing.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/PressureWashing.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/PressureWashing.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/ResidentialCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/ResidentialCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/ResidentialCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/ResidentialCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/ResidentialCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Services.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Services.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Services.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Services.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/Services.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/SolarPanelCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/SolarPanelCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/SolarPanelCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/SolarPanelCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/SolarPanelCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/TileGroutCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/TileGroutCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/TileGroutCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/TileGroutCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_cta_button_fix_20251025_020501/TileGroutCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_deepcleaning_rebuild_20251025_011442/DeepCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_deepcleaning_rebuild_20251025_011442/DeepCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_deepcleaning_rebuild_20251025_011442/DeepCleaning.tsx(3,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_deepcleaning_rebuild_20251025_011442/DeepCleaning.tsx(4,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_footer_rebuild_20251025_014506/Footer.tsx(1,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/About.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/About.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/About.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/About.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/About.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Blog.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Blog.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Blog.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Blog.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Blog.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/CarpetCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/CarpetCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/CarpetCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/CarpetCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/CarpetCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/CommercialCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/CommercialCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/CommercialCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/CommercialCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/CommercialCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/DeepCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/DeepCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/DeepCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/DeepCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/DeepCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/EndOfLeaseCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/EndOfLeaseCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/EndOfLeaseCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/EndOfLeaseCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/EndOfLeaseCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Index.tsx(1,25): error TS2307: Cannot find module '../components/home/HeroSection' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Index.tsx(2,29): error TS2307: Cannot find module '../components/home/ServicesSection' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Index.tsx(3,32): error TS2307: Cannot find module '../components/home/WhyChooseUsSection' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Index.tsx(4,28): error TS2307: Cannot find module '../components/home/ReviewsSection' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Index.tsx(5,31): error TS2307: Cannot find module '../components/home/GetInTouchSection' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Index.tsx(6,20): error TS2307: Cannot find module '../components/Footer' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Index.tsx(7,25): error TS2307: Cannot find module '../components/SEOHead' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/PressureWashing.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/PressureWashing.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/PressureWashing.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/PressureWashing.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/PressureWashing.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/ResidentialCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/ResidentialCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/ResidentialCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/ResidentialCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/ResidentialCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Services.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Services.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Services.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Services.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Services.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/Services.tsx(277,18): error TS2304: Cannot find name 'Phone'.
+backups_gradient_removal_20251025_035817/SolarPanelCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/SolarPanelCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/SolarPanelCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/SolarPanelCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/SolarPanelCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/TileGroutCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/TileGroutCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/TileGroutCleaning.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/TileGroutCleaning.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_gradient_removal_20251025_035817/TileGroutCleaning.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/Footer.tsx(1,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/GetInTouchSection.tsx(2,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/HeroSection.tsx(2,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/HeroSection.tsx(3,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/HeroSection.tsx(29,17): error TS2322: Type 'StaticImageData' is not assignable to type 'string'.
+backups_homepage_rebuild_20251024_231745/Index.tsx(1,25): error TS2307: Cannot find module '../components/home/HeroSection' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/Index.tsx(2,29): error TS2307: Cannot find module '../components/home/ServicesSection' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/Index.tsx(3,32): error TS2307: Cannot find module '../components/home/WhyChooseUsSection' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/Index.tsx(4,28): error TS2307: Cannot find module '../components/home/ReviewsSection' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/Index.tsx(5,31): error TS2307: Cannot find module '../components/home/GetInTouchSection' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/Index.tsx(6,20): error TS2307: Cannot find module '../components/Footer' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/Index.tsx(7,25): error TS2307: Cannot find module '../components/SEOHead' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/Navigation.tsx(2,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/Navigation.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_homepage_rebuild_20251024_231745/Navigation.tsx(30,17): error TS2322: Type 'StaticImageData' is not assignable to type 'string'.
+backups_homepage_rebuild_20251024_231745/ServicesSection.tsx(1,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/AddressField.tsx(1,74): error TS2307: Cannot find module '@/components/ui/form' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/AddressField.tsx(2,23): error TS2307: Cannot find module '@/components/ui/input' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/AddressField.tsx(15,18): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/ContactFields.tsx(1,74): error TS2307: Cannot find module '@/components/ui/form' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/ContactFields.tsx(2,23): error TS2307: Cannot find module '@/components/ui/input' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/ContactFields.tsx(16,20): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/ContactFields.tsx(29,20): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/ContactFields.tsx(42,20): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/FormSection.tsx(1,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(5,80): error TS2307: Cannot find module '@/components/ui/form' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(6,23): error TS2307: Cannot find module '@/components/ui/input' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(7,26): error TS2307: Cannot find module '@/components/ui/textarea' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(8,26): error TS2307: Cannot find module '@/components/ui/checkbox' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(10,29): error TS2307: Cannot find module '@/components/forms/FormSection' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(12,26): error TS2307: Cannot find module '@/components/ui/calendar' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(13,57): error TS2307: Cannot find module '@/components/ui/popover' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(14,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(16,26): error TS2307: Cannot find module '@/lib/supabase' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(17,33): error TS2307: Cannot find module '@/lib/emailService' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(18,39): error TS2307: Cannot find module '@/lib/serviceMapping' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(20,29): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(147,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(161,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(177,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(191,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(209,26): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(224,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(238,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(262,30): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(268,47): error TS7006: Parameter 'checked' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(272,58): error TS7006: Parameter 'value' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(296,26): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(322,36): error TS7006: Parameter 'date' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(326,36): error TS7006: Parameter 'date' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(345,26): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/LandingPageForm.tsx(366,26): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(5,80): error TS2307: Cannot find module '@/components/ui/form' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(6,23): error TS2307: Cannot find module '@/components/ui/input' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(7,26): error TS2307: Cannot find module '@/components/ui/textarea' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(8,26): error TS2307: Cannot find module '@/components/ui/checkbox' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(10,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(11,29): error TS2307: Cannot find module '@/components/forms/FormSection' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(13,26): error TS2307: Cannot find module '@/components/ui/calendar' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(14,57): error TS2307: Cannot find module '@/components/ui/popover' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(15,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(17,26): error TS2307: Cannot find module '@/lib/supabase' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(18,33): error TS2307: Cannot find module '@/lib/emailService' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(19,39): error TS2307: Cannot find module '@/lib/serviceMapping' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(21,29): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(192,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(211,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(231,30): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(248,30): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(269,30): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(287,30): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(308,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(341,40): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(346,55): error TS7006: Parameter 'checked' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(349,64): error TS7006: Parameter 'value' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(382,30): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(390,38): error TS7006: Parameter 'e' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(403,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(429,38): error TS7006: Parameter 'date' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(433,38): error TS7006: Parameter 'date' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(450,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/Quote.tsx(469,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_quote_page_rebuild_20251024_234826/ServiceSelection.tsx(1,74): error TS2307: Cannot find module '@/components/ui/form' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/ServiceSelection.tsx(2,79): error TS2307: Cannot find module '@/components/ui/select' or its corresponding type declarations.
+backups_quote_page_rebuild_20251024_234826/ServiceSelection.tsx(15,18): error TS7031: Binding element 'field' implicitly has an 'any' type.
+backups_residential_rebuild_20251025_010656/ResidentialCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_residential_rebuild_20251025_010656/ResidentialCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_residential_rebuild_20251025_010656/ResidentialCleaning.tsx(3,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_residential_rebuild_20251025_010656/ResidentialCleaning.tsx(4,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_stats_update_20251025_021023/About.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_stats_update_20251025_021023/About.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_stats_update_20251025_021023/About.tsx(3,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_stats_update_20251025_021023/About.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_stats_update_20251025_021023/About.tsx(5,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_stats_update_20251025_021023/Index.tsx(1,25): error TS2307: Cannot find module '../components/home/HeroSection' or its corresponding type declarations.
+backups_stats_update_20251025_021023/Index.tsx(2,29): error TS2307: Cannot find module '../components/home/ServicesSection' or its corresponding type declarations.
+backups_stats_update_20251025_021023/Index.tsx(3,32): error TS2307: Cannot find module '../components/home/WhyChooseUsSection' or its corresponding type declarations.
+backups_stats_update_20251025_021023/Index.tsx(4,28): error TS2307: Cannot find module '../components/home/ReviewsSection' or its corresponding type declarations.
+backups_stats_update_20251025_021023/Index.tsx(5,31): error TS2307: Cannot find module '../components/home/GetInTouchSection' or its corresponding type declarations.
+backups_stats_update_20251025_021023/Index.tsx(6,20): error TS2307: Cannot find module '../components/Footer' or its corresponding type declarations.
+backups_stats_update_20251025_021023/Index.tsx(7,25): error TS2307: Cannot find module '../components/SEOHead' or its corresponding type declarations.
+backups_thankyou_content_20251025_015955/ThankYou.tsx(2,52): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_thankyou_content_20251025_015955/ThankYou.tsx(3,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_thankyou_content_20251025_015955/ThankYou.tsx(5,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_thankyou_content_20251025_015955/ThankYou.tsx(6,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_thankyou_content_20251025_015955/ThankYou.tsx(7,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_thankyou_content_20251025_015955/ThankYou.tsx(21,16): error TS2304: Cannot find name 'gtag'.
+backups_thankyou_content_20251025_015955/ThankYou.tsx(25,7): error TS2304: Cannot find name 'gtag'.
+backups_thankyou_content_20251025_015955/ThankYou.tsx(35,7): error TS2304: Cannot find name 'gtag'.
+backups_thankyou_content_20251025_015955/ThankYou.tsx(40,7): error TS2304: Cannot find name 'gtag'.
+backups_thankyou_rebuild_20251025_005616/ThankYou.tsx(2,52): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_thankyou_rebuild_20251025_005616/ThankYou.tsx(3,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_thankyou_rebuild_20251025_005616/ThankYou.tsx(6,25): error TS2307: Cannot find module '@/components/SEOHead' or its corresponding type declarations.
+backups_thankyou_rebuild_20251025_005616/ThankYou.tsx(21,16): error TS2304: Cannot find name 'gtag'.
+backups_thankyou_rebuild_20251025_005616/ThankYou.tsx(25,7): error TS2304: Cannot find name 'gtag'.
+backups_thankyou_rebuild_20251025_005616/ThankYou.tsx(35,7): error TS2304: Cannot find name 'gtag'.
+backups_thankyou_rebuild_20251025_005616/ThankYou.tsx(40,7): error TS2304: Cannot find name 'gtag'.
+backups_thankyou_rebuild_20251025_005616/ThankYou.tsx(89,15): error TS2322: Type 'StaticImageData' is not assignable to type 'string'.
+backups_thankyou_rebuild_20251025_005616/ThankYouPage.tsx(2,29): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_thankyou_rebuild_20251025_005616/ThankYouPage.tsx(4,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_tier2_rebuild_20251025_013504/About.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_tier2_rebuild_20251025_013504/About.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_tier2_rebuild_20251025_013504/Services.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_tier2_rebuild_20251025_013504/Services.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_tier2_rebuild_20251025_013504/Services.tsx(3,33): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+backups_tilegrout_rebuild_20251025_011826/TileGroutCleaning.tsx(1,24): error TS2307: Cannot find module '@/components/Navigation' or its corresponding type declarations.
+backups_tilegrout_rebuild_20251025_011826/TileGroutCleaning.tsx(2,20): error TS2307: Cannot find module '@/components/Footer' or its corresponding type declarations.
+backups_tilegrout_rebuild_20251025_011826/TileGroutCleaning.tsx(3,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+backups_tilegrout_rebuild_20251025_011826/TileGroutCleaning.tsx(4,22): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+src/components/booking/BookingForm.tsx(5,24): error TS2305: Module '"@/src/components/booking/PriceSummary"' has no exported member 'calculateTotal'.
+src/components/booking/BookingForm.tsx(10,10): error TS2305: Module '"@/src/lib/pricing-data"' has no exported member 'services'.
+src/components/booking/BookingForm.tsx(10,20): error TS2305: Module '"@/src/lib/pricing-data"' has no exported member 'frequencies'.
+src/components/booking/BookingForm.tsx(10,33): error TS2305: Module '"@/src/lib/pricing-data"' has no exported member 'extras'.
+src/components/booking/BookingForm.tsx(10,64): error TS2305: Module '"@/src/lib/pricing-data"' has no exported member 'FormState'.
+src/components/booking/BookingForm.tsx(30,21): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/BookingForm.tsx(32,21): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/BookingForm.tsx(35,23): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/BookingForm.tsx(41,19): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/BookingForm.tsx(100,53): error TS2322: Type '{ formState: FormState; services: any; extras: any; compact: true; }' is not assignable to type 'IntrinsicAttributes & PriceSummaryProps'.
+  Property 'services' does not exist on type 'IntrinsicAttributes & PriceSummaryProps'.
+src/components/booking/BookingForm.tsx(116,51): error TS2322: Type '{ formState: FormState; services: any; extras: any; }' is not assignable to type 'IntrinsicAttributes & PriceSummaryProps'.
+  Property 'services' does not exist on type 'IntrinsicAttributes & PriceSummaryProps'.
+src/components/booking/steps/StepOne.tsx(5,15): error TS2305: Module '"@/src/lib/pricing-data"' has no exported member 'FormState'.
+src/components/booking/steps/StepOne.tsx(5,26): error TS2305: Module '"@/src/lib/pricing-data"' has no exported member 'ServiceOption'.
+src/components/booking/steps/StepOne.tsx(17,19): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepOne.tsx(21,19): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepOne.tsx(25,19): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepOne.tsx(37,19): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepOne.tsx(48,85): error TS18046: 'v' is of type 'unknown'.
+src/components/booking/steps/StepOne.tsx(119,46): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepOne.tsx(176,40): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepOne.tsx(224,40): error TS2339: Property 'badge' does not exist on type 'ExtraService'.
+src/components/booking/steps/StepOne.tsx(226,44): error TS2339: Property 'badge' does not exist on type 'ExtraService'.
+src/components/booking/steps/StepOne.tsx(229,40): error TS2551: Property 'recommended' does not exist on type 'ExtraService'. Did you mean 'eolRecommended'?
+src/components/booking/steps/StepOne.tsx(236,41): error TS2339: Property 'price' does not exist on type 'ExtraService'.
+src/components/booking/steps/StepThree.tsx(7,15): error TS2305: Module '"@/src/lib/pricing-data"' has no exported member 'FormState'.
+src/components/booking/steps/StepThree.tsx(43,46): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepThree.tsx(55,46): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepThree.tsx(69,44): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepThree.tsx(83,46): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepThree.tsx(95,46): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepThree.tsx(112,55): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepThree.tsx(131,55): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepThree.tsx(149,55): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepThree.tsx(170,44): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepTwo.tsx(7,15): error TS2305: Module '"@/src/lib/pricing-data"' has no exported member 'FormState'.
+src/components/booking/steps/StepTwo.tsx(42,44): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepTwo.tsx(56,44): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepTwo.tsx(68,46): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepTwo.tsx(77,55): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/booking/steps/StepTwo.tsx(95,57): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/ScrollToTop.tsx(6,24): error TS2304: Cannot find name 'useLocation'.
+src/components/ThankYouPage.tsx(34,7): error TS2304: Cannot find name 'navigate'.
+src/hooks/useGoogleAnalytics.ts(2,29): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+src/hooks/useGoogleAnalytics.ts(10,16): error TS2304: Cannot find name 'gtag'.
+src/hooks/useGoogleAnalytics.ts(11,7): error TS2304: Cannot find name 'gtag'.
+src/hooks/useGoogleAnalytics.ts(17,7): error TS2304: Cannot find name 'gtag'.
+src/hooks/useGoogleAnalytics.ts(30,14): error TS2304: Cannot find name 'gtag'.
+src/hooks/useGoogleAnalytics.ts(31,5): error TS2304: Cannot find name 'gtag'.
+src/hooks/useGoogleMapsAutocomplete.ts(32,34): error TS2503: Cannot find namespace 'google'.
+src/hooks/useGoogleMapsAutocomplete.ts(65,32): error TS2304: Cannot find name 'google'.
+src/hooks/useGoogleMapsAutocomplete.ts(101,43): error TS7006: Parameter 'component' implicitly has an 'any' type.
+src/hooks/useGoogleMapsAutocomplete.ts(144,11): error TS2304: Cannot find name 'google'.

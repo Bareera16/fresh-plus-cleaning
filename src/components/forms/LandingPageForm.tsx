@@ -1,25 +1,26 @@
+'use client';
+import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { Button } from "@/components/ui/button";
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/src/components/ui/button";
+import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/src/components/ui/form";
+import { Input } from "@/src/components/ui/input";
+import { Textarea } from "@/src/components/ui/textarea";
+import { Checkbox } from "@/src/components/ui/checkbox";
 import { toast } from "sonner";
-import { FormSection } from "@/components/forms/FormSection";
+import { FormSection } from "@/src/components/forms/FormSection";
 import { CalendarIcon, PaperclipIcon } from "lucide-react";
-import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
+import { Calendar } from "@/src/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/src/components/ui/popover";
+import { cn } from "@/src/lib/utils";
 import { format } from "date-fns";
-import { supabase } from "@/lib/supabase";
-import { sendQuoteEmails } from "@/lib/emailService";
-import { getServiceDisplayName } from "@/lib/serviceMapping";
+import { supabase } from "@/src/lib/supabase";
+import { sendQuoteEmails } from "@/src/lib/emailService";
+import { getServiceDisplayName } from "@/src/lib/serviceMapping";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { AddressAutocomplete } from "@/components/forms/AddressAutocomplete";
-import { useRecaptcha } from "@/hooks/useRecaptcha";
+import { AddressAutocomplete } from "@/src/components/forms/AddressAutocomplete";
+import { useRecaptcha } from "@/src/hooks/useRecaptcha";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -46,7 +47,7 @@ interface LandingPageFormProps {
 const LandingPageForm = ({ serviceType, availableServices }: LandingPageFormProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
   const { getRecaptchaToken } = useRecaptcha();
   
   const form = useForm<z.infer<typeof formSchema>>({
@@ -148,12 +149,12 @@ const LandingPageForm = ({ serviceType, availableServices }: LandingPageFormProp
         console.log('✅ Quote submitted successfully, redirecting to thank you page');
         
         // Redirect to thank you page with parameters (conversion tracking happens there)
-        navigate(`/thank-you?source=${serviceType}&type=quote&name=${encodeURIComponent(values.name)}`);
+        router.push(`/thank-you?source=${serviceType}&type=quote&name=${encodeURIComponent(values.name)}`);
       } else {
         console.error('Email sending failed:', emailResult.error);
         
         // Redirect to thank you page even if email fails (conversion tracking happens there)
-        navigate(`/thank-you?source=${serviceType}&type=quote&name=${encodeURIComponent(values.name)}`);
+        router.push(`/thank-you?source=${serviceType}&type=quote&name=${encodeURIComponent(values.name)}`);
       }
     } catch (error) {
       console.error('Error submitting quote:', error);

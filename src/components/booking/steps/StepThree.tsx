@@ -1,10 +1,10 @@
 import React from "react";
 import { ArrowLeft, CreditCard } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import type { FormState } from "@/lib/pricing-data";
+import { Input } from "@/src/components/ui/input";
+import { Label } from "@/src/components/ui/label";
+import { Textarea } from "@/src/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/src/components/ui/select";
+import type { FormState } from "@/src/lib/pricing-data";
 
 interface StepThreeProps {
   formState: FormState;

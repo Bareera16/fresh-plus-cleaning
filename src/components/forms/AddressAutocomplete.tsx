@@ -1,6 +1,6 @@
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { useGoogleMapsAutocomplete, AddressComponents } from "@/hooks/useGoogleMapsAutocomplete";
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/src/components/ui/form";
+import { Input } from "@/src/components/ui/input";
+import { useGoogleMapsAutocomplete, AddressComponents } from "@/src/hooks/useGoogleMapsAutocomplete";
 import { Control, useFormContext } from "react-hook-form";
 import { toast } from "sonner";
 import { MapPin } from "lucide-react";

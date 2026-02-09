@@ -1,6 +1,8 @@
+'use client';
+
 import { useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
-import { useAdminAuth } from '@/lib/adminAuth';
+import { useRouter } from 'next/navigation';
+import { useAdminAuth } from '@/src/lib/adminAuth';
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -8,9 +10,15 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute = ({ children, requiredRole }: ProtectedRouteProps) => {
+  const router = useRouter();
   const { isAuthenticated, user, isLoading } = useAdminAuth();
 
-  console.log('ProtectedRoute - Auth state:', { isAuthenticated, user, isLoading });
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      console.log('Not authenticated, redirecting to login');
+      router.push('/admin/login');
+    }
+  }, [isLoading, isAuthenticated, router]);
 
   // Show loading state while checking authentication
   if (isLoading) {
@@ -21,10 +29,9 @@ const ProtectedRoute = ({ children, requiredRole }: ProtectedRouteProps) => {
     );
   }
 
-  // Redirect to login if not authenticated
+  // If not authenticated, don't render anything while redirect happens
   if (!isAuthenticated) {
-    console.log('Not authenticated, redirecting to login');
-    return <Navigate to="/admin/login" replace />;
+    return null;
   }
 
   // Check role if required

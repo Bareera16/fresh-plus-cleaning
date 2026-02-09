@@ -1,19 +1,19 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 import { useState } from "react";
 import { CalendarIcon, Zap, Clock } from "lucide-react";
 import { format, addDays, isBefore, startOfToday } from "date-fns";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Switch } from "@/components/ui/switch";
+import { Input } from "@/src/components/ui/input";
+import { Label } from "@/src/components/ui/label";
+import { Textarea } from "@/src/components/ui/textarea";
+import { Button } from "@/src/components/ui/button";
+import { Calendar } from "@/src/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/src/components/ui/popover";
+import { Switch } from "@/src/components/ui/switch";
 import {
   timeSlots,
   SAME_DAY_PREMIUM,
   type InstantQuoteFormState,
-} from "@/lib/pricing-data";
+} from "@/src/lib/pricing-data";
 
 interface ContactScheduleProps {
   formState: InstantQuoteFormState;

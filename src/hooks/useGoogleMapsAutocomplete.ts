@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { loadGoogleMapsScript } from '@/lib/googleMaps';
+import { loadGoogleMapsScript } from "@/src/lib/googleMaps";
 
 // Victoria bounding box coordinates
 const VICTORIA_BOUNDS = {

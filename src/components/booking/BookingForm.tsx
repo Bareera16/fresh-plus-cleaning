@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { StepIndicator } from "@/components/booking/StepIndicator";
-import { PriceSummary, calculateTotal } from "@/components/booking/PriceSummary";
-import { StepOne } from "@/components/booking/steps/StepOne";
-import { StepTwo } from "@/components/booking/steps/StepTwo";
-import { StepThree } from "@/components/booking/steps/StepThree";
-import { SuccessScreen } from "@/components/booking/SuccessScreen";
-import { services, frequencies, extras, initialFormState, type FormState } from "@/lib/pricing-data";
+import { Button } from "@/src/components/ui/button";
+import { StepIndicator } from "@/src/components/booking/StepIndicator";
+import { PriceSummary, calculateTotal } from "@/src/components/booking/PriceSummary";
+import { StepOne } from "@/src/components/booking/steps/StepOne";
+import { StepTwo } from "@/src/components/booking/steps/StepTwo";
+import { StepThree } from "@/src/components/booking/steps/StepThree";
+import { SuccessScreen } from "@/src/components/booking/SuccessScreen";
+import { services, frequencies, extras, initialFormState, type FormState } from "@/src/lib/pricing-data";
 
 const steps = [{ label: "Service" }, { label: "Contact" }, { label: "Details" }];
 

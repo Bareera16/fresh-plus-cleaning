@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { Phone, Mail, MapPin, Star, Award, Shield, CheckCircle } from "lucide-react";
 
 // Scroll to top helper function
@@ -14,9 +16,9 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="mb-6">
-              <img 
-                src="/logo.webp" 
-                alt="Fresh Plus Professional Cleaning Services" 
+              <img
+                src="/logo.webp"
+                alt="Fresh Plus Professional Cleaning Services"
                 className="h-20 w-auto"
               />
             </div>
@@ -40,7 +42,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Our Services */}
           <div>
             <h3 className="text-lg font-bold mb-6">Our Services</h3>
@@ -56,9 +58,9 @@ const Footer = () => {
                 { name: "End of Lease Cleaning", path: "/services/end-of-lease" }
               ].map((service) => (
                 <li key={service.path}>
-                  <Link 
-                    to={service.path} 
-                    onClick={scrollToTop} 
+                  <Link
+                    href={service.path}
+                    onClick={scrollToTop}
                     className="text-white/80 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
                   >
                     <CheckCircle className="h-3 w-3 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -68,7 +70,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          
+
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-bold mb-6">Quick Links</h3>
@@ -84,9 +86,9 @@ const Footer = () => {
                 { name: "Terms of Service", path: "/terms-of-service" }
               ].map((link) => (
                 <li key={link.path}>
-                  <Link 
-                    to={link.path} 
-                    onClick={scrollToTop} 
+                  <Link
+                    href={link.path}
+                    onClick={scrollToTop}
                     className="text-white/80 hover:text-accent transition-colors text-sm flex items-center gap-2 group"
                   >
                     <CheckCircle className="h-3 w-3 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -96,14 +98,14 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          
+
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-bold mb-6">Contact Info</h3>
             <ul className="space-y-4">
               <li>
-                <a 
-                  href="tel:+61403971720" 
+                <a
+                  href="tel:+61403971720"
                   className="flex items-start gap-3 text-white/80 hover:text-accent transition-colors group"
                 >
                   <div className="bg-accent/10 p-2 rounded-lg group-hover:bg-accent/20 transition-colors mt-0.5">
@@ -116,8 +118,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="mailto:infofreshplusclean@gmail.com" 
+                <a
+                  href="mailto:infofreshplusclean@gmail.com"
                   className="flex items-start gap-3 text-white/80 hover:text-accent transition-colors group"
                 >
                   <div className="bg-accent/10 p-2 rounded-lg group-hover:bg-accent/20 transition-colors mt-0.5">
@@ -141,7 +143,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">

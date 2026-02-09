@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 import { ChevronDown, Check, Loader2, AlertTriangle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/src/components/ui/button";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -11,7 +11,7 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
+} from "@/src/components/ui/alert-dialog";
 import { ServiceCards } from "./ServiceCards";
 import { PropertyDetails } from "./PropertyDetails";
 import { EOLGuidance } from "./EOLGuidance";
@@ -28,7 +28,7 @@ import {
   bondBackBundle,
   type InstantQuoteFormState,
   type ServiceType,
-} from "@/lib/pricing-data";
+} from "@/src/lib/pricing-data";
 
 interface AccordionSection {
   id: number;

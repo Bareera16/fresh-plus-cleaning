@@ -1,7 +1,8 @@
+'use client';
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { CheckCircle, Phone, Mail, Home, Clock } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/src/components/ui/button';
 
 interface ThankYouPageProps {
   type: 'quote' | 'booking' | 'contact';
@@ -10,7 +11,7 @@ interface ThankYouPageProps {
 }
 
 const ThankYouPage = ({ type, customerName, onClose }: ThankYouPageProps) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [countdown, setCountdown] = useState(6);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const ThankYouPage = ({ type, customerName, onClose }: ThankYouPageProps) => {
           if (onClose) {
             onClose();
           } else {
-            navigate('/');
+            router.push('/');
           }
           return 0;
         }
@@ -179,7 +180,7 @@ const ThankYouPage = ({ type, customerName, onClose }: ThankYouPageProps) => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                onClick={() => navigate('/')}
+                onClick={() => router.push('/')}
                 className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2"
               >
                 <Home className="w-5 h-5" />

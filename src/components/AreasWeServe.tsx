@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { MapPin, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/src/components/ui/button";
 
 interface AreasWeServeProps {
   serviceName?: string;
@@ -47,7 +47,7 @@ export const AreasWeServe = ({ serviceName, compact = false }: AreasWeServeProps
           <span className="text-primary/60 text-sm">and more...</span>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
-          <Link to="/contact">
+          <Link href="/contact">
             <Button variant="outline" className="border-primary text-primary hover:bg-primary-light">
               View All Areas
             </Button>
@@ -131,7 +131,7 @@ export const AreasWeServe = ({ serviceName, compact = false }: AreasWeServeProps
                       Call 0403 971 720
                     </Button>
                   </a>
-                  <Link to="/get-quote">
+                  <Link href="/get-quote">
                     <Button variant="outline" className="border-primary text-primary hover:bg-primary-light w-full sm:w-auto">
                       Get Free Quote
                     </Button>

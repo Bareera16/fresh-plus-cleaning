@@ -1,12 +1,12 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 import { Check, Home, Building2, Sofa, Package } from "lucide-react";
 import { 
   propertyTypes, 
   bedroomOptions, 
   bathroomOptions,
   type InstantQuoteFormState 
-} from "@/lib/pricing-data";
-import { Label } from "@/components/ui/label";
+} from "@/src/lib/pricing-data";
+import { Label } from "@/src/components/ui/label";
 
 interface PropertyDetailsProps {
   formState: InstantQuoteFormState;

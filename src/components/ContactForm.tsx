@@ -1,16 +1,17 @@
+'use client';
+import { useRouter } from "next/navigation";
 import { useState } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { Button } from "@/components/ui/button";
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/src/components/ui/button";
+import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/src/components/ui/form";
+import { Input } from "@/src/components/ui/input";
+import { Textarea } from "@/src/components/ui/textarea";
 import { toast } from "sonner";
-import { supabase } from "@/lib/supabase";
-import { sendContactEmails } from "@/lib/emailService";
+import { supabase } from "@/src/lib/supabase";
+import { sendContactEmails } from "@/src/lib/emailService";
 import { Send, Loader2 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -22,7 +23,7 @@ const contactSchema = z.object({
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
@@ -81,7 +82,7 @@ const ContactForm = () => {
       }
       
       // Navigate to thank you page with contact type
-      navigate(`/thank-you?type=contact&name=${encodeURIComponent(values.name)}&source=contact-form`);
+      router.push(`/thank-you?type=contact&name=${encodeURIComponent(values.name)}&source=contact-form`);
       
     } catch (error) {
       console.error('Error submitting contact message:', error);

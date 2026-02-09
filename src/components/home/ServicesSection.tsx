@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Home, Building2, Sparkles, Droplet, Wind, Globe, Grid3x3, Key, Sun } from "lucide-react";
 
 const ServicesSection = () => {
@@ -75,9 +75,8 @@ const ServicesSection = () => {
           {services.map((service) => {
             const IconComponent = service.icon;
             return (
-              <Link
-                key={service.title}
-                to={service.path}
+              <Link key={service.title}
+                href={service.path}
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-secondary"
               >
                 <div className="p-6 md:p-8">

@@ -1,6 +1,7 @@
+'use client';
+import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { useAdminAuth } from '@/lib/adminAuth';
+import { useAdminAuth } from '@/src/lib/adminAuth';
 import {
   Sidebar,
   SidebarContent,
@@ -18,10 +19,10 @@ import {
   SidebarTrigger,
   SidebarRail,
   useSidebar,
-} from '@/components/ui/sidebar';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+} from '@/src/components/ui/sidebar';
+import { Button } from '@/src/components/ui/button';
+import { Badge } from '@/src/components/ui/badge';
+import { Avatar, AvatarFallback, AvatarImage } from '@/src/components/ui/avatar';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,7 +30,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from '@/src/components/ui/dropdown-menu';
 import {
   LayoutDashboard,
   Zap,
@@ -49,7 +50,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { toast } from 'sonner';
-import { cn } from '@/lib/utils';
+import { cn } from '@/src/lib/utils';
 
 interface NavItem {
   title: string;
@@ -107,20 +108,20 @@ const getNavigation = (pendingInstant: number, pendingBookings: number, unreadCo
 ];
 
 // Sidebar Navigation Component
-function AdminSidebar({ pendingInstant, pendingBookings, unreadContacts }: { 
-  pendingInstant: number; 
-  pendingBookings: number; 
+function AdminSidebar({ pendingInstant, pendingBookings, unreadContacts }: {
+  pendingInstant: number;
+  pendingBookings: number;
   unreadContacts: number;
 }) {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
   const { user, logout } = useAdminAuth();
   const navigation = getNavigation(pendingInstant, pendingBookings, unreadContacts);
 
   const handleLogout = async () => {
     await logout();
     toast.success('Logged out successfully');
-    navigate('/admin/login');
+    router.push('/admin/login');
   };
 
   return (
@@ -146,13 +147,13 @@ function AdminSidebar({ pendingInstant, pendingBookings, unreadContacts }: {
             <SidebarGroupContent>
               <SidebarMenu>
                 {group.items.map((item) => {
-                  const isActive = location.pathname === item.url;
+                  const isActive = pathname === item.url;
                   return (
                     <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton
                         tooltip={item.title}
                         isActive={isActive}
-                        onClick={() => navigate(item.url)}
+                        onClick={() => router.push(item.url)}
                         className={cn(
                           "transition-all duration-200",
                           isActive && "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400 font-medium"
@@ -241,7 +242,7 @@ function TopBar({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
     <header className="sticky top-0 z-40 flex h-16 items-center gap-4 border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-6">
       <SidebarTrigger className="h-8 w-8" />
-      
+
       <div className="flex-1">
         <h1 className="text-xl font-semibold text-foreground">{title}</h1>
         {subtitle && <p className="text-sm text-muted-foreground">{subtitle}</p>}
@@ -272,7 +273,7 @@ function TopBar({ title, subtitle }: { title: string; subtitle?: string }) {
 
 // Main Admin Layout
 export default function AdminLayout({ children }: AdminLayoutProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { isAuthenticated, isLoading } = useAdminAuth();
   const [pendingInstant, setPendingInstant] = useState(0);
   const [pendingBookings, setPendingBookings] = useState(0);
@@ -280,9 +281,9 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
-      navigate('/admin/login');
+      router.push('/admin/login');
     }
-  }, [isAuthenticated, isLoading, navigate]);
+  }, [isAuthenticated, isLoading, router]);
 
   useEffect(() => {
     // Initialize theme from localStorage
@@ -309,7 +310,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
   return (
     <SidebarProvider defaultOpen={true}>
-      <AdminSidebar 
+      <AdminSidebar
         pendingInstant={pendingInstant}
         pendingBookings={pendingBookings}
         unreadContacts={unreadContacts}

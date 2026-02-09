@@ -1,5 +1,5 @@
 import { CheckCircle2, Calendar, MapPin, Phone, Mail, MessageCircle, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/src/components/ui/button";
 import { format } from "date-fns";
 import {
   calculateTotalPrice,
@@ -9,7 +9,7 @@ import {
   serviceCategories,
   timeSlots,
   type InstantQuoteFormState,
-} from "@/lib/pricing-data";
+} from "@/src/lib/pricing-data";
 
 interface ConfirmationScreenProps {
   formState: InstantQuoteFormState;

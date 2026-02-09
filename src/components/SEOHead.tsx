@@ -1,8 +1,9 @@
-import { Helmet } from 'react-helmet-async';
+import React from 'react';
 
 interface SEOProps {
   title: string;
   description: string;
+  keywords?: string;
   canonical?: string;
   type?: 'website' | 'article' | 'service';
   schema?: any;
@@ -13,23 +14,26 @@ interface SEOProps {
   }>;
 }
 
-export const SEOHead = ({ 
-  title, 
-  description, 
-  canonical, 
+export const SEOHead = ({
+  title,
+  description,
+  keywords,
+  canonical,
   type = 'website',
   schema,
   noindex = false,
-  breadcrumbs 
+  breadcrumbs
 }: SEOProps) => {
   const fullTitle = title.length <= 60 ? title : title.substring(0, 57) + '...';
-  const fullDescription = description.length >= 140 && description.length <= 160 
-    ? description 
-    : description.length < 140 
+  const fullDescription = description.length >= 140 && description.length <= 160
+    ? description
+    : description.length < 140
       ? description + ' Call 0403 971 720 for free quote today!'
       : description.substring(0, 157) + '...';
-  
-  const canonicalUrl = canonical || `https://www.freshpluscleaning.com.au${window.location.pathname}`;
+
+  // Use window only if available (client-side), otherwise fallback or use canonical prop if provided
+  const currentUrl = typeof window !== 'undefined' ? window.location.pathname : '';
+  const canonicalUrl = canonical || `https://www.freshpluscleaning.com.au${currentUrl}`;
   const ogImage = 'https://www.freshpluscleaning.com.au/Home_Hero.webp';
 
   // Generate breadcrumb schema
@@ -45,19 +49,20 @@ export const SEOHead = ({
   } : null;
 
   return (
-    <Helmet>
+    <>
       {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={fullDescription} />
+      {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={canonicalUrl} />
-      
+
       {/* Robots */}
       {noindex ? (
         <meta name="robots" content="noindex, nofollow" />
       ) : (
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       )}
-      
+
       {/* Open Graph */}
       <meta property="og:type" content={type} />
       <meta property="og:title" content={fullTitle} />
@@ -66,27 +71,29 @@ export const SEOHead = ({
       <meta property="og:image" content={ogImage} />
       <meta property="og:site_name" content="Fresh Plus Cleaning" />
       <meta property="og:locale" content="en_AU" />
-      
+
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={fullDescription} />
       <meta name="twitter:image" content={ogImage} />
-      
+
       {/* Structured Data */}
       {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
       )}
-      
+
       {/* Breadcrumb Schema */}
       {breadcrumbSchema && (
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
       )}
-    </Helmet>
+    </>
   );
 };
 

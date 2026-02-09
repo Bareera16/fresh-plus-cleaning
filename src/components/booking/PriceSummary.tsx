@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 import { Home, Sparkles, Calendar, Zap, Tag, ChevronUp, ChevronDown, Gift } from "lucide-react";
 import { useState } from "react";
 import { TrustBadgesMini } from "./TrustBadges";
@@ -12,7 +12,7 @@ import {
   CUPBOARD_BUNDLE_DISCOUNT,
   hasCupboardBundleDiscount,
   type InstantQuoteFormState,
-} from "@/lib/pricing-data";
+} from "@/src/lib/pricing-data";
 
 interface PriceSummaryProps {
   formState: InstantQuoteFormState;

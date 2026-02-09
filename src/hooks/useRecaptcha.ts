@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { loadRecaptchaScript, executeRecaptcha } from '@/lib/recaptcha';
+import { loadRecaptchaScript, executeRecaptcha } from "@/src/lib/recaptcha";
 
 /**
  * React hook for reCAPTCHA v3 integration

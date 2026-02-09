@@ -1,8 +1,8 @@
 import React from "react";
 import { Check, Minus, Plus, ChevronDown, Sparkles, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import type { FormState, ServiceOption, FrequencyOption, ExtraService } from "@/lib/pricing-data";
+import { Button } from "@/src/components/ui/button";
+import { cn } from "@/src/lib/utils";
+import type { FormState, ServiceOption, FrequencyOption, ExtraService } from "@/src/lib/pricing-data";
 
 interface StepOneProps {
   formState: FormState;

@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 import { Check, Sparkles, AlertCircle, Plus, Minus, Package, Info, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/src/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/src/components/ui/tooltip";
 import {
   extraServices,
   bondBackBundle,
@@ -17,7 +17,7 @@ import {
   CUPBOARD_BUNDLE_DISCOUNT,
   type InstantQuoteFormState,
   type ExtraService,
-} from "@/lib/pricing-data";
+} from "@/src/lib/pricing-data";
 
 interface EOLGuidanceProps {
   formState: InstantQuoteFormState;

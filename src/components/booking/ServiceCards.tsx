@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 import { Check, ArrowRight } from "lucide-react";
-import { serviceCategories, type ServiceType, type ServiceCategory } from "@/lib/pricing-data";
+import { serviceCategories, type ServiceType, type ServiceCategory } from "@/src/lib/pricing-data";
 
 interface ServiceCardsProps {
   selectedService: ServiceType | null;

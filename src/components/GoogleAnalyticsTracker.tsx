@@ -1,4 +1,4 @@
-import { useGoogleAnalytics } from "@/hooks/useGoogleAnalytics";
+import { useGoogleAnalytics } from "@/src/hooks/useGoogleAnalytics";
 
 // Component to track page views in React SPA
 const GoogleAnalyticsTracker = () => {

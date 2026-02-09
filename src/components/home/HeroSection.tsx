@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import heroImage from "/Home_Hero.webp";
+import Link from "next/link";
+import { Button } from "@/src/components/ui/button";
 import Navigation from "../Navigation";
 
 const HeroSection = () => {
@@ -12,16 +11,16 @@ const HeroSection = () => {
       {/* Hero Section */}
       <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px] overflow-hidden">
         {/* Background Image with Overlay */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${heroImage})`,
+            backgroundImage: `url(/Home_Hero.webp)`,
           }}
         >
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
         </div>
-        
+
         {/* Hero Content */}
         <div className="relative container mx-auto px-4 py-16 sm:py-20 md:py-24 lg:py-28 flex items-center justify-center min-h-[500px] sm:min-h-[600px] md:min-h-[650px] lg:min-h-[700px]">
           <div className="text-center max-w-4xl mx-auto">
@@ -34,16 +33,16 @@ const HeroSection = () => {
             <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-lg">
               Transform your space with Melbourne's most trusted cleaning professionals serving homes and businesses across Melbourne CBD, Toorak, Richmond, South Yarra, and Hawthorn for over 12 years.
             </p>
-            
+
             {/* Single CTA Button */}
             <div className="flex justify-center mb-10">
-              <Link to="/get-quote">
+              <Link href="/get-quote">
                 <Button className="bg-accent hover:bg-accent-dark text-black font-bold px-8 py-6 text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
                   See Instant Pricing
                 </Button>
               </Link>
             </div>
-            
+
             {/* Trust indicators */}
             <div className="flex flex-wrap justify-center items-center gap-6 text-white text-sm font-semibold">
               <div className="flex items-center gap-2 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full">

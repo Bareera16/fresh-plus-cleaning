@@ -1,5 +1,5 @@
 import { Shield, Award, Clock, MapPin, Leaf } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 
 interface TrustBadge {
   icon: typeof Shield;

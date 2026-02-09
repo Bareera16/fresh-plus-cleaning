@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+.next
+out
 
 # Environment variables
 .env
@@ -30,3 +32,9 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Backup folders (old Vite files)
+backups_*
+src/pages
+src/main.tsx
+src/App.tsx

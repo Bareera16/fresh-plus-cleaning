@@ -17,10 +17,10 @@ export const loadGoogleMapsScript = (): Promise<void> => {
   }
 
   googleMapsPromise = new Promise((resolve, reject) => {
-    const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-    
+    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
     if (!apiKey) {
-      reject(new Error('Google Maps API key is not configured. Please add VITE_GOOGLE_MAPS_API_KEY to your environment variables.'));
+      reject(new Error('Google Maps API key is not configured. Please add NEXT_PUBLIC_GOOGLE_MAPS_API_KEY to your environment variables.'));
       return;
     }
 
@@ -47,7 +47,7 @@ export const loadGoogleMapsScript = (): Promise<void> => {
 // Type declarations for Google Maps
 declare global {
   interface Window {
-    google: typeof google;
+    google: any;
     initGoogleMaps: () => void;
   }
 }

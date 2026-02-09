@@ -28,7 +28,7 @@ export const loadRecaptchaScript = (): Promise<void> => {
   }
 
   recaptchaLoadPromise = new Promise((resolve, reject) => {
-    const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
     if (!siteKey) {
       reject(new Error('reCAPTCHA site key is not configured'));
@@ -71,7 +71,7 @@ export const executeRecaptcha = async (action: string): Promise<string> => {
   try {
     await loadRecaptchaScript();
 
-    const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
     if (!siteKey) {
       throw new Error('reCAPTCHA site key is not configured');
     }

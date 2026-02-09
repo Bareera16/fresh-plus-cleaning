@@ -1,0 +1,48 @@
+
+> fresh-plus-cleaning@0.0.0 build
+> next build
+
+   ▲ Next.js 15.5.12
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./app/thank-you/page.tsx
+Error:   [31mx[0m You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  [31m|[0m
+  [31m|[0m  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  [31m|[0m
+
+   ,-[[36;1;4mD:\Documents\GitHub\freshplus-web-haven\app\thank-you\page.tsx[0m:1:1]
+ [2m1[0m | import { useEffect } from "react";
+   : [35;1m         ^^^^^^^^^[0m
+ [2m2[0m | import type { Metadata } from 'next';
+ [2m3[0m | import { useSearchParams, useNavigate, Link } from "next/link";
+ [2m3[0m | import { Button } from "@/src/components/ui/button";
+   `----
+
+Import trace for requested module:
+./app/thank-you/page.tsx
+
+./src/pages/About.tsx
+Module not found: Can't resolve '@/components/Navigation'
+
+https://nextjs.org/docs/messages/module-not-found
+
+./src/pages/About.tsx
+Module not found: Can't resolve '@/components/Footer'
+
+https://nextjs.org/docs/messages/module-not-found
+
+./src/pages/About.tsx
+Module not found: Can't resolve '@/components/SEOHead'
+
+https://nextjs.org/docs/messages/module-not-found
+
+./src/pages/About.tsx
+Module not found: Can't resolve '@/components/ui/button'
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+> Build failed because of webpack errors

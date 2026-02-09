@@ -1,8 +1,10 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import logoImage from "/logo.webp";
+import { Button } from "@/src/components/ui/button";
+
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,10 +27,10 @@ const Navigation = () => {
       <header className="sticky top-0 z-50 bg-white px-4 py-3 sm:py-4 shadow-md">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center flex-1 min-w-0">
-            <Link to="/" className="flex items-center flex-1 min-w-0">
-              <img 
-                src={logoImage} 
-                alt="Fresh Plus Professional Cleaning Services" 
+            <Link href="/" className="flex items-center flex-1 min-w-0">
+              <img
+                src="/logo.webp"
+                alt="Fresh Plus Professional Cleaning Services"
                 className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto flex-shrink-0"
               />
               <span className="ml-2 sm:ml-3 md:ml-4 text-sm sm:text-base md:text-lg font-medium text-primary bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent underline decoration-2 underline-offset-4 decoration-accent hidden sm:block">
@@ -37,16 +39,16 @@ const Navigation = () => {
             </Link>
           </div>
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
-            <Link to="/get-quote">
+            <Link href="/get-quote">
               <Button className="bg-accent hover:bg-accent-dark text-black font-semibold text-sm px-6 py-2">
                 See Instant Pricing
               </Button>
             </Link>
           </div>
-          
+
           {/* Mobile CTA and menu button */}
           <div className="lg:hidden flex items-center gap-2 flex-shrink-0">
-            <Link to="/get-quote" className="hidden sm:block">
+            <Link href="/get-quote" className="hidden sm:block">
               <Button size="sm" className="bg-accent hover:bg-accent-dark text-black font-semibold px-4">
                 Instant Price
               </Button>
@@ -68,7 +70,7 @@ const Navigation = () => {
           <div className="hidden md:flex items-center justify-center">
             {/* Centered Menu items */}
             <div className="flex items-center space-x-6 lg:space-x-8 xl:space-x-10 text-sm font-medium">
-              <Link to="/" className="hover:text-accent cursor-pointer transition-colors">
+              <Link href="/" className="hover:text-accent cursor-pointer transition-colors">
                 HOME
               </Link>
               {/* Services Dropdown */}
@@ -83,7 +85,7 @@ const Navigation = () => {
                     {services.map((service) => (
                       <Link
                         key={service.path}
-                        to={service.path}
+                        href={service.path}
                         className="block px-4 py-2 text-sm hover:bg-gray-50 hover:text-primary transition-colors"
                       >
                         {service.name}
@@ -92,25 +94,25 @@ const Navigation = () => {
                   </div>
                 </div>
               </div>
-              <Link to="/about" className="hover:text-accent cursor-pointer transition-colors">
+              <Link href="/about" className="hover:text-accent cursor-pointer transition-colors">
                 ABOUT
               </Link>
-              <Link to="/blog" className="hover:text-accent cursor-pointer transition-colors">
+              <Link href="/blog" className="hover:text-accent cursor-pointer transition-colors">
                 BLOG
               </Link>
-              <Link to="/contact" className="hover:text-accent cursor-pointer transition-colors">
+              <Link href="/contact" className="hover:text-accent cursor-pointer transition-colors">
                 CONTACT
               </Link>
             </div>
           </div>
-          
+
           {/* Mobile Navigation */}
           <div className="md:hidden text-center">
             <div className="flex items-center justify-center space-x-4 text-xs font-medium">
-              <Link to="/" className="hover:text-accent transition-colors">HOME</Link>
-              <Link to="/about" className="hover:text-accent transition-colors">ABOUT</Link>
-              <Link to="/blog" className="hover:text-accent transition-colors">BLOG</Link>
-              <Link to="/contact" className="hover:text-accent transition-colors">CONTACT</Link>
+              <Link href="/" className="hover:text-accent transition-colors">HOME</Link>
+              <Link href="/about" className="hover:text-accent transition-colors">ABOUT</Link>
+              <Link href="/blog" className="hover:text-accent transition-colors">BLOG</Link>
+              <Link href="/contact" className="hover:text-accent transition-colors">CONTACT</Link>
             </div>
           </div>
         </div>
@@ -121,20 +123,20 @@ const Navigation = () => {
         <div className="fixed md:hidden top-[84px] sm:top-[100px] md:top-[116px] lg:top-[132px] left-0 right-0 bg-primary text-white border-t border-primary-light shadow-xl z-30 max-h-[calc(100vh-84px)] sm:max-h-[calc(100vh-100px)] overflow-y-auto">
           <div className="px-4 py-4 space-y-3">
             <Link
-              to="/"
+              href="/"
               className="block px-3 py-3 text-white hover:bg-primary-dark rounded-lg transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
-            
+
             <div className="px-3 py-2">
               <div className="text-accent font-semibold text-sm mb-2">Our Services:</div>
               <div className="space-y-1">
                 {services.map((service) => (
                   <Link
                     key={service.path}
-                    to={service.path}
+                    href={service.path}
                     className="block px-4 py-2 text-white hover:bg-primary-dark rounded-md text-sm transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
@@ -143,35 +145,35 @@ const Navigation = () => {
                 ))}
               </div>
             </div>
-            
+
             <Link
-              to="/about"
+              href="/about"
               className="block px-3 py-3 text-white hover:bg-primary-dark rounded-lg transition-colors"
               onClick={() => setIsOpen(false)}
             >
               About
             </Link>
-            
+
             <Link
-              to="/blog"
+              href="/blog"
               className="block px-3 py-3 text-white hover:bg-primary-dark rounded-lg transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Blog
             </Link>
-            
+
             <Link
-              to="/contact"
+              href="/contact"
               className="block px-3 py-3 text-white hover:bg-primary-dark rounded-lg transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Contact
             </Link>
-            
+
             {/* Mobile CTA Button */}
             <div className="pt-4 border-t border-primary-light">
               <Link
-                to="/get-quote"
+                href="/get-quote"
                 className="block px-3 py-3 text-center text-black bg-accent hover:bg-accent-dark rounded-lg font-semibold transition-colors"
                 onClick={() => setIsOpen(false)}
               >
