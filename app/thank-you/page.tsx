@@ -9,6 +9,11 @@ import Navigation from "@/src/components/Navigation";
 import Footer from "@/src/components/Footer";
 import { SEOHead } from "@/src/components/SEOHead";
 
+
+
+// Declare the gtag global
+declare const gtag: (...args: any[]) => void;
+
 export default function ThankYouPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -23,7 +28,7 @@ export default function ThankYouPage() {
     // Fire Google Analytics and Google Ads conversion events
     if (typeof gtag !== 'undefined') {
       console.log('🎯 Firing conversion events on thank you page');
-      
+
       // Google Analytics conversion event
       gtag('event', 'conversion_complete', {
         event_category: 'conversion',
@@ -33,18 +38,18 @@ export default function ThankYouPage() {
           'custom_parameter_2': source
         }
       });
-      
+
       // Google Ads conversion event
       gtag('event', 'conversion', {
         send_to: 'AW-17525851975/avIKCMDsq5MbEMeO_aRB'
       });
-      
+
       // Page view tracking
       gtag('config', 'G-VY43MPH5J3', {
         page_title: `Thank You - ${getSourceDisplay(source)}`,
         page_location: window.location.href
       });
-      
+
       console.log('✅ Conversion events fired successfully');
     } else {
       console.warn('⚠️ gtag not available - conversion tracking may not work');
@@ -72,9 +77,9 @@ export default function ThankYouPage() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <SEOHead 
+      <SEOHead
         title="Thank You - Fresh Plus Cleaning Services Melbourne"
-        description={isContact 
+        description={isContact
           ? "Thank you for contacting us. We'll respond to your message soon."
           : "Thank you for your submission. We'll contact you soon with your personalized quote for professional cleaning services in Melbourne."
         }
@@ -95,7 +100,7 @@ export default function ThankYouPage() {
           <h1 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">
             Thank You, {displayName}
           </h1>
-          
+
           {isContact ? (
             // CONTACT FORM SUBMISSION
             <p className="text-gray-600 mb-8 text-lg leading-relaxed">
@@ -154,8 +159,8 @@ export default function ThankYouPage() {
             <p className="text-sm text-gray-600 mb-4">
               For immediate assistance or urgent cleaning needs:
             </p>
-            <a 
-              href="tel:+61403971720" 
+            <a
+              href="tel:+61403971720"
               className="inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors font-semibold w-full sm:w-auto"
             >
               <Phone className="h-4 w-4 mr-2" />
