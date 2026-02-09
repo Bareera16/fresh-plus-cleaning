@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/src/components/ui/button";
-import { CheckCircle, Home, Phone } from "lucide-react";
+import { CheckCircle, Home, Phone, Loader2 } from "lucide-react";
 import Navigation from "@/src/components/Navigation";
 import Footer from "@/src/components/Footer";
 import { SEOHead } from "@/src/components/SEOHead";
@@ -14,7 +14,9 @@ import { SEOHead } from "@/src/components/SEOHead";
 // Declare the gtag global
 declare const gtag: (...args: any[]) => void;
 
-export default function ThankYouPage() {
+import { Suspense } from "react";
+
+function ThankYouContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -187,6 +189,19 @@ export default function ThankYouPage() {
 
       <Footer />
     </div>
+  );
+}
+
+export default function ThankYouPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-white flex flex-col items-center justify-center">
+        <Loader2 className="h-10 w-10 animate-spin text-primary" />
+        <p className="mt-4 text-gray-600">Loading thank you page...</p>
+      </div>
+    }>
+      <ThankYouContent />
+    </Suspense>
   );
 };
 

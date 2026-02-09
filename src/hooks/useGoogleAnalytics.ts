@@ -1,36 +1,38 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 
-// Hook to handle Google Analytics page tracking for React SPA
+// Hook to handle Google Analytics page tracking for Next.js
 export const useGoogleAnalytics = () => {
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
-    // Track page views on route changes for SPA
-    if (typeof gtag !== 'undefined') {
+    // Track page views on route changes
+    if (typeof window !== 'undefined' && typeof (window as any).gtag !== 'undefined') {
+      const gtag = (window as any).gtag;
       gtag('config', 'G-VY43MPH5J3', {
         page_title: document.title,
         page_location: window.location.href,
-        page_path: location.pathname
+        page_path: pathname
       });
-      
+
       gtag('config', 'AW-17525851975', {
         page_title: document.title,
         page_location: window.location.href,
-        page_path: location.pathname
+        page_path: pathname
       });
-      
-      console.log('📊 Page view tracked:', location.pathname);
+
+      console.log('📊 Page view tracked:', pathname);
     }
-  }, [location]);
+  }, [pathname]);
 };
 
 // Function to track custom events
 export const trackEvent = (eventName: string, parameters: Record<string, any> = {}) => {
-  if (typeof gtag !== 'undefined') {
-    gtag('event', eventName, parameters);
+  if (typeof window !== 'undefined' && typeof (window as any).gtag !== 'undefined') {
+    (window as any).gtag('event', eventName, parameters);
     console.log('🎯 Event tracked:', eventName, parameters);
   } else {
     console.warn('⚠️ gtag not available for event:', eventName);
   }
 };
+

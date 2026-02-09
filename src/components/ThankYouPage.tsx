@@ -31,7 +31,7 @@ const ThankYouPage = ({ type, customerName, onClose }: ThankYouPageProps) => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [navigate, onClose]);
+  }, [router, onClose]);
 
   const getTypeSpecificContent = () => {
     switch (type) {
@@ -83,17 +83,17 @@ const ThankYouPage = ({ type, customerName, onClose }: ThankYouPageProps) => {
             <div className="absolute bottom-4 right-4 w-16 h-16 border-2 border-white rounded-full"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-white rounded-full"></div>
           </div>
-          
+
           {/* Logo */}
           <div className="relative z-10 mb-6">
-            <img 
-              src="/logo.webp" 
-              alt="FreshPlus" 
+            <img
+              src="/logo.webp"
+              alt="FreshPlus"
               className="h-16 w-auto mx-auto mb-4"
             />
             <div className="text-sm opacity-90 font-medium">Professional Cleaning Services</div>
           </div>
-          
+
           {/* Success Icon */}
           <div className="relative z-10 mb-6">
             <div className="bg-white/20 backdrop-blur-sm w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
@@ -101,14 +101,14 @@ const ThankYouPage = ({ type, customerName, onClose }: ThankYouPageProps) => {
             </div>
             <div className="text-6xl mb-4">{content.icon}</div>
           </div>
-          
+
           {/* Title */}
           <h1 className="text-4xl md:text-5xl font-bold mb-3 relative z-10">
             {content.title}
           </h1>
           <p className="text-xl opacity-90 relative z-10">{content.subtitle}</p>
         </div>
-        
+
         {/* Content */}
         <div className="px-8 py-12 text-center">
           {customerName && (
@@ -118,11 +118,11 @@ const ThankYouPage = ({ type, customerName, onClose }: ThankYouPageProps) => {
               </h2>
             </div>
           )}
-          
+
           <p className="text-lg text-gray-700 mb-8 leading-relaxed max-w-lg mx-auto">
             {content.message}
           </p>
-          
+
           {/* Response Time Info */}
           <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-6 mb-8">
             <div className="flex items-center justify-center gap-3 mb-3">
@@ -134,20 +134,20 @@ const ThankYouPage = ({ type, customerName, onClose }: ThankYouPageProps) => {
               <p className="font-semibold">🌙 Next business day (after 7PM)</p>
             </div>
           </div>
-          
+
           {/* Contact Info */}
           <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-6 mb-8">
             <h3 className="text-lg font-bold text-amber-800 mb-4">Need Immediate Assistance?</h3>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="tel:+61403971720" 
+              <a
+                href="tel:+61403971720"
                 className="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors"
               >
                 <Phone className="w-5 h-5" />
                 <span className="font-semibold">+61 403 971 720</span>
               </a>
-              <a 
-                href="mailto:infofreshplusclean@gmail.com" 
+              <a
+                href="mailto:infofreshplusclean@gmail.com"
                 className="flex items-center gap-2 bg-secondary text-white px-6 py-3 rounded-lg hover:bg-secondary-dark transition-colors"
               >
                 <Mail className="w-5 h-5" />
@@ -155,7 +155,7 @@ const ThankYouPage = ({ type, customerName, onClose }: ThankYouPageProps) => {
               </a>
             </div>
           </div>
-          
+
           {/* Trust Badges */}
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">
@@ -171,24 +171,24 @@ const ThankYouPage = ({ type, customerName, onClose }: ThankYouPageProps) => {
               💯 Satisfaction Guaranteed
             </span>
           </div>
-          
+
           {/* Countdown and Actions */}
           <div className="border-t border-gray-200 pt-8">
             <p className="text-gray-600 mb-6">
               Redirecting to homepage in <span className="font-bold text-primary text-xl">{countdown}</span> seconds...
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 onClick={() => router.push('/')}
                 className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2"
               >
                 <Home className="w-5 h-5" />
                 Go to Homepage Now
               </Button>
-              
+
               {onClose && (
-                <Button 
+                <Button
                   onClick={onClose}
                   variant="outline"
                   className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-semibold"
