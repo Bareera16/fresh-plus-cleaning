@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { 
+import {
   Home,
   Building,
   Sparkles,
@@ -15,7 +15,8 @@ import {
   Shield,
   Calendar,
   Leaf,
-  ArrowRight
+  ArrowRight,
+  Phone
 } from "lucide-react";
 
 const Services = () => {
@@ -95,8 +96,8 @@ const Services = () => {
     }
   ];
 
-    return (
-      <div className="min-h-screen bg-white">
+  return (
+    <div className="min-h-screen bg-white">
       <SEOHead
         title="Professional Cleaning Services Melbourne | Fresh Plus Cleaning"
         description="Complete cleaning services across Melbourne. Residential, commercial, deep cleaning, carpet, tile & grout, pressure washing, and more. Licensed, insured, eco-friendly."
@@ -119,15 +120,15 @@ const Services = () => {
           }))
         }}
       />
-      
-        <Navigation />
-      
+
+      <Navigation />
+
       {/* Hero Section */}
       <section className="bg-white py-16 md:py-20 text-center px-4">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6">
             Professional Cleaning Services Melbourne
-                </h1>
+          </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
             From residential homes to commercial spaces, we provide comprehensive cleaning solutions trusted by Melbourne for over 12 years.
           </p>
@@ -139,7 +140,7 @@ const Services = () => {
               <a href="tel:+61403971720">Call 0403 971 720</a>
             </Button>
           </div>
-                  </div>
+        </div>
       </section>
 
       {/* Trust Bar */}
@@ -157,7 +158,7 @@ const Services = () => {
               );
             })}
           </div>
-                  </div>
+        </div>
       </section>
 
       {/* Services Grid */}
@@ -179,9 +180,8 @@ const Services = () => {
                 <Link
                   key={index}
                   to={service.path}
-                  className={`bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all group relative ${
-                    service.popular ? 'ring-2 ring-accent' : 'border border-gray-100'
-                  }`}
+                  className={`bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all group relative ${service.popular ? 'ring-2 ring-accent' : 'border border-gray-100'
+                    }`}
                 >
                   {service.popular && (
                     <div className="absolute -top-3 right-4">
@@ -199,7 +199,7 @@ const Services = () => {
                     Learn more
                     <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                   </div>
-              </Link>
+                </Link>
               );
             })}
           </div>
