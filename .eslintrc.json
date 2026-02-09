@@ -4,5 +4,8 @@
         "react/no-unescaped-entities": "off",
         "@next/next/no-page-custom-font": "off",
         "jsx-a11y/alt-text": "off"
-    }
+    },
+    "ignorePatterns": [
+        "src/_vite_pages_archive/"
+    ]
 }

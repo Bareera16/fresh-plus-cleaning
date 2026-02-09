@@ -36,7 +36,7 @@
   ],
   "exclude": [
     "node_modules",
-    "src/vite_pages",
+    "src/_vite_pages_archive",
     "vite.config.ts",
     "backups_*",
     "backups_*/**/*"
