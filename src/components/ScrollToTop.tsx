@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     // Scroll to top on route change
