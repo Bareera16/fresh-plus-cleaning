@@ -1,9 +1,9 @@
-import { blogPosts } from "@/src/data/blogPosts";
+import { blogPosts } from "@/data/blogPosts";
 import { notFound } from "next/navigation";
-import { SEOHead } from "@/src/components/SEOHead";
-import Navbar from "@/src/components/home/navbar";
-import Footer from "@/src/components/home/footer";
-import { Button } from "@/src/components/ui/button";
+import { SEOHead } from "@/components/SEOHead";
+import Navbar from "@/components/home/navbar";
+import Footer from "@/components/home/footer";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 

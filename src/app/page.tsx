@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/home/navbar";
 import HeroSlider from "@/components/home/hero-slider";
 import WhyChooseUs from "@/components/home/why-choose-us";
@@ -20,3 +21,4 @@ export default function Home() {
         </main>
     );
 }
+
