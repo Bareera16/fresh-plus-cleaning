@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import WhyChooseUs from "@/components/home/why-choose-us";
@@ -101,12 +102,14 @@ export default function CommercialCleaning() {
             </motion.div>
 
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <button className="bg-orange-500 hover:bg-black text-white px-8 py-4 font-black uppercase text-[12px] tracking-widest transition-all shadow-lg hover:-translate-y-1">
-                See Instant Pricing
-              </button>
-              <button className="border-2 border-blue-900 text-blue-900 px-8 py-4 font-black uppercase text-[12px] tracking-widest transition-all shadow-lg hover:-translate-y-1">
+              <Link href="/get-quote">
+                <button className="bg-orange-500 hover:bg-black text-white px-8 py-4 font-black uppercase text-[12px] tracking-widest transition-all shadow-lg hover:-translate-y-1">
+                  See Instant Pricing
+                </button>
+              </Link>
+              <a href="tel:0431977720" className="border-2 border-blue-900 text-blue-900 px-8 py-4 font-black uppercase text-[12px] tracking-widest transition-all shadow-lg hover:-translate-y-1 block text-center flex items-center justify-center">
                 Call 0431 977 720
-              </button>
+              </a>
             </div>
           </div>
         </motion.div>
@@ -193,9 +196,11 @@ export default function CommercialCleaning() {
                       </div>
                     ))}
                   </div>
-                  <button className={`w-full py-4 rounded-2xl text-white font-black uppercase tracking-widest text-[11px] ${plan.btnColor} hover:brightness-110 transition-all`}>
-                    {plan.btn}
-                  </button>
+                  <Link href="/get-quote" className="w-full block">
+                    <button className={`w-full py-4 rounded-2xl text-white font-black uppercase tracking-widest text-[11px] ${plan.btnColor} hover:brightness-110 transition-all`}>
+                      {plan.btn}
+                    </button>
+                  </Link>
                 </motion.div>
               ))}
             </div>

@@ -1,29 +1,27 @@
-import Navigation from "@/components/Navigation";
+import Navbar from "@/components/home/navbar";
 import type { Metadata } from 'next';
-import Footer from "@/components/Footer";
+import Footer from "@/components/home/footer";
 
 export default function TermsOfServicePage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
+      <Navbar />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-secondary to-secondary-dark text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6">Terms of Service</h1>
-            <p className="text-xl text-secondary-light">
-              Professional cleaning services you can trust. Our terms ensure quality and transparency.
-            </p>
-          </div>
-        </div>
-      </section>
+
 
       {/* Content Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="relative pt-48 pb-16 bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/Home_Hero.webp')" }}>
+        <div className="absolute inset-0 bg-black/60 z-0" />
+        <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12">
+
+              <div className="text-center mb-10">
+                <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900">Terms of Service</h1>
+                <p className="text-lg text-gray-600">
+                  Professional cleaning services you can trust. Our terms ensure quality and transparency.
+                </p>
+              </div>
 
               {/* Last Updated */}
               <div className="mb-8 p-4 bg-secondary-light rounded-lg border-l-4 border-secondary">

@@ -25,8 +25,8 @@ export default function Footer() {
         { name: "Blog", href: "/blog" },
         { name: "Contact", href: "/contact" },
         { name: "See Instant Pricing", href: "/get-quote" },
-        { name: "Privacy Policy", href: "/#" },
-        { name: "Terms of Service", href: "/#" },
+        { name: "Privacy Policy", href: "/privacy-policy" },
+        { name: "Terms of Service", href: "/terms-of-service" },
     ];
 
     return (
@@ -93,16 +93,16 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h4 className="text-sm font-black uppercase tracking-widest mb-8 text-white border-l-4 border-green-500 pl-3">Contact Info</h4>
                         <div className="flex flex-col gap-6">
-                            <div className="flex items-start gap-4 group">
+                            <a href="tel:+6143971720" className="flex items-start gap-4 group">
                                 <div className="bg-white/10 p-3 rounded-xl group-hover:bg-orange-500 transition-all duration-300">
                                     <Phone size={18} className="text-white" />
                                 </div>
                                 <div>
-                                    <p className="text-sm font-black">043971720</p>
+                                    <p className="text-sm font-black">0439 717 20</p>
                                     <p className="text-[10px] text-gray-400 font-bold uppercase mt-1">7AM - 7PM weekdays</p>
                                 </div>
-                            </div>
-                            <div className="flex items-start gap-4 group">
+                            </a>
+                            <a href="mailto:Info@freshpluscleaning.com.au" className="flex items-start gap-4 group">
                                 <div className="bg-white/10 p-3 rounded-xl group-hover:bg-orange-500 transition-all duration-300">
                                     <Mail size={18} className="text-white" />
                                 </div>
@@ -110,7 +110,7 @@ export default function Footer() {
                                     <p className="text-sm font-black break-all">Info@freshpluscleaning.com.au</p>
                                     <p className="text-[10px] text-gray-400 font-bold uppercase mt-1">Email anytime</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
