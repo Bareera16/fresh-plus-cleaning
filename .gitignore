@@ -38,3 +38,6 @@ backups_*
 src/pages
 src/main.tsx
 src/App.tsx
+
+# Archive folder (old docs, scripts, logs)
+.archive
