@@ -1,10 +1,10 @@
 import { cn } from "@/src/lib/utils";
 import { Check, Home, Building2, Sofa, Package } from "lucide-react";
-import { 
-  propertyTypes, 
-  bedroomOptions, 
+import {
+  propertyTypes,
+  bedroomOptions,
   bathroomOptions,
-  type InstantQuoteFormState 
+  type InstantQuoteFormState
 } from "@/src/lib/pricing-data";
 import { Label } from "@/src/components/ui/label";
 
@@ -14,10 +14,10 @@ interface PropertyDetailsProps {
   showFurnished?: boolean;
 }
 
-export function PropertyDetails({ 
-  formState, 
-  onUpdate, 
-  showFurnished = false 
+export function PropertyDetails({
+  formState,
+  onUpdate,
+  showFurnished = false
 }: PropertyDetailsProps) {
   return (
     <div className="space-y-6">
@@ -32,9 +32,9 @@ export function PropertyDetails({
               onClick={() => onUpdate({ propertyType: type.id })}
               className={cn(
                 "flex flex-col items-center gap-1 p-3 rounded-lg border-2 transition-all",
-                "hover:border-emerald-400",
+                "hover:border-green-400",
                 formState.propertyType === type.id
-                  ? "border-emerald-500 bg-emerald-50"
+                  ? "border-green-600 bg-green-50"
                   : "border-border"
               )}
             >
@@ -63,7 +63,7 @@ export function PropertyDetails({
               )}
             >
               {option.popular && (
-                <span className="absolute -top-2 right-2 px-2 py-0.5 text-xs font-semibold bg-emerald-500 text-white rounded-full">
+                <span className="absolute -top-2 right-2 px-2 py-0.5 text-xs font-semibold bg-green-500 text-white rounded-full">
                   Popular
                 </span>
               )}
@@ -73,7 +73,7 @@ export function PropertyDetails({
                   className={cn(
                     "h-4 w-4 rounded-full border-2 flex items-center justify-center",
                     formState.bedrooms === option.bedrooms
-                      ? "border-emerald-500 bg-emerald-500"
+                      ? "border-green-500 bg-green-500"
                       : "border-muted-foreground/30"
                   )}
                 >
@@ -89,7 +89,7 @@ export function PropertyDetails({
                 <span className="text-xs text-muted-foreground line-through">
                   ${option.originalPrice}
                 </span>
-                <span className="text-lg font-bold text-emerald-600">
+                <span className="text-lg font-bold text-green-600">
                   ${option.discountedPrice}
                 </span>
               </div>
@@ -111,7 +111,7 @@ export function PropertyDetails({
                 "px-4 py-2.5 rounded-full border-2 font-medium transition-all",
                 "hover:border-emerald-400",
                 formState.bathrooms === option.value
-                  ? "border-emerald-500 bg-emerald-500 text-white"
+                  ? "border-green-500 bg-green-500 text-white"
                   : "border-border"
               )}
             >
@@ -136,9 +136,9 @@ export function PropertyDetails({
               onClick={() => onUpdate({ furnished: "furnished" })}
               className={cn(
                 "flex items-center gap-3 p-4 rounded-lg border-2 transition-all",
-                "hover:border-emerald-400",
+                "hover:border-green-400",
                 formState.furnished === "furnished"
-                  ? "border-emerald-500 bg-emerald-50"
+                  ? "border-green-500 bg-green-50"
                   : "border-border"
               )}
             >
@@ -146,7 +146,7 @@ export function PropertyDetails({
                 className={cn(
                   "p-2 rounded-lg",
                   formState.furnished === "furnished"
-                    ? "bg-emerald-100"
+                    ? "bg-green-100"
                     : "bg-muted"
                 )}
               >
@@ -154,7 +154,7 @@ export function PropertyDetails({
                   className={cn(
                     "h-6 w-6",
                     formState.furnished === "furnished"
-                      ? "text-emerald-600"
+                      ? "text-green-600"
                       : "text-muted-foreground"
                   )}
                 />

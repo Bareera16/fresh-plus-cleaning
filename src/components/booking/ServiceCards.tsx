@@ -50,11 +50,11 @@ function ServiceCard({ service, isSelected, onSelect }: ServiceCardProps) {
       onClick={onSelect}
       className={cn(
         "relative flex flex-col p-4 md:p-5 rounded-xl border-2 text-left transition-all duration-200",
-        "hover:border-emerald-400 hover:shadow-lg hover:scale-[1.02]",
-        "focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2",
+        "hover:border-green-400 hover:shadow-lg hover:scale-[1.02]",
+        "focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2",
         "min-h-[140px] md:min-h-[160px]",
         isSelected
-          ? "border-emerald-500 bg-emerald-50 shadow-lg"
+          ? "border-green-600 bg-green-50 shadow-lg"
           : "border-border bg-card"
       )}
     >
@@ -63,7 +63,7 @@ function ServiceCard({ service, isSelected, onSelect }: ServiceCardProps) {
         <span
           className={cn(
             "absolute -top-2.5 right-3 px-2.5 py-0.5 text-xs font-semibold rounded-full",
-            "bg-emerald-500 text-white"
+            "bg-green-600 text-white"
           )}
         >
           {service.popular ? "Popular" : service.tag}
@@ -75,7 +75,7 @@ function ServiceCard({ service, isSelected, onSelect }: ServiceCardProps) {
         className={cn(
           "absolute top-3 left-3 flex h-5 w-5 items-center justify-center rounded-full border-2 transition-colors",
           isSelected
-            ? "border-emerald-500 bg-emerald-500 text-white"
+            ? "border-green-600 bg-green-600 text-white"
             : "border-muted-foreground/30"
         )}
       >

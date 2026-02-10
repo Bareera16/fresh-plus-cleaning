@@ -132,9 +132,9 @@ export function ContactSchedule({ formState, onUpdate }: ContactScheduleProps) {
               onClick={() => onUpdate({ preferredTime: slot.id })}
               className={cn(
                 "flex flex-col items-center p-3 rounded-lg border-2 transition-all",
-                "hover:border-emerald-400",
+                "hover:border-green-400",
                 formState.preferredTime === slot.id
-                  ? "border-emerald-500 bg-emerald-50"
+                  ? "border-green-600 bg-green-50"
                   : "border-border"
               )}
             >
@@ -142,7 +142,7 @@ export function ContactSchedule({ formState, onUpdate }: ContactScheduleProps) {
                 className={cn(
                   "h-5 w-5 mb-1",
                   formState.preferredTime === slot.id
-                    ? "text-emerald-600"
+                    ? "text-green-600"
                     : "text-muted-foreground"
                 )}
               />

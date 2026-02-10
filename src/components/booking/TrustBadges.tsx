@@ -31,7 +31,7 @@ export function TrustBadges({ variant = "horizontal", className }: TrustBadgesPr
               key={badge.label}
               className="flex items-center gap-1.5 px-2.5 py-1 bg-muted/50 rounded-full"
             >
-              <Icon className="h-3.5 w-3.5 text-emerald-600" />
+              <Icon className="h-3.5 w-3.5 text-green-600" />
               <span className="text-xs font-medium text-muted-foreground">
                 {badge.label}
               </span>
@@ -52,8 +52,8 @@ export function TrustBadges({ variant = "horizontal", className }: TrustBadgesPr
               key={badge.label}
               className="flex items-center gap-3 text-sm"
             >
-              <div className="p-1.5 rounded-lg bg-emerald-100">
-                <Icon className="h-4 w-4 text-emerald-600" />
+              <div className="p-1.5 rounded-lg bg-green-100">
+                <Icon className="h-4 w-4 text-green-600" />
               </div>
               <span className="text-muted-foreground">{badge.label}</span>
             </div>
@@ -78,19 +78,19 @@ export function TrustBadges({ variant = "horizontal", className }: TrustBadgesPr
             key={badge.label}
             className={cn(
               "flex items-center gap-2",
-              badge.highlight && "text-emerald-600"
+              badge.highlight && "text-green-600"
             )}
           >
             <Icon
               className={cn(
                 "h-4 w-4 md:h-5 md:w-5",
-                badge.highlight ? "text-emerald-600" : "text-muted-foreground"
+                badge.highlight ? "text-green-600" : "text-muted-foreground"
               )}
             />
             <span
               className={cn(
                 "text-xs md:text-sm font-medium",
-                badge.highlight ? "text-emerald-600" : "text-muted-foreground"
+                badge.highlight ? "text-green-600" : "text-muted-foreground"
               )}
             >
               {badge.label}
@@ -107,15 +107,15 @@ export function TrustBadgesMini() {
   return (
     <div className="flex items-center gap-4 text-xs text-muted-foreground">
       <div className="flex items-center gap-1">
-        <Shield className="h-3.5 w-3.5 text-emerald-500" />
+        <Shield className="h-3.5 w-3.5 text-green-500" />
         <span>Insured</span>
       </div>
       <div className="flex items-center gap-1">
-        <Award className="h-3.5 w-3.5 text-emerald-500" />
+        <Award className="h-3.5 w-3.5 text-green-500" />
         <span>Guaranteed</span>
       </div>
       <div className="flex items-center gap-1">
-        <Leaf className="h-3.5 w-3.5 text-emerald-500" />
+        <Leaf className="h-3.5 w-3.5 text-green-500" />
         <span>Eco</span>
       </div>
     </div>

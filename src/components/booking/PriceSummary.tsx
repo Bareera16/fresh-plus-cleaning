@@ -51,7 +51,7 @@ export function PriceSummary({
               ${pricing.originalTotal}
             </span>
           )}
-          <span className="text-2xl font-bold text-emerald-600">
+          <span className="text-2xl font-bold text-green-600">
             ${pricing.total}
           </span>
         </div>
@@ -78,7 +78,7 @@ export function PriceSummary({
               {selectedService?.name || "Select a service"}
             </span>
             {extrasCount > 0 && (
-              <span className="px-2 py-0.5 text-xs bg-emerald-100 text-emerald-600 rounded-full">
+              <span className="px-2 py-0.5 text-xs bg-green-100 text-green-600 rounded-full">
                 +{extrasCount} extras
               </span>
             )}
@@ -90,7 +90,7 @@ export function PriceSummary({
                   ${pricing.originalTotal}
                 </span>
               )}
-              <span className="text-xl font-bold text-emerald-600">
+              <span className="text-xl font-bold text-green-600">
                 ${pricing.total}
               </span>
             </div>
@@ -134,7 +134,7 @@ export function PriceSummary({
         {/* Base Service */}
         {selectedService && (
           <div className="flex items-start gap-3 text-sm">
-            <Home className="h-4 w-4 text-emerald-600 mt-0.5 shrink-0" />
+            <Home className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
             <div className="flex-1">
               <span className="font-medium">{selectedService.name}</span>
               {selectedBedroom && (
@@ -158,15 +158,15 @@ export function PriceSummary({
         {/* Bundle */}
         {formState.bundleSelected && (
           <div className="flex items-start gap-3 text-sm">
-            <Sparkles className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
-            <span className="flex-1 font-medium text-emerald-700">
+            <Sparkles className="h-4 w-4 text-green-500 mt-0.5 shrink-0" />
+            <span className="flex-1 font-medium text-green-700">
               {bondBackBundle.name}
             </span>
             <div className="text-right">
               <span className="text-xs text-muted-foreground line-through mr-1">
                 ${bondBackBundle.originalTotal}
               </span>
-              <span className="font-semibold text-emerald-600">
+              <span className="font-semibold text-green-600">
                 ${bondBackBundle.bundlePrice}
               </span>
             </div>
@@ -214,11 +214,11 @@ export function PriceSummary({
         {/* Kitchen Cupboards Bundle Discount */}
         {hasCupboardBundleDiscount(formState.selectedExtras) && !formState.bundleSelected && (
           <div className="flex items-start gap-3 text-sm">
-            <Gift className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
-            <span className="flex-1 font-medium text-emerald-700">
+            <Gift className="h-4 w-4 text-green-500 mt-0.5 shrink-0" />
+            <span className="flex-1 font-medium text-green-700">
               Kitchen Cupboards Bundle
             </span>
-            <span className="font-semibold text-emerald-600">
+            <span className="font-semibold text-green-600">
               -${CUPBOARD_BUNDLE_DISCOUNT}
             </span>
           </div>
@@ -250,7 +250,7 @@ export function PriceSummary({
                 ${pricing.originalTotal}
               </span>
             )}
-            <span className="text-3xl font-bold text-emerald-600">
+            <span className="text-3xl font-bold text-green-600">
               ${pricing.total}
             </span>
           </div>
@@ -268,9 +268,9 @@ export function PriceSummary({
 // Savings Badge Component
 function SavingsBadge({ savings }: { savings: number }) {
   return (
-    <div className="flex items-center gap-2 px-3 py-2 bg-emerald-50 border border-emerald-200 rounded-lg">
-      <Tag className="h-4 w-4 text-emerald-600" />
-      <span className="text-sm font-semibold text-emerald-700">
+    <div className="flex items-center gap-2 px-3 py-2 bg-green-50 border border-green-200 rounded-lg">
+      <Tag className="h-4 w-4 text-green-600" />
+      <span className="text-sm font-semibold text-green-700">
         You Save: ${savings}
       </span>
     </div>
@@ -306,7 +306,7 @@ function PriceBreakdown({
 
       {/* Bundle */}
       {formState.bundleSelected && (
-        <div className="flex justify-between text-emerald-700">
+        <div className="flex justify-between text-green-700">
           <span>{bondBackBundle.name}</span>
           <span className="font-medium">${bondBackBundle.bundlePrice}</span>
         </div>
@@ -340,7 +340,7 @@ function PriceBreakdown({
 
       {/* Cupboard Bundle Discount */}
       {hasCupboardBundleDiscount(formState.selectedExtras) && !formState.bundleSelected && (
-        <div className="flex justify-between text-emerald-700">
+        <div className="flex justify-between text-green-700">
           <span>Kitchen Cupboards Bundle</span>
           <span className="font-medium">-${CUPBOARD_BUNDLE_DISCOUNT}</span>
         </div>

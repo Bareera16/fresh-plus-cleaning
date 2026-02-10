@@ -169,8 +169,8 @@ export function EOLGuidance({ formState, onUpdate }: EOLGuidanceProps) {
         className={cn(
           "rounded-lg border transition-all",
           isSelected
-            ? "border-emerald-300 bg-emerald-50/50"
-            : "border-border hover:border-emerald-200",
+            ? "border-green-300 bg-green-50/50"
+            : "border-border hover:border-green-200",
           isInBundle && "opacity-60"
         )}
       >
@@ -203,15 +203,15 @@ export function EOLGuidance({ formState, onUpdate }: EOLGuidanceProps) {
                         className={cn(
                           "p-1 rounded-full transition-all duration-200",
                           isExpanded
-                            ? "bg-emerald-100 text-emerald-600 shadow-sm ring-1 ring-emerald-200"
-                            : "text-muted-foreground hover:text-emerald-600 hover:bg-emerald-50"
+                            ? "bg-green-100 text-green-600 shadow-sm ring-1 ring-green-200"
+                            : "text-muted-foreground hover:text-green-600 hover:bg-green-50"
                         )}
                       >
                         <Info className="h-3.5 w-3.5" />
                       </button>
                     </TooltipTrigger>
-                    <TooltipContent 
-                      side="top" 
+                    <TooltipContent
+                      side="top"
                       className="max-w-xs text-xs hidden md:block bg-white shadow-lg border border-gray-200 p-3 rounded-lg"
                     >
                       <p className="font-semibold text-gray-800 mb-1.5">What's included:</p>
@@ -283,7 +283,7 @@ export function EOLGuidance({ formState, onUpdate }: EOLGuidanceProps) {
                 variant="default"
                 size="sm"
                 onClick={() => handleExtraToggle(extra.id, extra)}
-                className="bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white shadow-md shadow-emerald-200/50"
+                className="bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white shadow-md shadow-green-200/50"
               >
                 <Check className="h-4 w-4 mr-1" /> Added
               </Button>
@@ -294,19 +294,19 @@ export function EOLGuidance({ formState, onUpdate }: EOLGuidanceProps) {
                 variant="outline"
                 size="sm"
                 onClick={() => handleExtraToggle(extra.id, extra)}
-                className="text-emerald-600 border-emerald-300 hover:bg-emerald-100"
+                className="text-green-600 border-green-300 hover:bg-green-100"
               >
                 Add
               </Button>
             )}
           </div>
         </div>
-        
+
         {/* Expandable details section (mobile-friendly) */}
         {extra.details && isExpanded && (
           <div className="px-3 pb-3 -mt-1 md:hidden">
-            <div className="p-3 bg-gradient-to-br from-emerald-50 to-white rounded-lg border border-emerald-100 shadow-sm">
-              <p className="text-xs font-semibold text-emerald-800 mb-1.5">What's included:</p>
+            <div className="p-3 bg-gradient-to-br from-green-50 to-white rounded-lg border border-green-100 shadow-sm">
+              <p className="text-xs font-semibold text-green-800 mb-1.5">What's included:</p>
               <p className="text-xs text-gray-600 leading-relaxed">
                 {extra.details}
               </p>
@@ -338,24 +338,24 @@ export function EOLGuidance({ formState, onUpdate }: EOLGuidanceProps) {
           className={cn(
             "p-4 md:p-5 rounded-xl border-2 transition-all",
             formState.bundleSelected
-              ? "border-emerald-500 bg-emerald-50 animate-bundle-glow"
-              : "border-dashed border-emerald-300 bg-emerald-50/50 animate-bundle-border"
+              ? "border-green-500 bg-green-50 animate-bundle-glow"
+              : "border-dashed border-green-300 bg-green-50/50 animate-bundle-border"
           )}
         >
           <div className="flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-emerald-100">
-              <Package className="h-6 w-6 text-emerald-600" />
+            <div className="p-2 rounded-lg bg-green-100">
+              <Package className="h-6 w-6 text-green-600" />
             </div>
             <div className="flex-1">
               <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="font-bold text-emerald-800">
+                <h3 className="font-bold text-green-800">
                   {bondBackBundle.name}
                 </h3>
-                <span className="px-2 py-0.5 text-xs font-semibold bg-emerald-500 text-white rounded-full">
+                <span className="px-2 py-0.5 text-xs font-semibold bg-green-500 text-white rounded-full">
                   Save ${bondBackBundle.savings}
                 </span>
               </div>
-              <p className="text-sm text-emerald-700 mt-1">
+              <p className="text-sm text-green-700 mt-1">
                 {bondBackBundle.description}
               </p>
               <div className="flex flex-wrap gap-1.5 mt-3">
@@ -364,7 +364,7 @@ export function EOLGuidance({ formState, onUpdate }: EOLGuidanceProps) {
                   return extra ? (
                     <span
                       key={extraId}
-                      className="px-2 py-0.5 text-xs bg-emerald-200 text-emerald-800 rounded-full"
+                      className="px-2 py-0.5 text-xs bg-green-200 text-green-800 rounded-full"
                     >
                       {extra.name}
                     </span>
@@ -373,10 +373,10 @@ export function EOLGuidance({ formState, onUpdate }: EOLGuidanceProps) {
               </div>
               <div className="flex items-center justify-between mt-4">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-sm text-emerald-600 line-through">
+                  <span className="text-sm text-green-600 line-through">
                     ${bondBackBundle.originalTotal}
                   </span>
-                  <span className="text-2xl font-bold text-emerald-700">
+                  <span className="text-2xl font-bold text-green-700">
                     ${bondBackBundle.bundlePrice}
                   </span>
                 </div>
@@ -386,8 +386,8 @@ export function EOLGuidance({ formState, onUpdate }: EOLGuidanceProps) {
                   variant={formState.bundleSelected ? "default" : "outline"}
                   className={cn(
                     formState.bundleSelected
-                      ? "bg-emerald-600 hover:bg-emerald-700"
-                      : "border-emerald-500 text-emerald-700 hover:bg-emerald-100"
+                      ? "bg-green-600 hover:bg-green-700"
+                      : "border-green-500 text-green-700 hover:bg-green-100"
                   )}
                 >
                   {formState.bundleSelected ? (
@@ -413,7 +413,7 @@ export function EOLGuidance({ formState, onUpdate }: EOLGuidanceProps) {
               Complete your kitchen cupboards
             </p>
             <p className="text-xs text-teal-700 mt-1">
-              Add {cupboardBundleInfo.hasOnlyOne === "inside" ? "outside" : "inside"} cupboards 
+              Add {cupboardBundleInfo.hasOnlyOne === "inside" ? "outside" : "inside"} cupboards
               and save ${CUPBOARD_BUNDLE_DISCOUNT} with our automatic bundle discount!
             </p>
           </div>
@@ -422,13 +422,13 @@ export function EOLGuidance({ formState, onUpdate }: EOLGuidanceProps) {
 
       {/* Kitchen Cupboards Bundle Applied */}
       {cupboardBundleInfo.hasDiscount && !formState.bundleSelected && (
-        <div className="flex items-start gap-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg animate-bundle-glow">
-          <Check className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+        <div className="flex items-start gap-3 p-4 bg-green-50 border border-green-200 rounded-lg animate-bundle-glow">
+          <Check className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
           <div>
-            <p className="text-sm font-medium text-emerald-800">
+            <p className="text-sm font-medium text-green-800">
               Kitchen Cupboards Bundle Applied!
             </p>
-            <p className="text-xs text-emerald-700 mt-1">
+            <p className="text-xs text-green-700 mt-1">
               You saved ${CUPBOARD_BUNDLE_DISCOUNT} by adding both inside & outside cupboards
             </p>
           </div>
@@ -460,7 +460,7 @@ export function EOLGuidance({ formState, onUpdate }: EOLGuidanceProps) {
             .filter(e => !mostPopularExtras.includes(e.id))
             .filter(filterByFurnished);
           if (filteredExtras.length === 0) return null;
-          
+
           return (
             <div key={category} className="space-y-3">
               <h3 className="font-semibold text-muted-foreground text-sm uppercase tracking-wide">

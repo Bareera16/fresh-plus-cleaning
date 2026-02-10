@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 15%;
 
-    --primary: 160 84% 39%;
+    --primary: 142 76% 36%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 158 60% 95%;
@@ -30,7 +30,7 @@
 
     --border: 0 0% 88%;
     --input: 0 0% 88%;
-    --ring: 160 84% 39%;
+    --ring: 142 76% 36%;
 
     --radius: 0.5rem;
 
@@ -38,7 +38,7 @@
 
     --sidebar-foreground: 0 0% 30%;
 
-    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary: 142 76% 36%;
 
     --sidebar-primary-foreground: 0 0% 100%;
 
@@ -48,17 +48,24 @@
 
     --sidebar-border: 0 0% 88%;
 
-    --sidebar-ring: 160 84% 45%;
+    --sidebar-ring: 142 76% 36%;
 
     /* Brand Colors from Source */
-    --brand-green: #16a34a; /* green-600 */
-    --brand-green-light: #f0fdf4; /* green-50 */
-    --brand-orange: #f97316; /* orange-500 */
-    --brand-orange-light: #fb923c; /* orange-400 */
-    --brand-blue: #1d4ed8; /* blue-700 */
-    --brand-blue-dark: #1e3a8a; /* blue-900 */
-    --brand-blue-light: #bfdbfe; /* blue-200 */
-    
+    --brand-green: #16a34a;
+    /* green-600 */
+    --brand-green-light: #f0fdf4;
+    /* green-50 */
+    --brand-orange: #f97316;
+    /* orange-500 */
+    --brand-orange-light: #fb923c;
+    /* orange-400 */
+    --brand-blue: #1d4ed8;
+    /* blue-700 */
+    --brand-blue-dark: #1e3a8a;
+    /* blue-900 */
+    --brand-blue-light: #bfdbfe;
+    /* blue-200 */
+
     --swiper-navigation-size: 24px;
   }
 
@@ -72,7 +79,7 @@
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 96%;
 
-    --primary: 158 64% 52%;
+    --primary: 142 76% 36%;
     --primary-foreground: 0 0% 8%;
 
     --secondary: 0 0% 15%;
@@ -89,15 +96,15 @@
 
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 158 64% 52%;
+    --ring: 142 76% 36%;
     --sidebar-background: 0 0% 10%;
     --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 158 64% 52%;
+    --sidebar-primary: 142 76% 36%;
     --sidebar-primary-foreground: 0 0% 8%;
     --sidebar-accent: 0 0% 12%;
     --sidebar-accent-foreground: 0 0% 96%;
     --sidebar-border: 0 0% 12%;
-    --sidebar-ring: 158 64% 55%;
+    --sidebar-ring: 142 76% 36%;
   }
 }
 
@@ -114,14 +121,16 @@
 /* Source specific styles */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #ffffff !important; /* Default color White */
+  color: #ffffff !important;
+  /* Default color White */
   transition: all 0.3s ease;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover,
 .swiper-button-next:active {
-  color: #22c55e !important; /* Green color (Tailwind green-500) on click/hover */
+  color: #16a34a !important;
+  /* Green color (Tailwind green-600) on click/hover */
 }
 
 /* Agar aap dots (pagination) bhi use kar rahe hain toh unka color bhi change kar sakte hain */
@@ -131,15 +140,18 @@
 }
 
 .swiper-pagination-bullet-active {
-  background: #22c55e !important;
+  background: #16a34a !important;
   opacity: 1;
 }
+
 .swiper-button-next {
-  right: 30px !important; /* Kinare se thora andar */
+  right: 30px !important;
+  /* Kinare se thora andar */
 }
 
 .swiper-button-prev {
-  left: 30px !important; /* Kinare se thora andar */
+  left: 30px !important;
+  /* Kinare se thora andar */
 }
 
 /* Arrow size ko thora aur compact karein */
@@ -151,28 +163,37 @@
 
 /* Bundle highlight animations */
 @keyframes bundle-glow {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.2);
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.2);
   }
+
   50% {
-    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+    box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15);
   }
 }
 
 @keyframes bundle-border-pulse {
-  0%, 100% {
-    border-color: rgba(16, 185, 129, 0.5);
+
+  0%,
+  100% {
+    border-color: rgba(22, 163, 74, 0.5);
   }
+
   50% {
-    border-color: rgba(16, 185, 129, 0.8);
+    border-color: rgba(22, 163, 74, 0.8);
   }
 }
 
 @keyframes suggestion-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     box-shadow: 0 2px 8px rgba(20, 184, 166, 0.1);
   }
+
   50% {
     transform: scale(1.005);
     box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);

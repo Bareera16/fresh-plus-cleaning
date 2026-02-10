@@ -48,8 +48,8 @@ const sections: AccordionSection[] = [
     id: 1,
     title: "Property Details",
     subtitle: "Tell us about your property",
-    isComplete: (state) => 
-      state.propertyType !== "" && 
+    isComplete: (state) =>
+      state.propertyType !== "" &&
       state.bedrooms > 0 &&
       (state.selectedService !== "end-of-lease" || state.furnished !== null),
   },
@@ -85,7 +85,7 @@ export function AccordionForm({ onSubmit }: AccordionFormProps) {
   const [bookingId, setBookingId] = useState<string>("");
   const [pendingService, setPendingService] = useState<ServiceType | null>(null);
   const [showResetDialog, setShowResetDialog] = useState(false);
-  
+
   const updateFormState = (updates: Partial<InstantQuoteFormState>) => {
     setFormState((prev) => ({ ...prev, ...updates }));
   };
@@ -113,14 +113,14 @@ export function AccordionForm({ onSubmit }: AccordionFormProps) {
     if (serviceId === formState.selectedService) {
       return;
     }
-    
+
     // If user already has data filled in, show confirmation dialog
     if (formState.selectedService !== null && hasFormData()) {
       setPendingService(serviceId);
       setShowResetDialog(true);
       return;
     }
-    
+
     // Otherwise, just update the service
     updateFormState({ selectedService: serviceId });
     // Auto-expand next section
@@ -240,7 +240,7 @@ export function AccordionForm({ onSubmit }: AccordionFormProps) {
                   key={section.id}
                   className={cn(
                     "bg-card rounded-xl border shadow-sm overflow-hidden transition-all",
-                    isOpen && "ring-2 ring-emerald-200"
+                    isOpen && "ring-2 ring-green-200"
                   )}
                 >
                   {/* Section Header */}
@@ -261,10 +261,10 @@ export function AccordionForm({ onSubmit }: AccordionFormProps) {
                         className={cn(
                           "flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold transition-colors",
                           isComplete
-                            ? "bg-emerald-500 text-white"
+                            ? "bg-green-600 text-white"
                             : isOpen
-                            ? "bg-emerald-500 text-white"
-                            : "bg-muted text-muted-foreground"
+                              ? "bg-green-600 text-white"
+                              : "bg-muted text-muted-foreground"
                         )}
                       >
                         {isComplete ? (
@@ -416,9 +416,9 @@ export function AccordionForm({ onSubmit }: AccordionFormProps) {
             <AlertDialogCancel onClick={handleCancelServiceChange}>
               Keep Current Service
             </AlertDialogCancel>
-            <AlertDialogAction 
+            <AlertDialogAction
               onClick={handleConfirmServiceChange}
-              className="bg-emerald-500 hover:bg-emerald-600"
+              className="bg-green-600 hover:bg-green-700"
             >
               Change Service
             </AlertDialogAction>

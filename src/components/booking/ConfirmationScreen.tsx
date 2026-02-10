@@ -56,8 +56,8 @@ export function ConfirmationScreen({
     <div className="min-h-[60vh] flex items-center justify-center p-4 md:p-6">
       <div className="max-w-lg w-full text-center space-y-6">
         {/* Success Icon */}
-        <div className="mx-auto w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center animate-bounce-once">
-          <CheckCircle2 className="h-12 w-12 text-emerald-600" />
+        <div className="mx-auto w-20 h-20 rounded-full bg-green-100 flex items-center justify-center animate-bounce-once">
+          <CheckCircle2 className="h-12 w-12 text-green-600" />
         </div>
 
         {/* Confirmation Message */}
@@ -71,8 +71,8 @@ export function ConfirmationScreen({
         </div>
 
         {/* Booking ID */}
-        <div className="inline-block px-4 py-2 bg-emerald-100 rounded-full">
-          <span className="text-sm font-medium text-emerald-600">
+        <div className="inline-block px-4 py-2 bg-green-100 rounded-full">
+          <span className="text-sm font-medium text-green-600">
             Booking ID: {bookingId.slice(0, 8).toUpperCase()}
           </span>
         </div>
@@ -81,8 +81,8 @@ export function ConfirmationScreen({
         <div className="bg-card border rounded-xl p-5 text-left space-y-4">
           {/* Service */}
           <div className="flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-emerald-100">
-              <CheckCircle2 className="h-5 w-5 text-emerald-600" />
+            <div className="p-2 rounded-lg bg-green-100">
+              <CheckCircle2 className="h-5 w-5 text-green-600" />
             </div>
             <div>
               <p className="font-semibold">{selectedService?.name}</p>
@@ -97,8 +97,8 @@ export function ConfirmationScreen({
           {/* Date & Time */}
           {formState.preferredDate && (
             <div className="flex items-start gap-3">
-              <div className="p-2 rounded-lg bg-emerald-100">
-                <Calendar className="h-5 w-5 text-emerald-600" />
+              <div className="p-2 rounded-lg bg-green-100">
+                <Calendar className="h-5 w-5 text-green-600" />
               </div>
               <div>
                 <p className="font-semibold">
@@ -113,8 +113,8 @@ export function ConfirmationScreen({
 
           {/* Address */}
           <div className="flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-emerald-100">
-              <MapPin className="h-5 w-5 text-emerald-600" />
+            <div className="p-2 rounded-lg bg-green-100">
+              <MapPin className="h-5 w-5 text-green-600" />
             </div>
             <div>
               <p className="font-semibold">{formState.address}</p>
@@ -134,13 +134,13 @@ export function ConfirmationScreen({
                     ${pricing.originalTotal}
                   </span>
                 )}
-                <span className="text-2xl font-bold text-emerald-600">
+                <span className="text-2xl font-bold text-green-600">
                   ${pricing.total}
                 </span>
               </div>
             </div>
             {pricing.totalSavings > 0 && (
-              <p className="text-sm text-emerald-600 text-right mt-1">
+              <p className="text-sm text-green-600 text-right mt-1">
                 You saved ${pricing.totalSavings}!
               </p>
             )}
@@ -176,7 +176,7 @@ export function ConfirmationScreen({
           </Button>
           <Button
             onClick={handleWhatsApp}
-            className="gap-2 bg-emerald-600 hover:bg-emerald-700"
+            className="gap-2 bg-green-600 hover:bg-green-700"
           >
             <MessageCircle className="h-4 w-4" />
             Chat on WhatsApp
