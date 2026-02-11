@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
         }
 
         // Use Resend API with a server-side approach
-        const RESEND_API_KEY = process.env.RESEND_API_KEY || 're_2kXVnpuG_A4VZQyHV33D3bz7Gr4mySFx1';
+        const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
         const emailPayload = {
             from: 'FreshPlus Quote System <onboarding@resend.dev>', // Updated fallback to match Resend defaults or onboarding
@@ -124,7 +124,7 @@ export async function POST(req: NextRequest) {
             success: false,
             error: error.message || 'Failed to send email',
             fallback: {
-                mailto: `mailto:infofreshplusclean@gmail.com?subject=${encodeURIComponent('New Quote Request')}&body=${encodeURIComponent('Email service failed. Please check the website admin panel for quote details.')}`
+                mailto: `mailto:info@freshpluscleaning.com.au?subject=${encodeURIComponent('New Quote Request')}&body=${encodeURIComponent('Email service failed. Please check the website admin panel for quote details.')}`
             }
         }, { status: 500 });
     }

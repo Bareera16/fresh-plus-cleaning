@@ -36,7 +36,16 @@ export default function Navbar() {
                     className="bg-white rounded-br-[35px] rounded-tl-[15px] shadow-xl border border-white/20 overflow-hidden flex items-center justify-center w-[220px] h-[110px] md:w-[280px] md:h-[140px]"
                 >
                     <Link href="/" className="relative w-full h-full p-2 flex items-center justify-center">
-                        <Image src="/logo.webp" alt="Logo" width={260} height={120} priority className="object-contain" quality={100} />
+                        <Image
+                            src="/logo.webp"
+                            alt="Logo"
+                            width={260}
+                            height={120}
+                            priority
+                            className="object-contain"
+                            style={{ height: 'auto', width: 'auto' }}
+                            quality={90}
+                        />
                     </Link>
                 </motion.div>
 

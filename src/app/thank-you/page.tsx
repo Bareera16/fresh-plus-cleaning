@@ -5,8 +5,8 @@ import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Home, Phone, Loader2 } from "lucide-react";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/home/navbar";
+import Footer from "@/components/home/footer";
 import { SEOHead } from "@/components/SEOHead";
 
 
@@ -53,7 +53,7 @@ function ThankYouContent() {
       });
 
       console.log('✅ Conversion events fired successfully');
-    } else {
+    } else if (process.env.NODE_ENV === 'production') {
       console.warn('⚠️ gtag not available - conversion tracking may not work');
     }
   }, [source, type, router]);
@@ -88,30 +88,45 @@ function ThankYouContent() {
         noindex={true}
       />
 
-      <Navigation />
+      <Navbar />
 
       {/* Main Content */}
-      <main className="flex-grow flex items-center justify-center bg-gray-50 px-4 py-16">
-        <section className="bg-white shadow-lg rounded-2xl p-8 md:p-12 max-w-xl w-full text-center">
+      <main className="flex-grow flex items-start justify-center relative bg-gray-900 px-4 pt-40 md:pt-56 pb-24 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/Home_Hero.webp')",
+            filter: "brightness(0.3)"
+          }}
+        />
+
+        {/* Decorative Blur and Animation */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+          <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-green-500/20 blur-[120px] rounded-full animate-pulse" />
+          <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-blue-500/20 blur-[120px] rounded-full animate-pulse" />
+        </div>
+
+        <section className="relative z-10 bg-white shadow-2xl rounded-3xl p-8 md:p-12 max-w-xl w-full text-center border border-white/20 backdrop-blur-sm">
           {/* Success Icon */}
-          <div className="mx-auto flex items-center justify-center w-20 h-20 bg-secondary rounded-full mb-6">
+          <div className="mx-auto flex items-center justify-center w-20 h-20 bg-green-600 rounded-full mb-6 shadow-lg shadow-green-200">
             <CheckCircle className="w-10 h-10 text-white" />
           </div>
 
           {/* Thank You Message */}
-          <h1 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
             Thank You, {displayName}
           </h1>
 
           {isContact ? (
             // CONTACT FORM SUBMISSION
             <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-              Your message has been received. Our Melbourne team will respond to your inquiry within 1 hour between 7:00 AM and 7:00 PM.
+              Your message has been received properly. Our team will respond to your inquiry within <strong>1 hour</strong> (7 AM - 7 PM).
             </p>
           ) : (
             // QUOTE FORM SUBMISSION
             <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-              Your {type === 'booking' ? 'booking' : 'quote'} request has been received. Our Melbourne team will contact you within 1 hour between 7:00 AM and 7:00 PM.
+              Your {type === 'booking' ? 'booking' : 'quote'} request has been received. Our team will contact you within <strong>1 hour</strong> (7 AM - 7 PM).
             </p>
           )}
 
