@@ -1,15 +1,15 @@
 // Admin Dashboard Types
 
 // Booking Statuses
-export type BookingStatus = 
-  | 'pending' 
-  | 'confirmed' 
-  | 'assigned' 
-  | 'on_the_way' 
-  | 'in_progress' 
-  | 'quality_check' 
-  | 'completed' 
-  | 'cancelled' 
+export type BookingStatus =
+  | 'pending'
+  | 'confirmed'
+  | 'assigned'
+  | 'on_the_way'
+  | 'in_progress'
+  | 'quality_check'
+  | 'completed'
+  | 'cancelled'
   | 'rescheduled';
 
 export const BOOKING_STATUS_CONFIG: Record<BookingStatus, { label: string; color: string; bgColor: string }> = {
