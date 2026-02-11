@@ -60,7 +60,43 @@ const secondaryPosts = [
 
 export default function BlogPageContent() {
     return (
-        <main className="min-h-screen bg-[#F0F4F2] pt-32 pb-20 px-6 overflow-hidden">
+        <main className="min-h-screen bg-[#F0F4F2] overflow-hidden">
+            {/* 0. Hero Section */}
+            <section className="relative pt-64 pb-24 px-6 text-center overflow-hidden">
+                {/* Background Image with Overlay */}
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src="/Home_Hero.webp"
+                        alt="Background"
+                        fill
+                        priority
+                        className="object-cover brightness-[0.4]"
+                    />
+                    <div className="absolute inset-0 bg-black/50" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
+                </div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <motion.h1
+                        initial={{ y: -50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.5, duration: 0.8 }}
+                        className="text-4xl md:text-7xl font-black text-white uppercase tracking-tight mb-4"
+                    >
+                        Cleaning <span className="text-brand-green">Blog</span>
+                    </motion.h1>
+
+                    <motion.p
+                        initial={{ y: 50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.8, duration: 0.8 }}
+                        className="text-gray-100 text-lg md:text-xl max-w-3xl mx-auto font-medium"
+                    >
+                        Expert cleaning tips, industry insights, and professional advice to keep your space sparkling.
+                    </motion.p>
+                </div>
+            </section>
+
             <h1 className="sr-only">Our Cleaning Blog - Expert Tips & Maintenance Guides</h1>
 
             {/* 1. HERO SECTION (Wahi Purana Overlapping Style) */}

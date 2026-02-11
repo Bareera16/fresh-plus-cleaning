@@ -5,6 +5,7 @@ import Navbar from "@/components/home/navbar";
 import Footer from "@/components/home/footer";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 
 export async function generateStaticParams() {
@@ -32,23 +33,25 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
             <Navbar />
 
-            <main className="pt-36 pb-16 px-4">
-                <article className="max-w-3xl mx-auto">
-                    {/* Back Link */}
-                    <div className="mb-8">
-                        <Link
-                            href="/blog"
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-green-50 text-green-700 hover:bg-green-100 hover:text-green-800 font-semibold transition-all group border border-green-200"
-                        >
-                            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-                            Back to Articles
-                        </Link>
+            <main className="overflow-hidden">
+                {/* Hero Section */}
+                <section className="relative pt-64 pb-24 px-6 text-center overflow-hidden">
+                    {/* Background Image with Overlay */}
+                    <div className="absolute inset-0 z-0">
+                        <Image
+                            src="/Home_Hero.webp"
+                            alt="Background"
+                            fill
+                            priority
+                            className="object-cover brightness-[0.4]"
+                        />
+                        <div className="absolute inset-0 bg-black/50" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
                     </div>
 
-                    {/* Header */}
-                    <div className="mb-8">
-                        <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-                            <span className="bg-accent/10 text-accent px-3 py-1 rounded-full font-medium">{post.category}</span>
+                    <div className="max-w-4xl mx-auto relative z-10">
+                        <div className="flex items-center justify-center gap-4 text-sm text-gray-100 mb-8 font-medium">
+                            <span className="bg-brand-green/20 text-brand-green px-4 py-1.5 rounded-full backdrop-blur-md border border-brand-green/30">{post.category}</span>
                             <div className="flex items-center gap-2">
                                 <Calendar className="w-4 h-4" />
                                 <span>{post.date}</span>
@@ -59,13 +62,26 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                             </div>
                         </div>
 
-                        <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-8 leading-[1.1]">
                             {post.title}
                         </h1>
 
-                        <p className="text-xl text-gray-600 leading-relaxed">
+                        <p className="text-xl text-gray-100 leading-relaxed font-medium">
                             {post.excerpt}
                         </p>
+                    </div>
+                </section>
+
+                <article className="max-w-3xl mx-auto py-16 px-4 relative z-10">
+                    {/* Back Link */}
+                    <div className="mb-12">
+                        <Link
+                            href="/blog"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-50 text-gray-700 hover:bg-green-600 hover:text-white font-black uppercase text-[11px] tracking-widest transition-all group border border-gray-200 shadow-sm"
+                        >
+                            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                            Back to Articles
+                        </Link>
                     </div>
 
                     {/* Image */}

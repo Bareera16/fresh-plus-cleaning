@@ -6,6 +6,7 @@ import Image from 'next/image';
 import WhyChooseUs from "@/components/home/why-choose-us";
 import Navbar from "@/components/home/navbar";
 import Footer from "@/components/home/footer";
+import { GradientButton } from "@/components/ui/gradient-button";
 import { Check, Building2, Store, Factory } from "lucide-react";
 
 const commercialServices = [
@@ -71,23 +72,36 @@ export default function CommercialCleaning() {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative pt-48 pb-20 px-6 bg-gradient-to-b from-blue-50 to-white text-center"
+          className="relative pt-64 pb-24 px-6 text-center overflow-hidden"
         >
-          <div className="max-w-7xl mx-auto">
+          {/* Background Image with Overlay */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/Home_Hero.webp"
+              alt="Background"
+              fill
+              priority
+              className="object-cover brightness-[0.4]"
+            />
+            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
+          </div>
+
+          <div className="max-w-7xl mx-auto relative z-10">
             <motion.h1
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-4xl md:text-6xl font-black text-black uppercase tracking-tight mb-4"
+              className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-4"
             >
-              Commercial Cleaning <span className="text-green-600">Melbourne</span>
+              Commercial Cleaning <span className="text-green-400">Melbourne</span>
             </motion.h1>
 
             <motion.p
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto font-medium"
+              className="text-gray-100 text-lg md:text-xl max-w-2xl mx-auto font-medium"
             >
               Focus on your business while we handle the clean. Professional commercial cleaning trusted by Melbourne businesses for over 12 years.
             </motion.p>
@@ -103,18 +117,23 @@ export default function CommercialCleaning() {
 
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link href="/get-quote">
-                <button className="bg-orange-500 hover:bg-black text-white px-8 py-4 font-black uppercase text-[12px] tracking-widest transition-all shadow-lg hover:-translate-y-1">
+                <GradientButton className="text-[12px] px-8 py-4 uppercase tracking-widest shadow-lg">
                   See Instant Pricing
-                </button>
+                </GradientButton>
               </Link>
-              <a href="tel:0431977720" className="border-2 border-blue-900 text-blue-900 px-8 py-4 font-black uppercase text-[12px] tracking-widest transition-all shadow-lg hover:-translate-y-1 block text-center flex items-center justify-center">
+              <a href="tel:0431977720" className="bg-white border-2 border-blue-900 text-blue-900 px-8 py-4 font-black uppercase text-[12px] tracking-widest transition-all shadow-lg hover:-translate-y-1 block text-center flex items-center justify-center">
                 Call 0431 977 720
               </a>
             </div>
           </div>
         </motion.div>
 
-        {/* 2. PARALLAX BUSINESS CLEANING SERVICES SECTION */}
+        {/* 2. WHY CHOOSE US */}
+        <section className="py-20 bg-white">
+          <WhyChooseUs />
+        </section>
+
+        {/* 3. PARALLAX BUSINESS CLEANING SERVICES SECTION */}
         <section className="relative h-auto py-32 flex items-center justify-center overflow-hidden">
           {/* Parallax Background */}
           <div
@@ -151,11 +170,6 @@ export default function CommercialCleaning() {
               ))}
             </div>
           </div>
-        </section>
-
-        {/* 3. WHY CHOOSE US */}
-        <section className="py-20 bg-white">
-          <WhyChooseUs />
         </section>
 
         {/* 4. FLEXIBLE CLEANING PLANS (Master Green Card) */}
@@ -207,21 +221,30 @@ export default function CommercialCleaning() {
           </motion.div>
         </section>
 
-        {/* 5. LOCATIONS */}
-        <section className="py-24 bg-white px-6">
+        {/* 5. LOCATIONS (Green Cards Animation) */}
+        <section className="py-24 bg-gray-50/50 px-6">
           <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-4xl font-black uppercase tracking-tighter mb-4 text-black">
-              Serving Melbourne <span className="text-green-600">Business Districts</span>
-            </h2>
-            <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto mt-12">
+            <motion.h2
+              initial={{ y: -40, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="text-4xl font-black uppercase tracking-tighter mb-12 text-black"
+            >
+              Serving Melbourne <span className="text-brand-green">Business Districts</span>
+            </motion.h2>
+
+            <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
               {locations.map((loc, i) => (
-                <motion.div
+                <motion.button
                   key={i}
-                  whileHover={{ scale: 1.05, backgroundColor: "#15803d", color: "white" }}
-                  className="px-6 py-4 bg-green-50 border border-green-100 text-green-800 rounded-2xl text-[11px] font-black uppercase tracking-widest cursor-pointer transition-all shadow-sm min-w-[150px] flex items-center justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  whileHover={{ scale: 1.05, backgroundColor: "var(--brand-green)" }}
+                  className="px-6 py-4 bg-brand-green text-white rounded-2xl text-[12px] font-black uppercase tracking-widest transition-all shadow-lg hover:shadow-brand-green"
                 >
                   {loc}
-                </motion.div>
+                </motion.button>
               ))}
             </div>
           </div>

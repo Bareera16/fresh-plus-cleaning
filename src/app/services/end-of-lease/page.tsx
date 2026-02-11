@@ -6,6 +6,7 @@ import Image from 'next/image';
 import WhyChooseUs from "@/components/home/why-choose-us";
 import Navbar from "@/components/home/navbar";
 import Footer from "@/components/home/footer";
+import { GradientButton } from "@/components/ui/gradient-button";
 import { Check, Home, Sparkles, Shield, Key } from "lucide-react";
 
 // Based on user image: "End of Lease Packages" with cleaning icons
@@ -116,14 +117,27 @@ export default function EndOfLeaseCleaning() {
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1.2, ease: "easeOut" }}
-                    className="relative pt-48 pb-20 px-6 bg-gradient-to-b from-brand-green-light to-white text-center"
+                    className="relative pt-64 pb-24 px-6 text-center overflow-hidden"
                 >
-                    <div className="max-w-7xl mx-auto">
+                    {/* Background Image with Overlay */}
+                    <div className="absolute inset-0 z-0">
+                        <Image
+                            src="/Home_Hero.webp"
+                            alt="Background"
+                            fill
+                            priority
+                            className="object-cover brightness-[0.4]"
+                        />
+                        <div className="absolute inset-0 bg-black/50" />
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
+                    </div>
+
+                    <div className="max-w-7xl mx-auto relative z-10">
                         <motion.h1
                             initial={{ y: -50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.5, duration: 0.8 }}
-                            className="text-4xl md:text-6xl font-black text-black uppercase tracking-tight mb-4"
+                            className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-4"
                         >
                             End of Lease <span className="text-brand-green">Cleaning</span>
                         </motion.h1>
@@ -132,7 +146,7 @@ export default function EndOfLeaseCleaning() {
                             initial={{ y: 50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.8, duration: 0.8 }}
-                            className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto font-medium"
+                            className="text-gray-100 text-lg md:text-xl max-w-3xl mx-auto font-medium"
                         >
                             Our professional end of lease cleaning covers every detail required by real estate agents and property managers. With our 100% bond back guarantee, you can move out stress-free knowing your property will pass inspection.
                         </motion.p>
@@ -153,24 +167,24 @@ export default function EndOfLeaseCleaning() {
                             className="mt-10 flex flex-wrap justify-center gap-4"
                         >
                             <Link href="/get-quote">
-                                <button className="bg-brand-orange hover:bg-black text-white px-8 py-3 font-black uppercase text-[12px] tracking-widest transition-all shadow-lg hover:-translate-y-1">
+                                <GradientButton className="text-[12px] px-8 py-4 uppercase tracking-widest shadow-lg">
                                     Get Bond Back Quote
-                                </button>
+                                </GradientButton>
                             </Link>
-                            <a href="tel:0431977720" className="border-2 border-brand-blue-dark text-brand-blue-dark hover:bg-brand-blue-dark hover:text-white px-8 py-3 font-black uppercase text-[12px] tracking-widest transition-all shadow-lg hover:-translate-y-1 block text-center flex items-center justify-center">
+                            <a href="tel:0431977720" className="bg-white border-2 border-brand-blue-dark text-brand-blue-dark hover:bg-brand-blue-dark hover:text-white px-8 py-4 font-black uppercase text-[12px] tracking-widest transition-all shadow-lg hover:-translate-y-1 block text-center flex items-center justify-center">
                                 Call 0431 977 720
                             </a>
                         </motion.div>
                     </div>
                 </motion.div>
 
-                {/* 2. PARALLAX PACKAGES SECTION */}
-                <ServicesSection />
-
-                {/* 3. WHY CHOOSE US */}
+                {/* 2. WHY CHOOSE US */}
                 <section className="py-10">
                     <WhyChooseUs />
                 </section>
+
+                {/* 3. PARALLAX PACKAGES SECTION */}
+                <ServicesSection />
 
                 {/* 4. GUARANTEES / PLANS (Master Green Card) */}
                 <section className="py-24 px-6 md:px-12 bg-white">

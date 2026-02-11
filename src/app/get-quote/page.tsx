@@ -2,6 +2,8 @@
 
 import { AccordionForm } from "@/components/booking/AccordionForm";
 import type { Metadata } from 'next';
+import { motion } from "framer-motion";
+import Image from "next/image";
 import Navbar from "@/components/home/navbar";
 import Footer from "@/components/home/footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -115,8 +117,46 @@ export default function InstantQuotePage() {
         description="Get an instant quote for professional cleaning services in Melbourne. See real-time pricing, select extras, and book online. 10% off all services!"
       />
       <Navbar />
-      <main className="pt-24">
-        <AccordionForm onSubmit={handleSubmit} />
+      <main className="min-h-screen bg-gray-50 overflow-hidden">
+        {/* Hero Section */}
+        <section className="relative pt-64 pb-24 px-6 text-center overflow-hidden">
+          {/* Background Image with Overlay */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/Home_Hero.webp"
+              alt="Background"
+              fill
+              priority
+              className="object-cover brightness-[0.4]"
+            />
+            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
+          </div>
+
+          <div className="max-w-7xl mx-auto relative z-10">
+            <motion.h1
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="text-4xl md:text-7xl font-black text-white uppercase tracking-tight mb-4"
+            >
+              See Our <span className="text-brand-green">Pricing</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="text-gray-100 text-lg md:text-xl max-w-3xl mx-auto font-medium"
+            >
+              Get an instant quote tailored to your needs. Transparent pricing, no hidden fees.
+            </motion.p>
+          </div>
+        </section>
+
+        <section className="relative z-10 -mt-10 pb-20">
+          <AccordionForm onSubmit={handleSubmit} />
+        </section>
       </main>
       <Footer />
     </>

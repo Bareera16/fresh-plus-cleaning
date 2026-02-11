@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown, Home, Info, BookOpen, Mail, Zap, LayoutGrid } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { GradientButton } from "@/components/ui/gradient-button";
 
 const services = [
     { name: "Residential Cleaning", href: "/services/residential" },
@@ -33,7 +34,7 @@ export default function Navbar() {
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="bg-white rounded-br-[35px] rounded-tl-[15px] shadow-xl border border-white/20 overflow-hidden flex items-center justify-center w-[220px] h-[110px] md:w-[280px] md:h-[140px]"
+                    className="overflow-hidden flex items-center justify-center w-[220px] h-[110px] md:w-[280px] md:h-[140px]"
                 >
                     <Link href="/" className="relative w-full h-full p-2 flex items-center justify-center">
                         <Image
@@ -86,9 +87,9 @@ export default function Navbar() {
 
                     <div className="pl-6 border-l border-gray-200">
                         <Link href="/get-quote">
-                            <button className="bg-green-600 text-white px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-black transition-all shadow-lg active:scale-95">
+                            <GradientButton className="text-[10px] font-black uppercase tracking-widest shadow-lg active:scale-95 px-8 py-3 rounded-full min-w-[160px]">
                                 See Pricing
-                            </button>
+                            </GradientButton>
                         </Link>
                     </div>
                 </motion.nav>
@@ -136,9 +137,9 @@ export default function Navbar() {
                             <MobileNavLink href="/contact" icon={<Mail size={24} />} label="Contact" onClick={() => setIsOpen(false)} />
 
                             <Link href="/get-quote" onClick={() => setIsOpen(false)}>
-                                <button className="w-full bg-green-600 text-white py-5 rounded-2xl font-black uppercase text-sm tracking-widest flex items-center justify-center gap-3">
+                                <GradientButton className="w-full py-5 rounded-2xl font-black uppercase text-sm tracking-widest flex items-center justify-center gap-3">
                                     <Zap size={20} /> See Instant Pricing
-                                </button>
+                                </GradientButton>
                             </Link>
                         </div>
                     </motion.div>

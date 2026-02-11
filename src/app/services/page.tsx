@@ -1,8 +1,10 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import Image from 'next/image';
+import Navbar from '@/components/home/navbar';
+import Footer from '@/components/home/footer';
 import { Button } from '@/components/ui/button';
+import { GradientButton } from "@/components/ui/gradient-button";
 import {
     Home,
     Building,
@@ -129,24 +131,39 @@ export default function Services() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
             />
 
-            <Navigation />
+            <Navbar />
 
             {/* Hero Section */}
-            <section className="bg-white py-16 md:py-20 text-center px-4">
-                <div className="max-w-4xl mx-auto">
-                    <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6">
-                        Professional Cleaning Services Melbourne
+            <section className="relative pt-64 pb-24 px-6 text-center overflow-hidden">
+                {/* Background Image with Overlay */}
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src="/Home_Hero.webp"
+                        alt="Background"
+                        fill
+                        priority
+                        className="object-cover brightness-[0.4]"
+                    />
+                    <div className="absolute inset-0 bg-black/50" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
+                </div>
+
+                <div className="max-w-4xl mx-auto relative z-10">
+                    <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-8">
+                        Professional Cleaning <span className="text-accent">Services Melbourne</span>
                     </h1>
-                    <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-xl text-gray-100 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
                         From residential homes to commercial spaces, we provide comprehensive cleaning solutions trusted by Melbourne for over 12 years.
                     </p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <Button asChild size="lg" className="bg-accent hover:bg-accent-dark text-black font-semibold px-8 py-6 text-lg">
-                            <Link href="/get-quote">See Instant Pricing</Link>
-                        </Button>
-                        <Button asChild variant="outline" size="lg" className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-6 text-lg">
-                            <a href="tel:+61403971720">Call 0403 971 720</a>
-                        </Button>
+                    <div className="flex flex-col sm:flex-row justify-center gap-6">
+                        <Link href="/get-quote">
+                            <GradientButton className="text-sm px-10 py-7 uppercase tracking-widest shadow-xl">
+                                See Instant Pricing
+                            </GradientButton>
+                        </Link>
+                        <a href="tel:+61403971720" className="bg-white border-2 border-white text-black hover:bg-black hover:text-white font-black uppercase tracking-widest px-10 py-7 text-sm shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center rounded-none">
+                            Call 0403 971 720
+                        </a>
                     </div>
                 </div>
             </section>
@@ -163,51 +180,6 @@ export default function Services() {
                                     <p className="font-semibold text-gray-900">{item.title}</p>
                                     <p className="text-sm text-gray-600">{item.description}</p>
                                 </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
-
-            {/* Services Grid */}
-            <section className="py-16 px-4 bg-white">
-                <div className="max-w-screen-xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Our Cleaning Services
-                        </h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto">
-                            Professional cleaning solutions for every need. Choose the service that's right for you.
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {services.map((service, index) => {
-                            const IconComponent = service.icon;
-                            return (
-                                <Link
-                                    key={index}
-                                    href={service.path}
-                                    className={`bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all group relative ${service.popular ? 'ring-2 ring-accent' : 'border border-gray-100'
-                                        }`}
-                                >
-                                    {service.popular && (
-                                        <div className="absolute -top-3 right-4">
-                                            <span className="bg-accent text-black px-3 py-1 rounded-full text-xs font-semibold">
-                                                Popular
-                                            </span>
-                                        </div>
-                                    )}
-                                    <div className="bg-primary/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                                        <IconComponent className="w-7 h-7 text-primary" />
-                                    </div>
-                                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{service.name}</h3>
-                                    <p className="text-gray-600 text-sm mb-4">{service.description}</p>
-                                    <div className="flex items-center text-primary font-medium text-sm group-hover:text-accent transition-colors">
-                                        Learn more
-                                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                                    </div>
-                                </Link>
                             );
                         })}
                     </div>
@@ -263,6 +235,51 @@ export default function Services() {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Services Grid */}
+            <section className="py-16 px-4 bg-white">
+                <div className="max-w-screen-xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Our Cleaning Services
+                        </h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto">
+                            Professional cleaning solutions for every need. Choose the service that's right for you.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {services.map((service, index) => {
+                            const IconComponent = service.icon;
+                            return (
+                                <Link
+                                    key={index}
+                                    href={service.path}
+                                    className={`bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all group relative ${service.popular ? 'ring-2 ring-accent' : 'border border-gray-100'
+                                        }`}
+                                >
+                                    {service.popular && (
+                                        <div className="absolute -top-3 right-4">
+                                            <span className="bg-accent text-black px-3 py-1 rounded-full text-xs font-semibold">
+                                                Popular
+                                            </span>
+                                        </div>
+                                    )}
+                                    <div className="bg-primary/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                                        <IconComponent className="w-7 h-7 text-primary" />
+                                    </div>
+                                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{service.name}</h3>
+                                    <p className="text-gray-600 text-sm mb-4">{service.description}</p>
+                                    <div className="flex items-center text-primary font-medium text-sm group-hover:text-accent transition-colors">
+                                        Learn more
+                                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                                    </div>
+                                </Link>
+                            );
+                        })}
                     </div>
                 </div>
             </section>

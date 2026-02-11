@@ -6,6 +6,7 @@ import Image from 'next/image';
 import WhyChooseUs from "@/components/home/why-choose-us";
 import Navbar from "@/components/home/navbar";
 import Footer from "@/components/home/footer";
+import { GradientButton } from "@/components/ui/gradient-button";
 import { Check, Home, Sparkles, Construction } from "lucide-react";
 
 // Updated for Deep Cleaning Services
@@ -72,23 +73,36 @@ export default function DeepCleaning() {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative pt-48 pb-20 px-6 bg-gradient-to-b from-blue-50 to-white text-center"
+          className="relative pt-64 pb-24 px-6 text-center overflow-hidden"
         >
-          <div className="max-w-7xl mx-auto">
+          {/* Background Image with Overlay */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/Home_Hero.webp"
+              alt="Background"
+              fill
+              priority
+              className="object-cover brightness-[0.4]"
+            />
+            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
+          </div>
+
+          <div className="max-w-7xl mx-auto relative z-10">
             <motion.h1
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-4xl md:text-6xl font-black text-black uppercase tracking-tight mb-4"
+              className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-4"
             >
-              Deep Cleaning <span className="text-green-600">Melbourne</span>
+              Deep Cleaning <span className="text-green-400">Melbourne</span>
             </motion.h1>
 
             <motion.p
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed"
+              className="text-gray-100 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed"
             >
               Our deep cleaning service tackles everything your regular clean misses. From inside appliances to behind furniture, we leave no corner untouched for a truly spotless home.
             </motion.p>
@@ -106,44 +120,60 @@ export default function DeepCleaning() {
 
             <motion.div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link href="/get-quote">
-                <button className="bg-orange-500 hover:bg-black text-white px-8 py-4 font-black uppercase text-[12px] tracking-widest transition-all shadow-lg hover:-translate-y-1">
+                <GradientButton className="text-[12px] px-8 py-4 uppercase tracking-widest shadow-lg">
                   Book Deep Clean Now
-                </button>
+                </GradientButton>
               </Link>
-              <a href="tel:0431977720" className="border-2 border-blue-900 text-blue-900 px-8 py-4 font-black uppercase text-[12px] tracking-widest transition-all shadow-lg hover:-translate-y-1 block text-center flex items-center justify-center">
+              <a href="tel:0431977720" className="bg-white border-2 border-blue-900 text-blue-900 px-8 py-4 font-black uppercase text-[12px] tracking-widest transition-all shadow-lg hover:-translate-y-1 block text-center flex items-center justify-center">
                 Call 0431 977 720
               </a>
             </motion.div>
           </div>
         </motion.div>
 
-        {/* 2. DEEP CLEANING SERVICES (Screenshot Style) */}
-        <section className="py-24 px-6 bg-gray-50/30">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-black">
-                Deep Cleaning <span className="text-green-600">Services</span>
+        {/* 2. WHY CHOOSE FRESH PLUS (Screenshot Section) */}
+        <section className="py-20 bg-white">
+          <WhyChooseUs />
+        </section>
+
+        {/* 3. DEEP CLEANING SERVICES */}
+        <section className="relative h-auto py-32 flex items-center justify-center overflow-hidden">
+          {/* Parallax Image Overlay */}
+          <div
+            className="absolute inset-0 z-0 bg-fixed bg-cover bg-center"
+            style={{
+              backgroundImage: "url('/deep-cleaning.webp')",
+              filter: "brightness(0.35)"
+            }}
+          />
+
+          <div className="relative z-10 max-w-7xl mx-auto px-6">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white">
+                Deep Cleaning <span className="text-brand-green">Services</span>
               </h2>
+              <div className="h-1.5 w-32 bg-brand-orange mx-auto mt-4 rounded-full" />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {deepCleaningServices.map((service, index) => (
                 <motion.div
                   key={index}
-                  whileHover={{ y: -10 }}
-                  className="bg-white p-10 rounded-[2.5rem] shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col items-center text-center"
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.2, duration: 0.8 }}
+                  whileHover={{ y: -20 }}
+                  className="bg-white/90 backdrop-blur-md p-10 rounded-[2.5rem] shadow-2xl flex flex-col items-center text-center border border-white/30"
                 >
-                  <div className="mb-6 p-4 bg-orange-50 rounded-full">{service.icon}</div>
-                  <h3 className="text-xl font-black uppercase mb-4 text-black tracking-tight">{service.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{service.desc}</p>
+                  <div className="mb-6 bg-orange-50 p-4 rounded-3xl shadow-sm">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-black uppercase mb-4 text-black tracking-tight">{service.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed font-medium">{service.desc}</p>
                 </motion.div>
               ))}
             </div>
           </div>
-        </section>
-
-        {/* 3. WHY CHOOSE FRESH PLUS (Screenshot Section) */}
-        <section className="py-20 bg-white">
-          <WhyChooseUs />
         </section>
 
         {/* 4. PRICING & PLANS */}
@@ -199,28 +229,29 @@ export default function DeepCleaning() {
         </section>
 
         {/* 5. SERVING MELBOURNE (Suburbs) */}
-        <section className="py-24 bg-white px-6">
+        <section className="py-24 bg-gray-50/50 px-6">
           <div className="max-w-7xl mx-auto text-center">
             <motion.h2
               initial={{ y: -40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl font-black uppercase tracking-tighter mb-4 text-black"
+              className="text-4xl font-black uppercase tracking-tighter mb-12 text-black"
             >
-              Melbourne Areas <span className="text-green-600">We Detail</span>
+              Melbourne Areas <span className="text-brand-green">We Detail</span>
             </motion.h2>
-            <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto mt-12">
+
+            <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
               {locations.map((loc, i) => (
-                <motion.div
+                <motion.button
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  whileHover={{ scale: 1.05, backgroundColor: "#15803d", color: "white" }}
-                  className="px-6 py-4 bg-green-50 border border-green-100 text-green-800 rounded-2xl text-[11px] font-black uppercase tracking-widest cursor-pointer transition-all shadow-sm flex items-center justify-center min-w-[140px]"
+                  whileHover={{ scale: 1.05, backgroundColor: "var(--brand-green)" }}
+                  className="px-6 py-4 bg-brand-green text-white rounded-2xl text-[12px] font-black uppercase tracking-widest transition-all shadow-lg hover:shadow-brand-green"
                 >
                   {loc}
-                </motion.div>
+                </motion.button>
               ))}
             </div>
           </div>

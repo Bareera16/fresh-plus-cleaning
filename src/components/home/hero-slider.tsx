@@ -4,6 +4,7 @@ import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import { GradientButton } from "@/components/ui/gradient-button";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -107,19 +108,9 @@ export default function HeroSlider() {
                                             {/* Button (3rd Line) */}
                                             <motion.div variants={bottomToTop}>
                                                 <Link href="/get-quote">
-                                                    <button className={`
-                          relative group
-                          bg-green-600 text-white 
-                          px-10 py-3.5 rounded-none 
-                          text-[10px] md:text-xs font-black uppercase tracking-[0.3em] 
-                          transition-all duration-500 ease-in-out
-                          hover:-translate-y-2 
-                          hover:bg-white hover:text-black 
-                          border-x-2 border-transparent hover:border-green-500
-                          shadow-lg hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)]
-                        `}>
+                                                    <GradientButton className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] px-10 py-5 shadow-2xl rounded-none">
                                                         Calculate Service
-                                                    </button>
+                                                    </GradientButton>
                                                 </Link>
                                             </motion.div>
                                         </motion.div>

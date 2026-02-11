@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button as MovingBorderButton } from "@/components/ui/moving-border";
 
 // Swiper styles
 import 'swiper/css';
@@ -94,32 +95,38 @@ export default function ProfessionalServices() {
                         className="pb-20 linear-swiper" // CSS class for linear motion
                     >
                         {allServices.map((service, index) => (
-                            <SwiperSlide key={index} className="h-auto">
-                                <motion.div
-                                    className="bg-white rounded-[2.5rem] shadow-sm border border-gray-100 h-full flex flex-col overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+                            <SwiperSlide key={index} className="h-auto px-2 py-4">
+                                <MovingBorderButton
+                                    as="div"
+                                    borderRadius="2.5rem"
+                                    duration={3500}
+                                    containerClassName="w-full h-full"
+                                    className="bg-white rounded-[2.5rem] flex flex-col overflow-hidden group transition-all duration-300 shadow-sm hover:shadow-xl"
                                 >
-                                    <div className="relative h-64 w-full overflow-hidden">
-                                        <Image
-                                            src={service.img}
-                                            alt={service.title}
-                                            fill
-                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                        />
-                                        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
-                                    </div>
+                                    <div className="flex flex-col h-full w-full">
+                                        <div className="relative h-64 w-full overflow-hidden">
+                                            <Image
+                                                src={service.img}
+                                                alt={service.title}
+                                                fill
+                                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                            />
+                                            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                                        </div>
 
-                                    <div className="p-8 text-center flex-1 flex flex-col items-center justify-center">
-                                        <h3 className="text-xl font-black text-black mb-4 uppercase tracking-tight">
-                                            {service.title}
-                                        </h3>
-                                        <p className="text-gray-500 text-sm leading-relaxed font-medium mb-8">
-                                            {service.desc}
-                                        </p>
-                                        <Link href={service.link} className="text-green-500 font-bold text-xs uppercase tracking-widest hover:gap-3 flex items-center transition-all">
-                                            Learn detail: {service.title} <span className="ml-2">+</span>
-                                        </Link>
+                                        <div className="p-8 text-center flex-1 flex flex-col items-center justify-center">
+                                            <h3 className="text-xl font-black text-black mb-4 uppercase tracking-tight">
+                                                {service.title}
+                                            </h3>
+                                            <p className="text-gray-500 text-sm leading-relaxed font-medium mb-8">
+                                                {service.desc}
+                                            </p>
+                                            <Link href={service.link} className="text-green-500 font-bold text-xs uppercase tracking-widest hover:gap-3 flex items-center transition-all">
+                                                Learn detail: {service.title} <span className="ml-2">+</span>
+                                            </Link>
+                                        </div>
                                     </div>
-                                </motion.div>
+                                </MovingBorderButton>
                             </SwiperSlide>
                         ))}
                     </Swiper>
