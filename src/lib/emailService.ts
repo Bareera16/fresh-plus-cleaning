@@ -1823,23 +1823,30 @@ export const sendQuoteEmails = async (quote: QuoteData) => {
     console.log('📧 Attempting to send quote emails for:', quote.name, '- Services:', quote.services.map(service => getServiceDisplayName(service)).join(', '));
 
     try {
-        // Use Supabase Edge Function for server-side email dispatch (avoids CORS issues)
-        const { data: edgeData, error: edgeError } = await supabase.functions.invoke('email-dispatch', {
-            body: { type: 'quote', quote, adminEmail: ADMIN_EMAIL }
+        // Use our local API route (ported from archived code) instead of Supabase Edge Function
+        // This gives us more control and uses the Resend logic the user requested
+        const response = await fetch('/api/send-quote-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ quoteData: quote })
         });
 
-        if (edgeError) {
-            console.error('❌ Edge function quote email error:', edgeError);
-            throw new Error(`Edge function failed: ${edgeError.message || JSON.stringify(edgeError)}`);
+        const result = await response.json();
+
+        if (!response.ok) {
+            console.error('❌ Local API quote email error:', result);
+            throw new Error(result.error || 'Failed to send email via local API');
         }
 
-        if (edgeData?.success) {
-            console.log('✅ Quote emails sent via Edge Function:', edgeData);
+        if (result.success) {
+            console.log('✅ Quote emails sent via local API:', result);
             console.log('🎉 All quote emails sent successfully!');
-            return { success: true, customerEmail: edgeData.customer, adminEmail: edgeData.admin };
+            return { success: true, emailId: result.emailId };
         } else {
-            console.error('❌ Edge function returned unsuccessful result:', edgeData);
-            throw new Error(`Edge function returned error: ${edgeData?.error || 'Unknown error'}`);
+            console.error('❌ Local API returned unsuccessful result:', result);
+            throw new Error(result.error || 'Unknown error');
         }
     } catch (error) {
         console.error('❌ Error sending quote emails:', error);
@@ -1849,7 +1856,6 @@ export const sendQuoteEmails = async (quote: QuoteData) => {
         if (error instanceof Error) {
             console.error('Error name:', error.name);
             console.error('Error message:', error.message);
-            console.error('Error stack:', error.stack);
         }
 
         return { success: false, error: error instanceof Error ? error.message : 'Unknown error', details: error };

@@ -1,6 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
@@ -60,11 +60,11 @@ export default function HeroSlider() {
     return (
         <div className="h-[80vh] md:h-[90vh] w-full overflow-hidden bg-black" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
             <Swiper
-                modules={[Autoplay, EffectFade, Navigation, Pagination]}
+                modules={[Autoplay, EffectFade, Pagination]}
                 effect="fade"
                 speed={1500}
                 autoplay={{ delay: 6000, disableOnInteraction: false }}
-                navigation={true}
+                navigation={false}
                 pagination={{ clickable: true }}
                 loop={true}
                 onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
@@ -132,34 +132,8 @@ export default function HeroSlider() {
             </Swiper>
 
             <style jsx global>{`
-        /* Navigation Arrows Styling */
-        .swiper-button-next, .swiper-button-prev {
-          transition: all 0.3s ease;
-        }
-
-
-        .swiper-button-next:after, .swiper-button-prev:after {
-          font-size: 18px !important;
-          color: white;
-          font-weight: bold;
-        }
-
         /* Mobile Responsive Adjustments */
         @media (max-width: 768px) {
-
-          .swiper-button-next:after, .swiper-button-prev:after {
-            font-size: 14px !important; 
-            opacity: 0.6;
-          }
-          
-
-          .swiper-button-next {
-            right: 5px !important;
-          }
-          .swiper-button-prev {
-            left: 5px !important;
-          }
-          
 
           .swiper-pagination-bullet {
             width: 5px !important;

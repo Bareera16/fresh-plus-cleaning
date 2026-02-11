@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title: string;
@@ -49,7 +50,7 @@ export const SEOHead = ({
   } : null;
 
   return (
-    <>
+    <Helmet>
       {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={fullDescription} />
@@ -82,18 +83,20 @@ export const SEOHead = ({
       {schema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
+        >
+          {JSON.stringify(schema)}
+        </script>
       )}
 
       {/* Breadcrumb Schema */}
       {breadcrumbSchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        />
+        >
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
       )}
-    </>
+    </Helmet>
   );
 };
 
